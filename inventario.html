@@ -313,6 +313,12 @@
   .badge-gray { background: var(--gray-100); color: var(--gray-600); }
   .badge-dark { background: var(--gray-800); color: var(--white); }
 
+  /* ── STATUS ── */
+  .status { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 7px; border-radius: var(--radius); white-space: nowrap; }
+  .status-pendiente { background: var(--gray-100); color: var(--gray-600); }
+  .status-comprado  { background: #dcfce7; color: #166534; }
+  .status-donacion  { background: #ede9fe; color: #5b21b6; }
+
   /* ── INFO GRID ── */
   .info-grid {
     display: grid;
@@ -464,8 +470,8 @@
     /* Ocultar Descripción (siempre vacía) y Evento (redundante con subtotal) */
     .inv-table th:nth-child(1),
     .inv-table td:nth-child(1),
-    .inv-table th:nth-child(3),
-    .inv-table td:nth-child(3) { display: none; }
+    .inv-table th:nth-child(4),
+    .inv-table td:nth-child(4) { display: none; }
 
     /* Subtotales y total general */
     .inv-total td { padding: 0.55rem 0.5rem; }
@@ -508,91 +514,91 @@
 const INV_LABELS = {spanish:'Spanish Night', international:'International Nights', asado:'Asado Final'};
 const INV_DATA = [
   // ── Spanish Night ──────────────────────────────────────────
-  {e:'spanish',a:'Empanadas hojaldre atún (30 trozos/ud)',pr:'Makro',ti:'Alimento',u:'19 uds',p:6.63,t:125.97,n:''},
-  {e:'spanish',a:'Bolsas Pulpo (potón cocido 800g)',pr:'Makro',ti:'Alimento',u:'9 uds',p:12.09,t:108.81,n:''},
-  {e:'spanish',a:'Packs Gildas (50 uds/pack)',pr:'Makro',ti:'Alimento',u:'12 uds',p:32.45,t:389.40,n:''},
-  {e:'spanish',a:'Packs Chistorra 1kg',pr:'Makro',ti:'Alimento',u:'10 uds',p:7.64,t:76.40,n:''},
-  {e:'spanish',a:'Queso Manchego entero',pr:'Mercadona',ti:'Alimento',u:'4,5 uds',p:40.00,t:180.00,n:''},
-  {e:'spanish',a:'Packs Torreznos (20 uds/pack)',pr:'Moreno Sáez',ti:'Alimento',u:'10 uds',p:12.95,t:129.50,n:''},
-  {e:'spanish',a:'Packs Morcilla de Burgos',pr:'Makro',ti:'Alimento',u:'19 uds',p:4.90,t:93.10,n:''},
-  {e:'spanish',a:'Botes Ensaladilla rusa 1kg',pr:'Makro',ti:'Alimento',u:'18 uds',p:5.22,t:93.96,n:''},
-  {e:'spanish',a:'Rosquillas marineras (≈130 uds/kg)',pr:'Pendiente',ti:'Alimento',u:'5 uds',p:3.69,t:18.45,n:''},
-  {e:'spanish',a:'Bolsas Mini Croquetas jamón (200/bolsa)',pr:'Makro',ti:'Alimento',u:'3 uds',p:5.01,t:15.03,n:''},
-  {e:'spanish',a:'Bolsas Patatas Bravas 2,5kg',pr:'Makro',ti:'Alimento',u:'4 uds',p:4.67,t:18.68,n:''},
-  {e:'spanish',a:'Botes Salsa Brava 1850g',pr:'Makro',ti:'Alimento',u:'1 ud',p:6.22,t:6.22,n:''},
-  {e:'spanish',a:'Tortillas de patata con cebolla (25 trozos/ud)',pr:'Mercadona',ti:'Alimento',u:'23 uds',p:2.60,t:59.80,n:''},
-  {e:'spanish',a:'Paquetes Pintxo Donostiarra 1,2kg',pr:'Makro',ti:'Alimento',u:'13 uds',p:8.13,t:105.69,n:''},
-  {e:'spanish',a:'Botes Sobrasada 1,5kg',pr:'Makro',ti:'Alimento',u:'5 uds',p:10.27,t:51.35,n:''},
-  {e:'spanish',a:'Packs Biscotes Minitosta 6 uds',pr:'Makro',ti:'Alimento',u:'6 uds',p:5.05,t:30.30,n:''},
-  {e:'spanish',a:'Botellas Gazpacho 1L',pr:'Mercadona',ti:'Alimento',u:'57 uds',p:1.70,t:96.90,n:''},
-  {e:'spanish',a:'Packs Ensaimadas 900g (18 uds/pack)',pr:'Makro',ti:'Alimento',u:'8 uds',p:7.80,t:62.40,n:''},
-  {e:'spanish',a:'Botes Crema Catalana Royal 800g',pr:'Makro',ti:'Alimento',u:'9 uds',p:6.70,t:60.30,n:''},
-  {e:'spanish',a:'Packs Churros fritos 875g',pr:'Makro',ti:'Alimento',u:'19 uds',p:7.78,t:147.82,n:''},
-  {e:'spanish',a:'Turrones Duros (15 trozos/tableta)',pr:'Mercadona',ti:'Alimento',u:'19 uds',p:2.95,t:56.05,n:''},
-  {e:'spanish',a:'Turrones Blandos (15 trozos/tableta)',pr:'Mercadona',ti:'Alimento',u:'19 uds',p:2.95,t:56.05,n:''},
-  {e:'spanish',a:'Aceite para freír 5L',pr:'Makro',ti:'Alimento',u:'6 uds',p:8.79,t:52.74,n:''},
-  {e:'spanish',a:'Packs Leche entera 1,5L (6 briks/pack)',pr:'Makro',ti:'Alimento',u:'5 uds',p:8.21,t:41.05,n:''},
-  {e:'spanish',a:'Aceite de oliva',pr:'Pendiente',ti:'Alimento',u:'1 ud',p:5.15,t:5.15,n:''},
-  {e:'spanish',a:'Pimentón dulce 800g',pr:'Makro',ti:'Alimento',u:'1 ud',p:6.11,t:6.11,n:''},
-  {e:'spanish',a:'Jamones cebo 50% ibérico',pr:'Makro',ti:'Alimento',u:'2 uds',p:170.00,t:340.00,n:''},
-  {e:'spanish',a:'Fuentes acero inox 22×13cm',pr:'Makro',ti:'Objeto',u:'100 uds',p:1.49,t:149.00,n:'En revisión'},
-  {e:'spanish',a:'Platos hondos Bionic bagazo 680ml',pr:'Makro',ti:'Objeto',u:'2000 uds',p:0.12,t:240.00,n:''},
-  {e:'spanish',a:'Boles Bionic bagazo 950ml',pr:'Makro',ti:'Objeto',u:'2000 uds',p:0.20,t:400.00,n:''},
-  {e:'spanish',a:'Vasos reutilizables 20/40ml PP',pr:'Makro',ti:'Objeto',u:'2000 uds',p:0.05,t:100.00,n:''},
-  {e:'spanish',a:'Tenedores 18cm inox',pr:'Makro',ti:'Objeto',u:'2000 uds',p:0.24,t:480.00,n:''},
-  {e:'spanish',a:'Cuchillos 18cm inox',pr:'Makro',ti:'Objeto',u:'2000 uds',p:0.28,t:560.00,n:''},
-  {e:'spanish',a:'Cucharas 18cm inox',pr:'Makro',ti:'Objeto',u:'2000 uds',p:0.24,t:480.00,n:''},
-  {e:'spanish',a:'Cucharitas café mini 10cm',pr:'Makro',ti:'Objeto',u:'2000 uds',p:0.04,t:80.00,n:''},
-  {e:'spanish',a:'Servilletas papel 40×40cm burdeos',pr:'Makro',ti:'Objeto',u:'2400 uds',p:0.054,t:129.04,n:''},
-  {e:'spanish',a:'Telas decorativas 3m/caseta',pr:'Pendiente',ti:'Objeto',u:'33 m',p:15.00,t:495.00,n:''},
-  {e:'spanish',a:'Rollos Mantel Papel adamascado 25m',pr:'Amazon',ti:'Objeto',u:'4 uds',p:30.69,t:122.76,n:''},
-  {e:'spanish',a:'Disfraces temáticos',pr:'Pendiente',ti:'Objeto',u:'10 uds',p:45.00,t:450.00,n:''},
-  {e:'spanish',a:'Sellos customizables',pr:'Pendiente',ti:'Objeto',u:'75 uds',p:4.00,t:300.00,n:''},
-  {e:'spanish',a:'Tinta para sellos',pr:'Pendiente',ti:'Objeto',u:'75 uds',p:2.00,t:150.00,n:''},
-  {e:'spanish',a:'Impresora',pr:'Pendiente',ti:'Objeto',u:'1 ud',p:120.00,t:120.00,n:'En revisión'},
-  {e:'spanish',a:'Packs Listones madera abeto 200cm',pr:'Brico Depôt',ti:'Objeto',u:'22 packs',p:19.95,t:438.90,n:''},
-  {e:'spanish',a:'Tablero MDF 60×120×1,6cm',pr:'Leroy Merlin',ti:'Objeto',u:'11 uds',p:21.99,t:241.89,n:''},
-  {e:'spanish',a:'Tornillos para madera',pr:'Pendiente',ti:'Objeto',u:'350 uds',p:0.10,t:35.00,n:''},
-  {e:'spanish',a:'Arandelas',pr:'Pendiente',ti:'Objeto',u:'200 uds',p:0.20,t:40.00,n:''},
-  {e:'spanish',a:'Palominas',pr:'Pendiente',ti:'Objeto',u:'200 uds',p:0.20,t:40.00,n:''},
-  {e:'spanish',a:'Botellas Sangría 1,5L',pr:'Mercadona',ti:'Alimento',u:'172 uds',p:1.60,t:275.20,n:''},
-  {e:'spanish',a:'Botellas Tinto Verano SIN alcohol',pr:'Mercadona',ti:'Alimento',u:'55 uds',p:0.90,t:49.50,n:''},
-  {e:'spanish',a:'Cajas Vino Fino bag-in-box 5L',pr:'Alcampo',ti:'Alimento',u:'16 uds',p:16.77,t:268.32,n:''},
-  {e:'spanish',a:'Botellas Sprite 2L',pr:'Mercadona',ti:'Alimento',u:'81 uds',p:0.95,t:76.95,n:''},
-  {e:'spanish',a:'Botellas Sidra',pr:'Makro',ti:'Alimento',u:'168 uds',p:2.04,t:342.72,n:''},
-  {e:'spanish',a:'Briks Horchata chufa',pr:'Mercadona',ti:'Alimento',u:'130 uds',p:1.35,t:175.50,n:''},
-  {e:'spanish',a:'Vino Tinto Kalimotxo bag-box 5L',pr:'Makro',ti:'Alimento',u:'3 uds',p:6.35,t:19.05,n:''},
-  {e:'spanish',a:'Coca-Cola packs 6 uds (kalimotxo)',pr:'Makro',ti:'Alimento',u:'3 uds',p:8.77,t:26.31,n:''},
-  {e:'spanish',a:'Hielo Bolsas 2kg',pr:'Makro',ti:'Alimento',u:'25 uds',p:0.95,t:23.75,n:'En revisión'},
-  {e:'spanish',a:'Jarabe de fruta granizados',pr:'Amazon',ti:'Alimento',u:'20 uds',p:8.40,t:168.00,n:'En revisión'},
-  {e:'spanish',a:'Aderezo puestecitos',pr:'Pendiente',ti:'Objeto',u:'1 ud',p:400.00,t:400.00,n:'Pendiente definir'},
+  {e:'spanish',s:'Pendiente',a:'Empanadas hojaldre atún (30 trozos/ud)',pr:'Makro',ti:'Alimento',u:'19 uds',p:6.63,t:125.97,n:''},
+  {e:'spanish',s:'Pendiente',a:'Bolsas Pulpo (potón cocido 800g)',pr:'Makro',ti:'Alimento',u:'9 uds',p:12.09,t:108.81,n:''},
+  {e:'spanish',s:'Pendiente',a:'Packs Gildas (50 uds/pack)',pr:'Makro',ti:'Alimento',u:'12 uds',p:32.45,t:389.40,n:''},
+  {e:'spanish',s:'Pendiente',a:'Packs Chistorra 1kg',pr:'Makro',ti:'Alimento',u:'10 uds',p:7.64,t:76.40,n:''},
+  {e:'spanish',s:'Pendiente',a:'Queso Manchego entero',pr:'Mercadona',ti:'Alimento',u:'4,5 uds',p:40.00,t:180.00,n:''},
+  {e:'spanish',s:'Pendiente',a:'Packs Torreznos (20 uds/pack)',pr:'Moreno Sáez',ti:'Alimento',u:'10 uds',p:12.95,t:129.50,n:''},
+  {e:'spanish',s:'Pendiente',a:'Packs Morcilla de Burgos',pr:'Makro',ti:'Alimento',u:'19 uds',p:4.90,t:93.10,n:''},
+  {e:'spanish',s:'Pendiente',a:'Botes Ensaladilla rusa 1kg',pr:'Makro',ti:'Alimento',u:'18 uds',p:5.22,t:93.96,n:''},
+  {e:'spanish',s:'Pendiente',a:'Rosquillas marineras (≈130 uds/kg)',pr:'Pendiente',ti:'Alimento',u:'5 uds',p:3.69,t:18.45,n:''},
+  {e:'spanish',s:'Pendiente',a:'Bolsas Mini Croquetas jamón (200/bolsa)',pr:'Makro',ti:'Alimento',u:'3 uds',p:5.01,t:15.03,n:''},
+  {e:'spanish',s:'Pendiente',a:'Bolsas Patatas Bravas 2,5kg',pr:'Makro',ti:'Alimento',u:'4 uds',p:4.67,t:18.68,n:''},
+  {e:'spanish',s:'Pendiente',a:'Botes Salsa Brava 1850g',pr:'Makro',ti:'Alimento',u:'1 ud',p:6.22,t:6.22,n:''},
+  {e:'spanish',s:'Pendiente',a:'Tortillas de patata con cebolla (25 trozos/ud)',pr:'Mercadona',ti:'Alimento',u:'23 uds',p:2.60,t:59.80,n:''},
+  {e:'spanish',s:'Pendiente',a:'Paquetes Pintxo Donostiarra 1,2kg',pr:'Makro',ti:'Alimento',u:'13 uds',p:8.13,t:105.69,n:''},
+  {e:'spanish',s:'Pendiente',a:'Botes Sobrasada 1,5kg',pr:'Makro',ti:'Alimento',u:'5 uds',p:10.27,t:51.35,n:''},
+  {e:'spanish',s:'Pendiente',a:'Packs Biscotes Minitosta 6 uds',pr:'Makro',ti:'Alimento',u:'6 uds',p:5.05,t:30.30,n:''},
+  {e:'spanish',s:'Pendiente',a:'Botellas Gazpacho 1L',pr:'Mercadona',ti:'Alimento',u:'57 uds',p:1.70,t:96.90,n:''},
+  {e:'spanish',s:'Pendiente',a:'Packs Ensaimadas 900g (18 uds/pack)',pr:'Makro',ti:'Alimento',u:'8 uds',p:7.80,t:62.40,n:''},
+  {e:'spanish',s:'Pendiente',a:'Botes Crema Catalana Royal 800g',pr:'Makro',ti:'Alimento',u:'9 uds',p:6.70,t:60.30,n:''},
+  {e:'spanish',s:'Pendiente',a:'Packs Churros fritos 875g',pr:'Makro',ti:'Alimento',u:'19 uds',p:7.78,t:147.82,n:''},
+  {e:'spanish',s:'Pendiente',a:'Turrones Duros (15 trozos/tableta)',pr:'Mercadona',ti:'Alimento',u:'19 uds',p:2.95,t:56.05,n:''},
+  {e:'spanish',s:'Pendiente',a:'Turrones Blandos (15 trozos/tableta)',pr:'Mercadona',ti:'Alimento',u:'19 uds',p:2.95,t:56.05,n:''},
+  {e:'spanish',s:'Pendiente',a:'Aceite para freír 5L',pr:'Makro',ti:'Alimento',u:'6 uds',p:8.79,t:52.74,n:''},
+  {e:'spanish',s:'Pendiente',a:'Packs Leche entera 1,5L (6 briks/pack)',pr:'Makro',ti:'Alimento',u:'5 uds',p:8.21,t:41.05,n:''},
+  {e:'spanish',s:'Pendiente',a:'Aceite de oliva',pr:'Pendiente',ti:'Alimento',u:'1 ud',p:5.15,t:5.15,n:''},
+  {e:'spanish',s:'Pendiente',a:'Pimentón dulce 800g',pr:'Makro',ti:'Alimento',u:'1 ud',p:6.11,t:6.11,n:''},
+  {e:'spanish',s:'Pendiente',a:'Jamones cebo 50% ibérico',pr:'Makro',ti:'Alimento',u:'2 uds',p:170.00,t:340.00,n:''},
+  {e:'spanish',s:'Pendiente',a:'Fuentes acero inox 22×13cm',pr:'Makro',ti:'Objeto',u:'100 uds',p:1.49,t:149.00,n:'En revisión'},
+  {e:'spanish',s:'Comprado',a:'Platos hondos Bionic bagazo 680ml',pr:'Makro',ti:'Objeto',u:'2000 uds',p:0.12,t:240.00,n:''},
+  {e:'spanish',s:'Comprado',a:'Boles Bionic bagazo 950ml',pr:'Makro',ti:'Objeto',u:'2000 uds',p:0.20,t:400.00,n:''},
+  {e:'spanish',s:'Comprado',a:'Vasos reutilizables 20/40ml PP',pr:'Makro',ti:'Objeto',u:'2000 uds',p:0.05,t:100.00,n:''},
+  {e:'spanish',s:'Comprado',a:'Tenedores 18cm inox',pr:'Makro',ti:'Objeto',u:'2000 uds',p:0.24,t:480.00,n:''},
+  {e:'spanish',s:'Comprado',a:'Cuchillos 18cm inox',pr:'Makro',ti:'Objeto',u:'2000 uds',p:0.28,t:560.00,n:''},
+  {e:'spanish',s:'Comprado',a:'Cucharas 18cm inox',pr:'Makro',ti:'Objeto',u:'2000 uds',p:0.24,t:480.00,n:''},
+  {e:'spanish',s:'Pendiente',a:'Cucharitas café mini 10cm',pr:'Makro',ti:'Objeto',u:'2000 uds',p:0.04,t:80.00,n:''},
+  {e:'spanish',s:'Comprado',a:'Servilletas papel 40×40cm burdeos',pr:'Makro',ti:'Objeto',u:'2400 uds',p:0.054,t:129.04,n:''},
+  {e:'spanish',s:'Pendiente',a:'Telas decorativas 3m/caseta',pr:'Pendiente',ti:'Objeto',u:'33 m',p:15.00,t:495.00,n:''},
+  {e:'spanish',s:'Comprado',a:'Rollos Mantel Papel adamascado 25m',pr:'Amazon',ti:'Objeto',u:'4 uds',p:30.69,t:122.76,n:''},
+  {e:'spanish',s:'Pendiente',a:'Disfraces temáticos',pr:'Pendiente',ti:'Objeto',u:'10 uds',p:45.00,t:450.00,n:''},
+  {e:'spanish',s:'Pendiente',a:'Sellos customizables',pr:'Pendiente',ti:'Objeto',u:'75 uds',p:4.00,t:300.00,n:''},
+  {e:'spanish',s:'Pendiente',a:'Tinta para sellos',pr:'Pendiente',ti:'Objeto',u:'75 uds',p:2.00,t:150.00,n:''},
+  {e:'spanish',s:'Pendiente',a:'Impresora',pr:'Pendiente',ti:'Objeto',u:'1 ud',p:120.00,t:120.00,n:'En revisión'},
+  {e:'spanish',s:'Comprado',a:'Packs Listones madera abeto 200cm',pr:'Brico Depôt',ti:'Objeto',u:'22 packs',p:19.95,t:438.90,n:''},
+  {e:'spanish',s:'Comprado',a:'Tablero MDF 60×120×1,6cm',pr:'Leroy Merlin',ti:'Objeto',u:'11 uds',p:21.99,t:241.89,n:''},
+  {e:'spanish',s:'Comprado',a:'Tornillos para madera',pr:'Pendiente',ti:'Objeto',u:'350 uds',p:0.10,t:35.00,n:''},
+  {e:'spanish',s:'Comprado',a:'Arandelas',pr:'Pendiente',ti:'Objeto',u:'200 uds',p:0.20,t:40.00,n:''},
+  {e:'spanish',s:'Comprado',a:'Palominas',pr:'Pendiente',ti:'Objeto',u:'200 uds',p:0.20,t:40.00,n:''},
+  {e:'spanish',s:'Pendiente',a:'Botellas Sangría 1,5L',pr:'Mercadona',ti:'Alimento',u:'172 uds',p:1.60,t:275.20,n:''},
+  {e:'spanish',s:'Pendiente',a:'Botellas Tinto Verano SIN alcohol',pr:'Mercadona',ti:'Alimento',u:'55 uds',p:0.90,t:49.50,n:''},
+  {e:'spanish',s:'Pendiente',a:'Cajas Vino Fino bag-in-box 5L',pr:'Alcampo',ti:'Alimento',u:'16 uds',p:16.77,t:268.32,n:''},
+  {e:'spanish',s:'Pendiente',a:'Botellas Sprite 2L',pr:'Mercadona',ti:'Alimento',u:'81 uds',p:0.95,t:76.95,n:''},
+  {e:'spanish',s:'Pendiente',a:'Botellas Sidra',pr:'Makro',ti:'Alimento',u:'168 uds',p:2.04,t:342.72,n:''},
+  {e:'spanish',s:'Pendiente',a:'Briks Horchata chufa',pr:'Mercadona',ti:'Alimento',u:'130 uds',p:1.35,t:175.50,n:''},
+  {e:'spanish',s:'Pendiente',a:'Vino Tinto Kalimotxo bag-box 5L',pr:'Makro',ti:'Alimento',u:'3 uds',p:6.35,t:19.05,n:''},
+  {e:'spanish',s:'Pendiente',a:'Coca-Cola packs 6 uds (kalimotxo)',pr:'Makro',ti:'Alimento',u:'3 uds',p:8.77,t:26.31,n:''},
+  {e:'spanish',s:'Pendiente',a:'Hielo Bolsas 2kg',pr:'Makro',ti:'Alimento',u:'25 uds',p:0.95,t:23.75,n:'En revisión'},
+  {e:'spanish',s:'Pendiente',a:'Jarabe de fruta granizados',pr:'Amazon',ti:'Alimento',u:'20 uds',p:8.40,t:168.00,n:'En revisión'},
+  {e:'spanish',s:'Pendiente',a:'Aderezo puestecitos',pr:'Pendiente',ti:'Objeto',u:'1 ud',p:400.00,t:400.00,n:'Pendiente definir'},
   // ── International Nights ───────────────────────────────────
-  {e:'international',a:'Frescos por país (estimado)',pr:'Varios',ti:'Alimento',u:'110 uds',p:10.00,t:1100.00,n:'Pendiente confirmar con países'},
-  {e:'international',a:'Hielo Bolsas 2kg',pr:'Makro',ti:'Alimento',u:'30 uds',p:1.70,t:51.00,n:''},
-  {e:'international',a:'Cucharas de cocina',pr:'Makro',ti:'Objeto',u:'11 uds',p:2.99,t:32.89,n:'Pdte. confirmar si reutilizable de Javier'},
-  {e:'international',a:'Set Cuchillos cortar 15 uds',pr:'Makro',ti:'Objeto',u:'2 uds',p:24.99,t:49.98,n:'Pdte. confirmar si reutilizable de Javier'},
-  {e:'international',a:'Set Tablas de cortar 6 uds',pr:'Makro',ti:'Objeto',u:'2 uds',p:12.33,t:24.66,n:'Pdte. confirmar si reutilizable de Javier'},
-  {e:'international',a:'Set Tenedores cocina 12 uds',pr:'Makro',ti:'Objeto',u:'1 ud',p:3.09,t:3.09,n:'Pdte. confirmar si reutilizable de Javier'},
-  {e:'international',a:'Cazo de puchero',pr:'—',ti:'Objeto',u:'4 uds',p:0,t:0,n:'Pendiente precio'},
-  {e:'international',a:'Espátulas',pr:'Makro',ti:'Objeto',u:'4 uds',p:1.49,t:5.96,n:'Pdte. confirmar si reutilizable de Javier'},
-  {e:'international',a:'Cacerolas',pr:'Makro',ti:'Objeto',u:'2 uds',p:43.79,t:87.58,n:'Pdte. confirmar si reutilizable de Javier'},
-  {e:'international',a:'Sartenes',pr:'Makro',ti:'Objeto',u:'2 uds',p:61.15,t:122.30,n:'Pdte. confirmar si reutilizable de Javier'},
-  {e:'international',a:'Mini Pimer Braun',pr:'Amazon',ti:'Objeto',u:'1 ud',p:34.00,t:34.00,n:'Pdte. confirmar si reutilizable de Javier'},
-  {e:'international',a:'Hornillo Gas/Camping Gas',pr:'Amazon',ti:'Objeto',u:'2 uds',p:139.99,t:279.98,n:'Pdte. confirmar si reutilizable de Javier'},
-  {e:'international',a:'Guirnaldas banderas países',pr:'Amazon',ti:'Objeto',u:'4 uds',p:10.00,t:40.00,n:''},
-  {e:'international',a:'Set Banderitas comida por país 100 uds',pr:'Amazon',ti:'Objeto',u:'22 uds',p:6.59,t:144.98,n:''},
-  {e:'international',a:'Cajas de almacenamiento transporte',pr:'Amazon',ti:'Objeto',u:'2 uds',p:20.00,t:40.00,n:''},
+  {e:'international',s:'Pendiente',a:'Frescos por país (estimado)',pr:'Varios',ti:'Alimento',u:'110 uds',p:10.00,t:1100.00,n:'Pendiente confirmar con países'},
+  {e:'international',s:'Pendiente',a:'Hielo Bolsas 2kg',pr:'Makro',ti:'Alimento',u:'30 uds',p:1.70,t:51.00,n:''},
+  {e:'international',s:'Pendiente',a:'Cucharas de cocina',pr:'Makro',ti:'Objeto',u:'11 uds',p:2.99,t:32.89,n:'Pdte. confirmar si reutilizable de Javier'},
+  {e:'international',s:'Pendiente',a:'Set Cuchillos cortar 15 uds',pr:'Makro',ti:'Objeto',u:'2 uds',p:24.99,t:49.98,n:'Pdte. confirmar si reutilizable de Javier'},
+  {e:'international',s:'Pendiente',a:'Set Tablas de cortar 6 uds',pr:'Makro',ti:'Objeto',u:'2 uds',p:12.33,t:24.66,n:'Pdte. confirmar si reutilizable de Javier'},
+  {e:'international',s:'Pendiente',a:'Set Tenedores cocina 12 uds',pr:'Makro',ti:'Objeto',u:'1 ud',p:3.09,t:3.09,n:'Pdte. confirmar si reutilizable de Javier'},
+  {e:'international',s:'Pendiente',a:'Cazo de puchero',pr:'—',ti:'Objeto',u:'4 uds',p:0,t:0,n:'Pendiente precio'},
+  {e:'international',s:'Pendiente',a:'Espátulas',pr:'Makro',ti:'Objeto',u:'4 uds',p:1.49,t:5.96,n:'Pdte. confirmar si reutilizable de Javier'},
+  {e:'international',s:'Pendiente',a:'Cacerolas',pr:'Makro',ti:'Objeto',u:'2 uds',p:43.79,t:87.58,n:'Pdte. confirmar si reutilizable de Javier'},
+  {e:'international',s:'Pendiente',a:'Sartenes',pr:'Makro',ti:'Objeto',u:'2 uds',p:61.15,t:122.30,n:'Pdte. confirmar si reutilizable de Javier'},
+  {e:'international',s:'Pendiente',a:'Mini Pimer Braun',pr:'Amazon',ti:'Objeto',u:'1 ud',p:34.00,t:34.00,n:'Pdte. confirmar si reutilizable de Javier'},
+  {e:'international',s:'Pendiente',a:'Hornillo Gas/Camping Gas',pr:'Amazon',ti:'Objeto',u:'2 uds',p:139.99,t:279.98,n:'Pdte. confirmar si reutilizable de Javier'},
+  {e:'international',s:'Pendiente',a:'Guirnaldas banderas países',pr:'Amazon',ti:'Objeto',u:'4 uds',p:10.00,t:40.00,n:''},
+  {e:'international',s:'Pendiente',a:'Set Banderitas comida por país 100 uds',pr:'Amazon',ti:'Objeto',u:'22 uds',p:6.59,t:144.98,n:''},
+  {e:'international',s:'Pendiente',a:'Cajas de almacenamiento transporte',pr:'Amazon',ti:'Objeto',u:'2 uds',p:20.00,t:40.00,n:''},
   // ── Asado Final ────────────────────────────────────────────
-  {e:'asado',a:'Paella Mixta / Fideuá de Marisco (catering 566 pax, incluye desplazamiento+menaje)',pr:'Catering',ti:'Alimento',u:'566 pax',p:6.25,t:3537.50,n:''},
-  {e:'asado',a:'Hielo Bolsas 2kg',pr:'Makro',ti:'Alimento',u:'115 uds',p:0.95,t:109.25,n:''},
-  {e:'asado',a:'Cucharillas desechables',pr:'Temu',ti:'Objeto',u:'660 uds',p:0.032,t:21.12,n:'Pdte. confirmar si cubre catering'},
-  {e:'asado',a:'Servilletas papel decoradas',pr:'Temu',ti:'Objeto',u:'1200 uds',p:0.072,t:86.40,n:'Pdte. confirmar si cubre catering'},
-  {e:'asado',a:'Vasos Plástico 300ml reutilizables',pr:'Makro',ti:'Objeto',u:'600 uds',p:0.31,t:186.00,n:'Pdte. confirmar si cubre catering'},
-  {e:'asado',a:'Manteles desechables de colores (8m, 14 uds)',pr:'Temu',ti:'Objeto',u:'14 uds',p:40.32,t:564.48,n:''},
-  {e:'asado',a:'Decoración Centros de Mesa (estimado)',pr:'Pendiente',ti:'Objeto',u:'1 partida',p:400.00,t:400.00,n:''},
-  {e:'asado',a:'Brownie de Chocolate (1/persona)',pr:'Makro',ti:'Alimento',u:'566 uds',p:0.84,t:475.44,n:'Pendiente confirmar donación Frigo'},
-  {e:'asado',a:'Helado de Vainilla tarrina (~57L)',pr:'Makro',ti:'Alimento',u:'566 pax',p:1.25,t:707.50,n:'Pendiente confirmar donación Frigo'},
-  {e:'asado',a:'Cucharillas Postre',pr:'Temu',ti:'Objeto',u:'566 uds',p:0.032,t:18.11,n:'Pdte. confirmar donación Frigo'},
+  {e:'asado',s:'Pendiente',a:'Paella Mixta / Fideuá de Marisco (catering 566 pax, incluye desplazamiento+menaje)',pr:'Catering',ti:'Alimento',u:'566 pax',p:6.25,t:3537.50,n:''},
+  {e:'asado',s:'Pendiente',a:'Hielo Bolsas 2kg',pr:'Makro',ti:'Alimento',u:'115 uds',p:0.95,t:109.25,n:''},
+  {e:'asado',s:'Pendiente',a:'Cucharillas desechables',pr:'Temu',ti:'Objeto',u:'660 uds',p:0.032,t:21.12,n:'Pdte. confirmar si cubre catering'},
+  {e:'asado',s:'Comprado',a:'Servilletas papel decoradas',pr:'Temu',ti:'Objeto',u:'1200 uds',p:0.072,t:86.40,n:'Pdte. confirmar si cubre catering'},
+  {e:'asado',s:'Comprado',a:'Vasos Plástico 300ml reutilizables',pr:'Makro',ti:'Objeto',u:'600 uds',p:0.31,t:186.00,n:'Pdte. confirmar si cubre catering'},
+  {e:'asado',s:'Donación',a:'Manteles desechables de colores (8m, 14 uds)',pr:'Temu',ti:'Objeto',u:'14 uds',p:40.32,t:564.48,n:''},
+  {e:'asado',s:'Pendiente',a:'Decoración Centros de Mesa (estimado)',pr:'Pendiente',ti:'Objeto',u:'1 partida',p:400.00,t:400.00,n:''},
+  {e:'asado',s:'Pendiente',a:'Brownie de Chocolate (1/persona)',pr:'Makro',ti:'Alimento',u:'566 uds',p:0.84,t:475.44,n:'Pendiente confirmar donación Frigo'},
+  {e:'asado',s:'Pendiente',a:'Helado de Vainilla tarrina (~57L)',pr:'Makro',ti:'Alimento',u:'566 pax',p:1.25,t:707.50,n:'Pendiente confirmar donación Frigo'},
+  {e:'asado',s:'Pendiente',a:'Cucharillas Postre',pr:'Temu',ti:'Objeto',u:'566 uds',p:0.032,t:18.11,n:'Pdte. confirmar donación Frigo'},
 ];
 
 function invFmt(n) {
@@ -620,30 +626,35 @@ function renderInv(filter) {
 
   h += '<div class="inv-table-wrap">';
   h += `<table class="inv-table"><thead><tr>
-    <th>Evento</th><th>Artículo</th><th>Descripción</th><th>Proveedor</th><th>Tipo</th>
+    <th>Evento</th><th>Estado</th><th>Artículo</th><th>Descripción</th><th>Proveedor</th><th>Tipo</th>
     <th style="text-align:right">Uds.</th><th style="text-align:right">P. unit.</th>
     <th style="text-align:right">Total</th><th style="text-align:left">Notas</th>
   </tr></thead><tbody>`;
 
+  const statusBadge = s => {
+    const cls = s==='Comprado' ? 'status-comprado' : s==='Donación' ? 'status-donacion' : 'status-pendiente';
+    return `<span class="status ${cls}">${s||'Pendiente'}</span>`;
+  };
+
   events.forEach(ev => {
     const evRows = INV_DATA.filter(r=>r.e===ev);
     const sub = evRows.reduce((s,r)=>s+r.t,0);
-    h += `<tr class="inv-sec"><td colspan="9">${INV_LABELS[ev]}</td></tr>`;
+    h += `<tr class="inv-sec"><td colspan="10">${INV_LABELS[ev]}</td></tr>`;
     evRows.forEach(r => {
       const isRed = r.n && (r.n.includes('En revisión')||r.n.includes('Pendiente')||r.n.includes('Pdte.'));
       const ns = `style="text-align:left${isRed?';color:var(--red)':'"'}`;
-      h += `<tr><td>${INV_LABELS[r.e]}</td><td>${r.a}</td><td></td><td>${r.pr}</td>
+      h += `<tr><td>${INV_LABELS[r.e]}</td><td>${statusBadge(r.s)}</td><td>${r.a}</td><td></td><td>${r.pr}</td>
         <td><span class="tag ${r.ti==='Alimento'?'tag-a':'tag-o'}">${r.ti}</span></td>
         <td style="text-align:right">${r.u}</td>
         <td style="text-align:right">${invFmtU(r.p)}</td>
         <td style="text-align:right">${invFmt(r.t)}</td>
         <td ${ns}>${r.n}</td></tr>`;
     });
-    h += `<tr class="inv-total"><td colspan="7">Subtotal ${INV_LABELS[ev]}</td><td style="text-align:right">${invFmt(sub)}</td><td></td></tr>`;
+    h += `<tr class="inv-total"><td colspan="8">Subtotal ${INV_LABELS[ev]}</td><td style="text-align:right">${invFmt(sub)}</td><td></td></tr>`;
   });
 
   if (filter==='all') {
-    h += `<tr class="inv-total"><td colspan="7"><strong>TOTAL GENERAL</strong></td><td style="text-align:right"><strong>${invFmt(gt)}</strong></td><td></td></tr>`;
+    h += `<tr class="inv-total"><td colspan="8"><strong>TOTAL GENERAL</strong></td><td style="text-align:right"><strong>${invFmt(gt)}</strong></td><td></td></tr>`;
   }
 
   h += '</tbody></table></div>';
