@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malta Camp 2026 · Asado Final</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #FFFFFF;
+    --gray-50: #F7F7F7;
+    --gray-100: #EFEFEF;
+    --gray-200: #DEDEDE;
+    --gray-400: #ABABAB;
+    --gray-600: #6B6B6B;
+    --gray-800: #2E2E2E;
+    --gray-900: #1A1A1A;
+    --red: #CC0000;
+    --red-light: #FFF0F0;
+    --font: 'Plus Jakarta Sans', sans-serif;
+    --radius: 2px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font);
+    background: var(--white);
+    color: var(--gray-900);
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+    display: flex; align-items: stretch;
+    padding: 0 2rem;
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 8px;
+    padding: 0 1.5rem 0 0; margin-right: 1.5rem;
+    border-right: 1px solid var(--gray-200);
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--gray-900); text-decoration: none;
+  }
+
+  .nav-cross { color: var(--red); font-size: 18px; font-weight: 300; }
+
+  .nav-tabs { display: flex; overflow-x: auto; scrollbar-width: none; }
+  .nav-tabs::-webkit-scrollbar { display: none; }
+
+  .nav-tab {
+    padding: 1rem 1.1rem;
+    font-size: 12.5px; font-weight: 400;
+    color: var(--gray-400); cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color 0.1s, border-color 0.1s;
+    user-select: none;
+    text-decoration: none;
+    display: flex; align-items: center;
+  }
+  .nav-tab:hover { color: var(--gray-800); }
+  .nav-tab.active { color: var(--gray-900); border-bottom-color: var(--red); font-weight: 500; }
+
+  /* ── HERO ── */
+  .ficha-hero {
+    padding: 2.5rem 2rem 2rem;
+    border-bottom: 1px solid var(--gray-200);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem; align-items: end;
+  }
+
+  .ficha-eyebrow {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 0.5rem;
+  }
+
+  .ficha-title {
+    font-size: 2rem; font-weight: 300;
+    color: var(--gray-900); letter-spacing: -0.02em;
+    line-height: 1.1; margin-bottom: 0.75rem;
+  }
+
+  .ficha-desc {
+    font-size: 13px; color: var(--gray-600);
+    line-height: 1.65; max-width: 500px; font-weight: 300;
+  }
+
+  .ficha-meta { display: flex; gap: 2rem; align-items: end; }
+  .meta-item { text-align: right; }
+  .meta-label {
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gray-400); margin-bottom: 3px;
+  }
+  .meta-value { font-size: 14px; font-weight: 500; color: var(--gray-900); }
+
+  /* ── FRISO HORIZONTAL ── */
+  .friso {
+    background: var(--gray-50);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 1.5rem 2rem;
+    overflow-x: auto;
+  }
+
+  .friso-label {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gray-400); margin-bottom: 1.25rem;
+  }
+
+  .friso-track { display: flex; align-items: flex-start; gap: 0; min-width: fit-content; }
+  .friso-seg { display: flex; align-items: flex-start; gap: 0; }
+  .friso-node { display: flex; flex-direction: column; align-items: center; width: 140px; flex-shrink: 0; }
+  .friso-dot-row { display: flex; align-items: center; width: 100%; position: relative; margin-bottom: 8px; }
+  .friso-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--white); border: 1.5px solid var(--gray-400); flex-shrink: 0; z-index: 1; }
+  .friso-dot.on { background: var(--red); border-color: var(--red); }
+  .friso-line { flex: 1; height: 1px; background: var(--gray-200); }
+  .friso-node-content { padding: 0 8px; text-align: left; width: 100%; }
+  .friso-time { font-size: 15px; font-weight: 500; color: var(--gray-900); letter-spacing: -0.01em; margin-bottom: 2px; }
+  .friso-action { font-size: 12px; font-weight: 500; color: var(--gray-800); margin-bottom: 4px; }
+  .friso-people { display: flex; flex-direction: column; gap: 2px; }
+  .friso-person { font-size: 11px; color: var(--gray-400); display: flex; align-items: center; gap: 4px; }
+  .friso-person::before { content: ''; width: 3px; height: 3px; border-radius: 50%; background: var(--gray-400); flex-shrink: 0; }
+  .friso-end-node { display: flex; flex-direction: column; align-items: flex-start; width: 100px; flex-shrink: 0; }
+  .friso-end-dot-row { display: flex; align-items: center; margin-bottom: 8px; }
+  .friso-end-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--white); border: 1.5px solid var(--gray-200); flex-shrink: 0; }
+  .friso-end-content { padding-left: 0; }
+
+  /* ── BODY LAYOUT ── */
+  .content-wrapper { display: grid; grid-template-columns: 180px 1fr; }
+
+  /* ── SIDEBAR NAV ── */
+  .sidebar-nav {
+    background: var(--gray-50);
+    border-right: 1px solid var(--gray-200);
+    padding: 2rem 0;
+    position: sticky; top: 53px;
+    height: calc(100vh - 53px);
+    overflow-y: auto;
+  }
+
+  .sidebar-heading {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gray-400); padding: 0 1.25rem 1rem;
+  }
+
+  .sidebar-link {
+    display: block; padding: 0.55rem 1.25rem;
+    font-size: 12.5px; font-weight: 400; color: var(--gray-600);
+    cursor: pointer; border-left: 2px solid transparent;
+    transition: color 0.1s, border-color 0.1s;
+    text-decoration: none; user-select: none;
+  }
+  .sidebar-link:hover { color: var(--gray-900); }
+  .sidebar-link.active { color: var(--gray-900); border-left-color: var(--red); font-weight: 500; }
+
+  /* ── SECTIONS ── */
+  .sections-col { padding: 2rem 2rem 6rem; }
+
+  .section-block {
+    margin-bottom: 2.5rem; padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--gray-100);
+    scroll-margin-top: 80px;
+  }
+  .section-block:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .section-title {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gray-400); margin-bottom: 1.25rem;
+  }
+
+  .section-subtitle {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gray-400); margin: 1.25rem 0 0.75rem;
+  }
+
+  /* ── TBD ── */
+  .tbd {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 11px; font-weight: 500;
+    color: var(--red); background: var(--red-light);
+    padding: 2px 8px; border-radius: var(--radius);
+  }
+  .tbd::before { content: '—'; font-weight: 300; }
+
+  .tbd-block {
+    padding: 1rem 1.1rem;
+    background: var(--red-light);
+    border-left: 2px solid var(--red);
+    font-size: 13px; color: var(--red);
+    line-height: 1.6; font-weight: 400;
+  }
+
+  /* ── INFO GRID ── */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1px; background: var(--gray-200);
+    border: 1px solid var(--gray-200); margin-bottom: 1rem;
+  }
+  .info-cell { background: var(--white); padding: 0.9rem 1rem; }
+  .info-cell-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 4px; }
+  .info-cell-value { font-size: 13px; color: var(--gray-900); line-height: 1.5; }
+
+  /* ── STAT STRIP ── */
+  .stat-strip { display: flex; gap: 1px; background: var(--gray-200); border: 1px solid var(--gray-200); margin-bottom: 1rem; }
+  .stat-cell { background: var(--white); padding: 1rem 1.25rem; flex: 1; }
+  .stat-num { font-size: 1.75rem; font-weight: 300; color: var(--gray-900); letter-spacing: -0.03em; line-height: 1; margin-bottom: 4px; }
+  .stat-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400); }
+
+  /* ── CONTACT ── */
+  .contact-row { display: flex; align-items: center; gap: 12px; padding: 0.9rem 1rem; border: 1px solid var(--gray-200); margin-bottom: 0.5rem; max-width: 380px; }
+  .contact-init { width: 36px; height: 36px; border-radius: 50%; background: var(--gray-100); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: var(--gray-600); flex-shrink: 0; }
+  .contact-name { font-size: 13px; font-weight: 500; color: var(--gray-900); }
+  .contact-role { font-size: 12px; color: var(--gray-400); font-weight: 300; }
+
+  ::-webkit-scrollbar { width: 3px; height: 3px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--gray-200); }
+
+  @media (max-width: 768px) {
+    .nav { padding: 0 0.75rem; }
+    .nav-logo { padding-right: 0.75rem; margin-right: 0.75rem; font-size: 11px; }
+    .nav-tab { padding: 0.85rem 0.85rem; font-size: 12px; }
+    .ficha-hero { grid-template-columns: 1fr; padding: 1.5rem 1rem 1.25rem; gap: 1.25rem; }
+    .ficha-title { font-size: 1.6rem; }
+    .ficha-desc { max-width: 100%; }
+    .ficha-meta { flex-wrap: wrap; justify-content: flex-start; gap: 1rem 1.5rem; }
+    .meta-item { text-align: left; }
+    .friso { padding: 1.25rem 1rem; }
+    .content-wrapper { display: flex; flex-direction: column; }
+    .sidebar-nav {
+      position: sticky; top: 53px; height: auto;
+      overflow-x: auto; overflow-y: visible; scrollbar-width: none;
+      display: flex; flex-direction: row; align-items: stretch;
+      padding: 0; border-right: none; border-bottom: 1px solid var(--gray-200);
+      background: var(--white); z-index: 50;
+    }
+    .sidebar-nav::-webkit-scrollbar { display: none; }
+    .sidebar-heading { display: none; }
+    .sidebar-link { white-space: nowrap; padding: 0.7rem 1rem; border-left: none; border-bottom: 2px solid transparent; font-size: 12px; }
+    .sidebar-link.active { border-left-color: transparent; border-bottom-color: var(--red); }
+    .sections-col { padding: 1.5rem 1rem 4rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-logo" href="index.html"><span class="nav-cross">✛</span> Malta Camp 2026</a>
+  <div class="nav-tabs">
+    <a class="nav-tab" href="spanish_night.html">Spanish Night</a>
+    <a class="nav-tab" href="international_nights.html">International Nights</a>
+    <a class="nav-tab" href="comida_unav.html">Comida UNAV</a>
+    <a class="nav-tab active" href="asado_final.html">Asado Final</a>
+    <a class="nav-tab" href="inventario.html">Inventario</a>
+  </div>
+</nav>
+
+<div class="ficha-hero">
+  <div>
+    <div class="ficha-eyebrow">Evento 04 · Javier, Navarra</div>
+    <div class="ficha-title">Asado Final</div>
+    <div class="ficha-desc">El gran cierre del camp. Paella y asado para todos los participantes, con bebidas, postres y ambiente de despedida. El evento más grande en términos de logística y montaje.</div>
+  </div>
+  <div class="ficha-meta">
+    <div class="meta-item"><div class="meta-label">Día</div><div class="meta-value">Domingo 9 agosto</div></div>
+    <div class="meta-item"><div class="meta-label">Hora</div><div class="meta-value">19:30–21:30 h</div></div>
+    <div class="meta-item"><div class="meta-label">Asistentes</div><div class="meta-value">~566 pers.</div></div>
+  </div>
+</div>
+
+<div class="friso">
+  <div class="friso-label">cronograma (cuando nos lo mande Pela)</div>
+  <div class="friso-track">
+    <div class="friso-seg">
+      <div class="friso-node">
+        <div class="friso-dot-row"><div class="friso-dot on"></div><div class="friso-line"></div></div>
+        <div class="friso-node-content">
+          <div class="friso-time">17:00</div>
+          <div class="friso-action">Montaje mesas</div>
+          <div class="friso-people">
+            <div class="friso-person">Equipo montaje (10)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="friso-seg">
+      <div class="friso-node">
+        <div class="friso-dot-row"><div class="friso-dot on"></div><div class="friso-line"></div></div>
+        <div class="friso-node-content">
+          <div class="friso-time">19:30</div>
+          <div class="friso-action">Cena</div>
+          <div class="friso-people">
+            <div class="friso-person">Servicio mesas (10)</div>
+            <div class="friso-person">Segundoturno 20:00-23:00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="friso-end-node">
+      <div class="friso-end-dot-row"><div class="friso-end-dot"></div></div>
+      <div class="friso-end-content">
+        <div class="friso-time">22:30</div>
+        <div class="friso-action">Recogida</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-wrapper">
+  <nav class="sidebar-nav">
+    <div class="sidebar-heading">Secciones</div>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('asado-catering', this)">Catering</a>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('asado-montaje', this)">Montaje</a>
+  </nav>
+
+  <div class="sections-col">
+
+    <div class="section-block" id="asado-catering">
+
+      <div class="section-subtitle">Menú</div>
+      <div class="info-grid">
+        <div class="info-cell">
+          <div class="info-cell-label">Menú confirmado</div>
+          <div class="info-cell-value">
+            Paella mixta · 566 pax · incluye desplazamiento, cocinado, emplatado y menaje ·
+            <strong>6,25 €/pax = 3.537,50 €</strong>
+          </div>
+        </div>
+
+        <div class="info-cell">
+          <div class="info-cell-label">Menú alérgenos</div>
+          <div class="info-cell-value">
+            <span class="tbd">Pendiente definir con lista de alérgenos.</span><br><br>
+
+            <a
+              href="https://ordendemalta.sharepoint.com/:x:/r/sites/MaltaCamp2026/_layouts/15/doc2.aspx?sourcedoc=%7BBC47AB2B-0E73-470D-8CFD-BAB3D30D643D%7D&file=Dietas%20-%20Intolerancias%20y%20alergias.xlsx&action=default&mobileredirect=true"
+              target="_blank"
+              style="display:inline-flex;align-items:center;gap:6px;padding:8px 12px;background:#111827;color:#fff;text-decoration:none;border-radius:6px;font-size:12px;font-weight:600;">
+              Excel de alérgenos
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-subtitle">Contacto</div>
+      <div class="contact-row">
+        <div class="contact-init">EC</div>
+        <div>
+          <div class="contact-name">Ester Cabrejas</div>
+          <div class="contact-role">
+            <a href="mailto:info@paellasgigantesaragonesas.com">info@paellasgigantesaragonesas.com</a><br>
+            T. 639 888 205<br>
+            <a href="https://www.paellasgigantesaragonesas.com" target="_blank">www.paellasgigantesaragonesas.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-subtitle">Bebidas (nosotros)</div>
+      <div class="info-grid">
+        <div class="info-cell"><div class="info-cell-label">Agua</div><div class="info-cell-value">Confirmado y presupuestado</div></div>
+        <div class="info-cell"><div class="info-cell-label">Hielo</div><div class="info-cell-value">Confirmado y presupuestado</div></div>
+        <div class="info-cell"><div class="info-cell-label">Jarras</div><div class="info-cell-value">Pendiente</div></div>
+        <div class="info-cell"><div class="info-cell-label">Barra</div><div class="info-cell-value">Montar barra con sobras de la semana (pendiente)</div></div>
+      </div>
+
+      <div class="section-subtitle">Postres (nosotros)</div>
+      <div class="info-grid">
+        <div class="info-cell">
+          <div class="info-cell-label">Opción A</div>
+          <div class="info-cell-value">
+            Helado de vainilla + brownie de chocolate (Makro)<br>
+            707,50 € + 475,44 € = <strong>1.182,94 €</strong>
+          </div>
+        </div>
+        <div class="info-cell">
+          <div class="info-cell-label">Opción B</div>
+          <div class="info-cell-value">
+            <span class="tbd">Donación de Frigo pendiente de confirmar</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section-block" id="asado-montaje">
+
+      <div class="section-title">Montaje</div>
+
+      <div class="section-subtitle">Organización del espacio</div>
+      <div class="info-grid">
+        <div class="info-cell"><div class="info-cell-label">Mesas recogida paella</div><div class="info-cell-value">Mesas largas en zona central. Cola por grupos y delegaciones.</div></div>
+        <div class="info-cell"><div class="info-cell-label">Puesto bebidas</div><div class="info-cell-value">Mesa lateral con agua, refrescos e hielo. 4 voluntarios.</div></div>
+        <div class="info-cell"><div class="info-cell-label">Postres</div><div class="info-cell-value">Puesto separado. Se sirven al terminar el servicio principal.</div></div>
+      </div>
+
+      <div class="section-subtitle">Mesas</div>
+      <div class="stat-strip">
+        <div class="stat-cell"><div class="stat-num">43</div><div class="stat-label">Mesas redondas</div></div>
+        <div class="stat-cell"><div class="stat-num">~13</div><div class="stat-label">Personas / mesa</div></div>
+        <div class="stat-cell"><div class="stat-num">566</div><div class="stat-label">Asistentes est.</div></div>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-cell"><div class="info-cell-label">Contacto mesas</div><div class="info-cell-value">Nena Alarcón</div></div>
+        <div class="info-cell">
+          <div class="info-cell-label">Manteles</div>
+          <div class="info-cell-value">
+            <strong>Opción A — Donación Tía César (Inés)</strong><br>
+            Opción B — Compra: manteles desechables de colores · 14 uds × 40,32 € = <strong>564,48 €</strong> (Temu)
+          </div>
+        </div>
+        <div class="info-cell"><div class="info-cell-label">Decoración</div><div class="info-cell-value"><span class="tbd">por determinar</span></div></div>
+        <div class="info-cell"><div class="info-cell-label">Qué usar de la Gala Night</div><div class="info-cell-value"><span class="tbd">revisar inventario — centros, velas…</span></div></div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<script>
+function scrollToSection(id, link) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+  link.classList.add('active');
+}
+
+document.querySelectorAll('.section-block[id]').forEach(section => {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+        const link = document.querySelector(`.sidebar-link[onclick*="${entry.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  io.observe(section);
+});
+</script>
+
+</body>
+</html>

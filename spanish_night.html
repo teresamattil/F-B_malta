@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malta Camp 2026 · Spanish Night</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #FFFFFF;
+    --gray-50: #F7F7F7;
+    --gray-100: #EFEFEF;
+    --gray-200: #DEDEDE;
+    --gray-400: #ABABAB;
+    --gray-600: #6B6B6B;
+    --gray-800: #2E2E2E;
+    --gray-900: #1A1A1A;
+    --red: #CC0000;
+    --red-light: #FFF0F0;
+    --font: 'Plus Jakarta Sans', sans-serif;
+    --radius: 2px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font);
+    background: var(--white);
+    color: var(--gray-900);
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+    display: flex; align-items: stretch;
+    padding: 0 2rem;
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 8px;
+    padding: 0 1.5rem 0 0; margin-right: 1.5rem;
+    border-right: 1px solid var(--gray-200);
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--gray-900); text-decoration: none;
+  }
+
+  .nav-cross { color: var(--red); font-size: 18px; font-weight: 300; }
+
+  .nav-tabs { display: flex; overflow-x: auto; scrollbar-width: none; }
+  .nav-tabs::-webkit-scrollbar { display: none; }
+
+  .nav-tab {
+    padding: 1rem 1.1rem;
+    font-size: 12.5px; font-weight: 400;
+    color: var(--gray-400); cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color 0.1s, border-color 0.1s;
+    user-select: none;
+    text-decoration: none;
+    display: flex; align-items: center;
+  }
+  .nav-tab:hover { color: var(--gray-800); }
+  .nav-tab.active { color: var(--gray-900); border-bottom-color: var(--red); font-weight: 500; }
+
+  /* ── HERO ── */
+  .ficha-hero {
+    padding: 2.5rem 2rem 2rem;
+    border-bottom: 1px solid var(--gray-200);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem; align-items: end;
+  }
+
+  .ficha-eyebrow {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 0.5rem;
+  }
+
+  .ficha-title {
+    font-size: 2rem; font-weight: 300;
+    color: var(--gray-900); letter-spacing: -0.02em;
+    line-height: 1.1; margin-bottom: 0.75rem;
+  }
+
+  .ficha-desc {
+    font-size: 13px; color: var(--gray-600);
+    line-height: 1.65; max-width: 500px; font-weight: 300;
+  }
+
+  .ficha-meta { display: flex; gap: 2rem; align-items: end; }
+  .meta-item { text-align: right; }
+  .meta-label {
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gray-400); margin-bottom: 3px;
+  }
+  .meta-value { font-size: 14px; font-weight: 500; color: var(--gray-900); }
+
+  /* ── FRISO HORIZONTAL ── */
+  .friso {
+    background: var(--gray-50);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 1.5rem 2rem;
+    overflow-x: auto;
+  }
+
+  .friso-label {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gray-400); margin-bottom: 1.25rem;
+  }
+
+  .friso-track {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    min-width: fit-content;
+  }
+
+  .friso-seg {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .friso-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 140px;
+    flex-shrink: 0;
+  }
+
+  .friso-dot-row {
+    display: flex; align-items: center;
+    width: 100%; position: relative;
+    margin-bottom: 8px;
+  }
+
+  .friso-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--white); border: 1.5px solid var(--gray-400);
+    flex-shrink: 0; z-index: 1;
+  }
+
+  .friso-dot.on { background: var(--red); border-color: var(--red); }
+
+  .friso-line {
+    flex: 1; height: 1px;
+    background: var(--gray-200);
+  }
+
+  .friso-node-content { padding: 0 8px; text-align: left; width: 100%; }
+
+  .friso-time {
+    font-size: 15px; font-weight: 500;
+    color: var(--gray-900); letter-spacing: -0.01em;
+    margin-bottom: 2px;
+  }
+
+  .friso-action {
+    font-size: 12px; font-weight: 500;
+    color: var(--gray-800); margin-bottom: 4px;
+  }
+
+  .friso-people { display: flex; flex-direction: column; gap: 2px; }
+
+  .friso-person {
+    font-size: 11px; color: var(--gray-400);
+    display: flex; align-items: center; gap: 4px;
+  }
+  .friso-person::before {
+    content: ''; width: 3px; height: 3px;
+    border-radius: 50%; background: var(--gray-400); flex-shrink: 0;
+  }
+
+  .friso-end-node {
+    display: flex; flex-direction: column;
+    align-items: flex-start; width: 100px; flex-shrink: 0;
+  }
+
+  .friso-end-dot-row {
+    display: flex; align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .friso-end-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--white); border: 1.5px solid var(--gray-200);
+    flex-shrink: 0;
+  }
+
+  .friso-end-content { padding-left: 0; }
+
+  /* ── BODY LAYOUT ── */
+  .content-wrapper {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+  }
+
+  /* ── SIDEBAR NAV ── */
+  .sidebar-nav {
+    background: var(--gray-50);
+    border-right: 1px solid var(--gray-200);
+    padding: 2rem 0;
+    position: sticky;
+    top: 53px;
+    height: calc(100vh - 53px);
+    overflow-y: auto;
+  }
+
+  .sidebar-heading {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gray-400);
+    padding: 0 1.25rem 1rem;
+  }
+
+  .sidebar-link {
+    display: block;
+    padding: 0.55rem 1.25rem;
+    font-size: 12.5px; font-weight: 400;
+    color: var(--gray-600);
+    cursor: pointer;
+    border-left: 2px solid transparent;
+    transition: color 0.1s, border-color 0.1s;
+    text-decoration: none;
+    user-select: none;
+  }
+  .sidebar-link:hover { color: var(--gray-900); }
+  .sidebar-link.active { color: var(--gray-900); border-left-color: var(--red); font-weight: 500; }
+
+  /* ── SECTIONS ── */
+  .sections-col { padding: 2rem 2rem 6rem; }
+
+  .section-block {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--gray-100);
+    scroll-margin-top: 80px;
+  }
+  .section-block:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .section-title {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gray-400); margin-bottom: 1.25rem;
+  }
+
+  .section-subtitle {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gray-400); margin: 1.25rem 0 0.75rem;
+  }
+
+  /* ── TBD ── */
+  .tbd {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 11px; font-weight: 500;
+    color: var(--red); background: var(--red-light);
+    padding: 2px 8px; border-radius: var(--radius);
+  }
+  .tbd::before { content: '—'; font-weight: 300; }
+
+  .tbd-block {
+    padding: 1rem 1.1rem;
+    background: var(--red-light);
+    border-left: 2px solid var(--red);
+    font-size: 13px; color: var(--red);
+    line-height: 1.6; font-weight: 400;
+  }
+
+  /* ── CARDS GRID ── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 1px; background: var(--gray-200);
+    border: 1px solid var(--gray-200);
+  }
+
+  .card { background: var(--white); padding: 1rem; }
+  .card-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); margin-bottom: 4px; }
+  .card-title { font-size: 13px; font-weight: 500; color: var(--gray-900); margin-bottom: 6px; }
+  .card-body { font-size: 12px; color: var(--gray-600); line-height: 1.55; font-weight: 300; }
+
+  /* ── TABLE ── */
+  .data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .data-table th {
+    text-align: left; font-size: 10px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400);
+    padding: 0 1rem 0.6rem; border-bottom: 1px solid var(--gray-200);
+  }
+  .data-table td {
+    padding: 0.65rem 1rem; border-bottom: 1px solid var(--gray-100);
+    color: var(--gray-800); vertical-align: top; line-height: 1.5;
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table th:first-child, .data-table td:first-child { padding-left: 0; }
+
+  .badge { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 7px; border-radius: var(--radius); }
+  .badge-gray { background: var(--gray-100); color: var(--gray-600); }
+  .badge-dark { background: var(--gray-800); color: var(--white); }
+
+  /* ── INFO GRID ── */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1px; background: var(--gray-200);
+    border: 1px solid var(--gray-200); margin-bottom: 1rem;
+  }
+  .info-cell { background: var(--white); padding: 0.9rem 1rem; }
+  .info-cell-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 4px; }
+  .info-cell-value { font-size: 13px; color: var(--gray-900); line-height: 1.5; }
+
+  /* ── FUN GRID ── */
+  .fun-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--gray-200); border: 1px solid var(--gray-200); }
+  .fun-cell { background: var(--white); padding: 1rem; }
+  .fun-title { font-size: 13px; font-weight: 500; color: var(--gray-900); margin-bottom: 0.6rem; }
+
+  ::-webkit-scrollbar { width: 3px; height: 3px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--gray-200); }
+
+  /* ════════════════════════
+     MOBILE  ≤ 768px
+     ════════════════════════ */
+  @media (max-width: 768px) {
+    .nav { padding: 0 0.75rem; }
+    .nav-logo { padding-right: 0.75rem; margin-right: 0.75rem; font-size: 11px; }
+    .nav-tab { padding: 0.85rem 0.85rem; font-size: 12px; }
+
+    .ficha-hero {
+      grid-template-columns: 1fr;
+      padding: 1.5rem 1rem 1.25rem;
+      gap: 1.25rem;
+    }
+    .ficha-title { font-size: 1.6rem; }
+    .ficha-desc { max-width: 100%; }
+    .ficha-meta {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 1rem 1.5rem;
+    }
+    .meta-item { text-align: left; }
+
+    .friso { padding: 1.25rem 1rem; }
+
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar-nav {
+      position: sticky;
+      top: 53px;
+      height: auto;
+      overflow-x: auto;
+      overflow-y: visible;
+      scrollbar-width: none;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      padding: 0;
+      border-right: none;
+      border-bottom: 1px solid var(--gray-200);
+      background: var(--white);
+      z-index: 50;
+    }
+    .sidebar-nav::-webkit-scrollbar { display: none; }
+    .sidebar-heading { display: none; }
+    .sidebar-link {
+      white-space: nowrap;
+      padding: 0.7rem 1rem;
+      border-left: none;
+      border-bottom: 2px solid transparent;
+      font-size: 12px;
+    }
+    .sidebar-link.active {
+      border-left-color: transparent;
+      border-bottom-color: var(--red);
+    }
+
+    .sections-col { padding: 1.5rem 1rem 4rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-logo" href="index.html"><span class="nav-cross">✛</span> Malta Camp 2026</a>
+  <div class="nav-tabs">
+    <a class="nav-tab active" href="spanish_night.html">Spanish Night</a>
+    <a class="nav-tab" href="international_nights.html">International Nights</a>
+    <a class="nav-tab" href="comida_unav.html">Comida UNAV</a>
+    <a class="nav-tab" href="asado_final.html">Asado Final</a>
+    <a class="nav-tab" href="inventario.html">Inventario</a>
+  </div>
+</nav>
+
+<div class="ficha-hero">
+  <div>
+    <div class="ficha-eyebrow">Evento 01 · Javier, Navarra</div>
+    <div class="ficha-title">Spanish Night</div>
+    <div class="ficha-desc">Una noche de puestecitos por provincias de España. Los participantes recorren los stands, prueban la gastronomía española y viven una experiencia inmersiva de la cultura del país.</div>
+  </div>
+  <div class="ficha-meta">
+    <div class="meta-item"><div class="meta-label">Día</div><div class="meta-value">Lunes 3 agosto</div></div>
+    <div class="meta-item"><div class="meta-label">Hora</div><div class="meta-value">20:30–21:30 h</div></div>
+    <div class="meta-item"><div class="meta-label">Asistentes</div><div class="meta-value">~560 pers.</div></div>
+  </div>
+</div>
+
+<div class="friso">
+  <div class="friso-label">cronograma (cuando nos lo mande Pela)</div>
+  <div class="friso-track">
+    <div class="friso-seg">
+      <div class="friso-node">
+        <div class="friso-dot-row"><div class="friso-dot on"></div><div class="friso-line"></div></div>
+        <div class="friso-node-content">
+          <div class="friso-time">17:00</div>
+          <div class="friso-action">Montaje puestecitos</div>
+          <div class="friso-people">
+            <div class="friso-person">Equipo asignado: 17 personas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="friso-seg">
+      <div class="friso-node">
+        <div class="friso-dot-row"><div class="friso-dot on"></div><div class="friso-line"></div></div>
+        <div class="friso-node-content">
+          <div class="friso-time">20:00</div>
+          <div class="friso-action">Apertura al público</div>
+          <div class="friso-people">
+            <div class="friso-person">Equipo asignado: 17 personas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="friso-end-node">
+      <div class="friso-end-dot-row"><div class="friso-end-dot"></div></div>
+      <div class="friso-end-content">
+        <div class="friso-time">23:00</div>
+        <div class="friso-action">Recogida</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-wrapper">
+  <nav class="sidebar-nav">
+    <div class="sidebar-heading">Secciones</div>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('spanish-provincias', this)">Provincias</a>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('spanish-cocina', this)">Cocina</a>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('spanish-puestecitos', this)">Puestecitos</a>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('spanish-pasaporte', this)">Pasaporte</a>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('spanish-fun', this)">Para hacerlo fun</a>
+  </nav>
+
+  <div class="sections-col">
+
+    <div class="section-block" id="spanish-provincias">
+      <div class="section-title">Provincias</div>
+      <div class="cards-grid">
+        <div class="card"><div class="card-label">Puesto 1 · Galicia y Asturias</div><div class="card-title">Empanada · Pulpo / Lacón</div><div class="card-body"><strong>Cubiertos:</strong> Palillos, cuenquitos, cucharitas<br><strong>Decoración:</strong> Gaitas, conchas Camino de Santiago<div style="font-size:10px;color:var(--gray-400);margin-top:6px"><strong>Alérgenos:</strong> Gluten, huevo, lácteos, pescado/marisco, sulfitos</div></div></div>
+        <div class="card"><div class="card-label">Puesto 2 · Cantabria, PV y Navarra</div><div class="card-title">Pintxos de txaka · Gildas · Chistorra</div><div class="card-body"><strong>Cubiertos:</strong> Palillos / banderillas<br><strong>Decoración:</strong> Pimientos y ajos colgando, boinas<div style="font-size:10px;color:var(--gray-400);margin-top:6px"><strong>Alérgenos:</strong> Pescado, gluten, sulfitos, lácteos, huevo, marisco</div></div></div>
+        <div class="card"><div class="card-label">Puesto 3 · Aragón, La Rioja y Cataluña</div><div class="card-title"><span class="tbd">Comida por determinar</span></div><div class="card-body"><strong>Cubiertos:</strong> <span class="tbd">por determinar</span><br><strong>Decoración:</strong> Pañuelos cachirulos, uvas<div style="font-size:10px;color:var(--gray-400);margin-top:6px"><strong>Alérgenos:</strong> Frutos secos (almendras, avellanas), gluten, sulfitos</div></div></div>
+        <div class="card"><div class="card-label">Puesto 4 · Castilla-La Mancha y Madrid</div><div class="card-title">Queso Manchego · Bocata de calamares</div><div class="card-body"><strong>Cubiertos:</strong> Platitos, tenedores<br><strong>Decoración:</strong> Chulapos<div style="font-size:10px;color:var(--gray-400);margin-top:6px"><strong>Alérgenos:</strong> Lácteos, gluten, huevo (rebozado), moluscos, sulfitos</div></div></div>
+        <div class="card"><div class="card-label">Puesto 5 · Castilla y León y Extremadura</div><div class="card-title">Torreznos · Morcilla · Jamón</div><div class="card-body"><strong>Cubiertos:</strong> Cortador de jamón<br><strong>Decoración:</strong> Chorizos colgando<br><strong>Nota:</strong> Puesto extra<div style="font-size:10px;color:var(--gray-400);margin-top:6px"><strong>Alérgenos:</strong> Gluten, sulfitos</div></div></div>
+        <div class="card"><div class="card-label">Puesto 6 · C. Valenciana y Murcia</div><div class="card-title">Marineras</div><div class="card-body"><strong>Cubiertos:</strong> <span class="tbd">por determinar</span><br><strong>Decoración:</strong> Naranjas<div style="font-size:10px;color:var(--gray-400);margin-top:6px"><strong>Alérgenos:</strong> Gluten, marisco, pescado, moluscos, sulfitos, huevo</div></div></div>
+        <div class="card"><div class="card-label">Puesto 7 · Andalucía</div><div class="card-title">Gazpacho · Tortilla · Croquetas · Patatas Bravas</div><div class="card-body"><strong>Cubiertos:</strong> Vasitos, palillos<br><strong>Decoración:</strong> Farolillos, mantones<div style="font-size:10px;color:var(--gray-400);margin-top:6px"><strong>Alérgenos:</strong> Gluten, huevo, lácteos, sulfitos</div></div></div>
+        <div class="card"><div class="card-label">Puesto 8 · Baleares, Canarias, Ceuta y Melilla</div><div class="card-title">Sobrasada</div><div class="card-body"><strong>Cubiertos:</strong> <span class="tbd">por determinar</span><br><strong>Decoración:</strong> Sombreros y cestas de mimbre<div style="font-size:10px;color:var(--gray-400);margin-top:6px"><strong>Alérgenos:</strong> Lácteos, sulfitos, posible gluten</div></div></div>
+        <div class="card"><div class="card-label">Puesto 9 · Dulces Típicos</div><div class="card-title">Ensaimada · Buñuelos · Crema Catalana · Churros · Filloas · Turrón</div><div class="card-body"><strong>Cubiertos:</strong> Cuenquitos, cucharitas, tenedores, platitos<br><strong>Decoración:</strong> Vestidos de pasteleros<div style="font-size:10px;color:var(--gray-400);margin-top:6px"><strong>Alérgenos:</strong> Gluten, huevo, lácteos, sulfitos</div></div></div>
+        <div class="card"><div class="card-label">Puestos 10 y 11 · Bebidas (×2)</div><div class="card-title">Sangría · Rebujito · Croft Twist · Sidra · Vino · Cerveza 0,0 · Horchata</div><div class="card-body"><strong>Cubiertos:</strong> Vasos, cubiteras, abrebotellas, escanciadores, pajitas<br><strong>Decoración:</strong> "Eso se vende solo"<div style="font-size:10px;color:var(--gray-400);margin-top:6px"><strong>Alérgenos:</strong> Sulfitos, posibles frutas (cítricos)</div></div></div>
+      </div>
+    </div>
+
+    <div class="section-block" id="spanish-cocina">
+      <div class="section-title">Cocina - Verificar si está todo</div>
+      <table class="data-table">
+        <thead><tr><th>Elaboración</th><th>Platos</th><th>Tipo</th><th>Cuándo preparar</th></tr></thead>
+        <tbody>
+          <tr><td>Sin cocción / frío directo</td><td>Gazpacho, horchata, sangría, sidra, kalimotxo, granizados, cerveza 0,0, rebujito, Croft Twist, gildas, sobrasada, queso manchego, turrón</td><td><span class="badge badge-gray">Frío</span></td><td>Día anterior / mañana misma</td></tr>
+          <tr><td>Fritura</td><td>Chistorra, morcilla, torreznos, patatas bravas, churros, croquetas, buñuelos, bocata de calamares</td><td><span class="badge badge-dark">Caliente</span></td><td>Durante el evento. Freidoras / sartenes grandes.</td></tr>
+          <tr><td>Temperatura ambiente</td><td>Jamón (cortado en vivo), tortilla de patata, ensaladilla, marineras, pintxos de txaka, empanada</td><td><span class="badge badge-gray">Ambiente</span></td><td>2 h antes del evento</td></tr>
+          <tr><td>Preparación previa (calentar)</td><td>Pulpo/lacón (solo calentar), crema catalana (mezcla Royal), filloas</td><td><span class="badge badge-dark">Caliente</span></td><td>Mañana. Recalentar 1 h antes.</td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:1rem;padding:0.75rem 1rem;background:var(--gray-50);border-left:2px solid var(--gray-200);font-size:12px;color:var(--gray-600)"><strong>Material necesario:</strong> Freidoras o sartenes grandes, aceite de freír (6 botes 5 L), leche (para crema catalana), cortador de jamón</div>
+    </div>
+
+    <div class="section-block" id="spanish-puestecitos">
+      <div class="section-title">Puestecitos - Falta rellenar</div>
+      <div class="info-grid" style="margin-bottom:1.25rem">
+        <div class="info-cell"><div class="info-cell-label">Total puestos</div><div class="info-cell-value">11 puestecitos</div></div>
+        <div class="info-cell"><div class="info-cell-label">Estructura por puesto</div><div class="info-cell-value">3 m tela decorativa · 2 packs listones abeto 200 cm · 1 tablero MDF 60×120 cm</div></div>
+        <div class="info-cell"><div class="info-cell-label">Fijación</div><div class="info-cell-value">Tornillos, arandelas, palominas</div></div>
+      </div>
+      <div class="section-subtitle">Vajilla compartida (todos los puestos)</div>
+      <div class="cards-grid">
+        <div class="card"><div class="card-label">Platos</div><div class="card-title">Platos hondos bagazo 680 ml</div><div class="card-body">2.000 uds · Makro</div></div>
+        <div class="card"><div class="card-label">Boles</div><div class="card-title">Boles bagazo 950 ml</div><div class="card-body">2.000 uds · Makro</div></div>
+        <div class="card"><div class="card-label">Vasos</div><div class="card-title">Vasos reutilizables PP 20/40 ml</div><div class="card-body">2.000 uds · Makro</div></div>
+        <div class="card"><div class="card-label">Cubiertos inox</div><div class="card-title">Tenedores · Cuchillos · Cucharas 18 cm</div><div class="card-body">2.000 uds c/u · Makro</div></div>
+        <div class="card"><div class="card-label">Cucharitas</div><div class="card-title">Cucharitas café mini 10 cm</div><div class="card-body">2.000 uds · Makro</div></div>
+        <div class="card"><div class="card-label">Servilletas</div><div class="card-title">Servilletas papel burdeos 40×40 cm</div><div class="card-body">2.400 uds · Makro</div></div>
+      </div>
+      <div class="section-subtitle" style="color:var(--red)">Decoración puestecitos · Falta</div>
+      <div class="tbd-block">Por determinar. Definir decoración específica por puesto: carteles, elementos temáticos por región, mantelería individual, props…</div>
+      <div class="section-subtitle">Materiales generales de decoración</div>
+      <div class="info-grid">
+        <div class="info-cell"><div class="info-cell-label">Mantel papel</div><div class="info-cell-value">4 rollos adamascado 25 m · Amazon</div></div>
+        <div class="info-cell"><div class="info-cell-label">Telas decorativas</div><div class="info-cell-value">33 m en total (3 m/caseta) · Pendiente proveedor</div></div>
+      </div>
+    </div>
+
+    <div class="section-block" id="spanish-pasaporte">
+      <div class="section-title">Pasaporte</div>
+      <div class="tbd-block">Concepto: cada participante recibe un pasaporte impreso y sella en cada puestecito.<br><br><strong>Materiales presupuestados:</strong> 75 sellos customizables (4 €/ud), 75 tintas para sellos (2 €/ud), 1 impresora (120 €, en revisión).<br><br><strong>Pendiente determinar:</strong> diseño del pasaporte, quién lo imprime, quién gestiona la entrega, quién sella en cada puesto, y si la impresora se compra o se usa una ya disponible.</div>
+    </div>
+
+    <div class="section-block" id="spanish-fun">
+      <div class="section-title">Para hacerlo fun</div>
+      <div class="fun-grid">
+        <div class="fun-cell"><div class="fun-title">Photomatón</div><div class="tbd-block">Por determinar. Ubicación, props (abanicos, mantillas, sombreros…) y quién lo opera.</div></div>
+        <div class="fun-cell"><div class="fun-title">Pululantes</div><div class="card-body">10 disfraces temáticos confirmados (Don Quijote, Isabel la Católica…).<br>Presupuesto: 45 €/ud × 10 = <strong>450 €</strong>.</div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function scrollToSection(id, link) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+  link.classList.add('active');
+}
+
+document.querySelectorAll('.section-block[id]').forEach(section => {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+        const link = document.querySelector(`.sidebar-link[onclick*="${entry.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  io.observe(section);
+});
+</script>
+
+</body>
+</html>

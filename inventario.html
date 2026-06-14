@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malta Camp 2026 · Inventario & Presupuesto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --white: #FFFFFF;
+    --gray-50: #F7F7F7;
+    --gray-100: #EFEFEF;
+    --gray-200: #DEDEDE;
+    --gray-400: #ABABAB;
+    --gray-600: #6B6B6B;
+    --gray-800: #2E2E2E;
+    --gray-900: #1A1A1A;
+    --red: #CC0000;
+    --red-light: #FFF0F0;
+    --font: 'Plus Jakarta Sans', sans-serif;
+    --radius: 2px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font);
+    background: var(--white);
+    color: var(--gray-900);
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+    display: flex; align-items: stretch;
+    padding: 0 2rem;
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 8px;
+    padding: 0 1.5rem 0 0; margin-right: 1.5rem;
+    border-right: 1px solid var(--gray-200);
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--gray-900);
+  }
+
+  .nav-cross { color: var(--red); font-size: 18px; font-weight: 300; }
+
+  .nav-tabs { display: flex; overflow-x: auto; scrollbar-width: none; }
+  .nav-tabs::-webkit-scrollbar { display: none; }
+
+  .nav-tab {
+    padding: 1rem 1.1rem;
+    font-size: 12.5px; font-weight: 400;
+    color: var(--gray-400); cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color 0.1s, border-color 0.1s;
+    user-select: none;
+  }
+  .nav-tab:hover { color: var(--gray-800); }
+  .nav-tab.active { color: var(--gray-900); border-bottom-color: var(--red); font-weight: 500; }
+
+  /* ── PANELS ── */
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* ── HERO ── */
+  .ficha-hero {
+    padding: 2.5rem 2rem 2rem;
+    border-bottom: 1px solid var(--gray-200);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem; align-items: end;
+  }
+
+  .ficha-eyebrow {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 0.5rem;
+  }
+
+  .ficha-title {
+    font-size: 2rem; font-weight: 300;
+    color: var(--gray-900); letter-spacing: -0.02em;
+    line-height: 1.1; margin-bottom: 0.75rem;
+  }
+
+  .ficha-desc {
+    font-size: 13px; color: var(--gray-600);
+    line-height: 1.65; max-width: 500px; font-weight: 300;
+  }
+
+  .ficha-meta { display: flex; gap: 2rem; align-items: end; }
+  .meta-item { text-align: right; }
+  .meta-label {
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gray-400); margin-bottom: 3px;
+  }
+  .meta-value { font-size: 14px; font-weight: 500; color: var(--gray-900); }
+
+  /* ── FRISO HORIZONTAL ── */
+  .friso {
+    background: var(--gray-50);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 1.5rem 2rem;
+    overflow-x: auto;
+  }
+
+  .friso-label {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gray-400); margin-bottom: 1.25rem;
+  }
+
+  .friso-track {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    min-width: fit-content;
+  }
+
+  .friso-seg {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .friso-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 140px;
+    flex-shrink: 0;
+  }
+
+  .friso-dot-row {
+    display: flex; align-items: center;
+    width: 100%; position: relative;
+    margin-bottom: 8px;
+  }
+
+  .friso-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--white); border: 1.5px solid var(--gray-400);
+    flex-shrink: 0; z-index: 1;
+  }
+
+  .friso-dot.on { background: var(--red); border-color: var(--red); }
+
+  .friso-line {
+    flex: 1; height: 1px;
+    background: var(--gray-200);
+  }
+
+  .friso-node-content { padding: 0 8px; text-align: left; width: 100%; }
+
+  .friso-time {
+    font-size: 15px; font-weight: 500;
+    color: var(--gray-900); letter-spacing: -0.01em;
+    margin-bottom: 2px;
+  }
+
+  .friso-action {
+    font-size: 12px; font-weight: 500;
+    color: var(--gray-800); margin-bottom: 4px;
+  }
+
+  .friso-people { display: flex; flex-direction: column; gap: 2px; }
+
+  .friso-person {
+    font-size: 11px; color: var(--gray-400);
+    display: flex; align-items: center; gap: 4px;
+  }
+  .friso-person::before {
+    content: ''; width: 3px; height: 3px;
+    border-radius: 50%; background: var(--gray-400); flex-shrink: 0;
+  }
+
+  .friso-end-node {
+    display: flex; flex-direction: column;
+    align-items: flex-start; width: 100px; flex-shrink: 0;
+  }
+
+  .friso-end-dot-row {
+    display: flex; align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .friso-end-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--white); border: 1.5px solid var(--gray-200);
+    flex-shrink: 0;
+  }
+
+  .friso-end-content { padding-left: 0; }
+
+  /* ── BODY LAYOUT ── */
+  .content-wrapper {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+  }
+
+  /* ── SIDEBAR NAV ── */
+  .sidebar-nav {
+    background: var(--gray-50);
+    border-right: 1px solid var(--gray-200);
+    padding: 2rem 0;
+    position: sticky;
+    top: 53px;
+    height: calc(100vh - 53px);
+    overflow-y: auto;
+  }
+
+  .sidebar-heading {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gray-400);
+    padding: 0 1.25rem 1rem;
+  }
+
+  .sidebar-link {
+    display: block;
+    padding: 0.55rem 1.25rem;
+    font-size: 12.5px; font-weight: 400;
+    color: var(--gray-600);
+    cursor: pointer;
+    border-left: 2px solid transparent;
+    transition: color 0.1s, border-color 0.1s;
+    text-decoration: none;
+    user-select: none;
+  }
+  .sidebar-link:hover { color: var(--gray-900); }
+  .sidebar-link.active { color: var(--gray-900); border-left-color: var(--red); font-weight: 500; }
+
+  /* ── SECTIONS ── */
+  .sections-col { padding: 2rem 2rem 6rem; }
+
+  .section-block {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--gray-100);
+    scroll-margin-top: 80px;
+  }
+  .section-block:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .section-title {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gray-400); margin-bottom: 1.25rem;
+  }
+
+  .section-subtitle {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gray-400); margin: 1.25rem 0 0.75rem;
+  }
+
+  /* ── TBD ── */
+  .tbd {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 11px; font-weight: 500;
+    color: var(--red); background: var(--red-light);
+    padding: 2px 8px; border-radius: var(--radius);
+  }
+  .tbd::before { content: '—'; font-weight: 300; }
+
+  .tbd-block {
+    padding: 1rem 1.1rem;
+    background: var(--red-light);
+    border-left: 2px solid var(--red);
+    font-size: 13px; color: var(--red);
+    line-height: 1.6; font-weight: 400;
+  }
+
+  /* ── CARDS GRID ── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 1px; background: var(--gray-200);
+    border: 1px solid var(--gray-200);
+  }
+
+  .card { background: var(--white); padding: 1rem; }
+  .card-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); margin-bottom: 4px; }
+  .card-title { font-size: 13px; font-weight: 500; color: var(--gray-900); margin-bottom: 6px; }
+  .card-body { font-size: 12px; color: var(--gray-600); line-height: 1.55; font-weight: 300; }
+
+  /* ── TABLE ── */
+  .data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .data-table th {
+    text-align: left; font-size: 10px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400);
+    padding: 0 1rem 0.6rem; border-bottom: 1px solid var(--gray-200);
+  }
+  .data-table td {
+    padding: 0.65rem 1rem; border-bottom: 1px solid var(--gray-100);
+    color: var(--gray-800); vertical-align: top; line-height: 1.5;
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table th:first-child, .data-table td:first-child { padding-left: 0; }
+
+  .badge { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 7px; border-radius: var(--radius); }
+  .badge-gray { background: var(--gray-100); color: var(--gray-600); }
+  .badge-dark { background: var(--gray-800); color: var(--white); }
+
+  /* ── INFO GRID ── */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1px; background: var(--gray-200);
+    border: 1px solid var(--gray-200); margin-bottom: 1rem;
+  }
+  .info-cell { background: var(--white); padding: 0.9rem 1rem; }
+  .info-cell-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 4px; }
+  .info-cell-value { font-size: 13px; color: var(--gray-900); line-height: 1.5; }
+
+  /* ── STAT STRIP ── */
+  .stat-strip { display: flex; gap: 1px; background: var(--gray-200); border: 1px solid var(--gray-200); margin-bottom: 1rem; }
+  .stat-cell { background: var(--white); padding: 1rem 1.25rem; flex: 1; }
+  .stat-num { font-size: 1.75rem; font-weight: 300; color: var(--gray-900); letter-spacing: -0.03em; line-height: 1; margin-bottom: 4px; }
+  .stat-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400); }
+
+  /* ── CONTACT ── */
+  .contact-row { display: flex; align-items: center; gap: 12px; padding: 0.9rem 1rem; border: 1px solid var(--gray-200); margin-bottom: 0.5rem; max-width: 380px; }
+  .contact-init { width: 36px; height: 36px; border-radius: 50%; background: var(--gray-100); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: var(--gray-600); flex-shrink: 0; }
+  .contact-name { font-size: 13px; font-weight: 500; color: var(--gray-900); }
+  .contact-role { font-size: 12px; color: var(--gray-400); font-weight: 300; }
+
+  /* ── FUN GRID ── */
+  .fun-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--gray-200); border: 1px solid var(--gray-200); }
+  .fun-cell { background: var(--white); padding: 1rem; }
+  .fun-title { font-size: 13px; font-weight: 500; color: var(--gray-900); margin-bottom: 0.6rem; }
+
+  /* ── INVENTARIO ── */
+  .inv-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .inv-table th { text-align: left; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400); padding: 0 0.75rem 0.6rem; border-bottom: 1px solid var(--gray-900); }
+  .inv-table th:last-child { text-align: right; }
+  .inv-table td { padding: 0.55rem 0.75rem; border-bottom: 1px solid var(--gray-100); color: var(--gray-800); vertical-align: top; line-height: 1.4; }
+  .inv-table td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+  .inv-table tr:last-child td { border-bottom: none; }
+  .inv-sec td { background: var(--gray-50); font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-400); padding: 0.4rem 0.75rem; border-bottom: none; }
+  .inv-total td { background: var(--gray-900); color: var(--white) !important; font-weight: 500; padding: 0.7rem 0.75rem; }
+  .tag { display: inline-block; font-size: 10px; font-weight: 500; padding: 1px 6px; border-radius: var(--radius); }
+  .tag-a { background: var(--gray-100); color: var(--gray-600); }
+  .tag-o { background: var(--gray-800); color: var(--white); }
+  .total-bar { display: flex; justify-content: space-between; align-items: center; background: var(--gray-900); color: var(--white); padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+  .total-bar-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400); }
+  .total-bar-amount { font-size: 1.5rem; font-weight: 300; letter-spacing: -0.02em; }
+
+  ::-webkit-scrollbar { width: 3px; height: 3px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--gray-200); }
+
+  /* ── INV FILTER ── */
+  .inv-filter-row { display: flex; gap: 6px; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .inv-filter-btn { padding: 0.4rem 1rem; font-size: 12px; font-weight: 500; font-family: var(--font); cursor: pointer; border: 1px solid var(--gray-200); background: var(--white); color: var(--gray-600); border-radius: var(--radius); transition: all 0.1s; }
+  .inv-filter-btn:hover { border-color: var(--gray-400); color: var(--gray-900); }
+  .inv-filter-btn.active { background: var(--gray-900); color: var(--white); border-color: var(--gray-900); }
+  .inv-table th:last-child { text-align: left; }
+  .inv-table td:last-child { text-align: left; font-variant-numeric: normal; }
+
+  /* ════════════════════════
+     MOBILE  ≤ 768px
+     ════════════════════════ */
+  @media (max-width: 768px) {
+
+    /* ── Top nav ── */
+    .nav { padding: 0 0.75rem; }
+    .nav-logo { padding-right: 0.75rem; margin-right: 0.75rem; font-size: 11px; }
+    .nav-tab { padding: 0.85rem 0.85rem; font-size: 12px; }
+
+    /* ── Hero: stack en columna ── */
+    .ficha-hero {
+      grid-template-columns: 1fr;
+      padding: 1.5rem 1rem 1.25rem;
+      gap: 1.25rem;
+    }
+    .ficha-title { font-size: 1.6rem; }
+    .ficha-desc { max-width: 100%; }
+    .ficha-meta {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 1rem 1.5rem;
+    }
+    .meta-item { text-align: left; }
+
+    /* ── Friso: full width ── */
+    .friso { padding: 1.25rem 1rem; }
+
+    /* ── Layout: columna en lugar de grid 180px+1fr ── */
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Sidebar → barra horizontal sticky bajo el friso ── */
+    .sidebar-nav {
+      position: sticky;
+      top: 53px;
+      height: auto;
+      overflow-x: auto;
+      overflow-y: visible;
+      scrollbar-width: none;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      padding: 0;
+      border-right: none;
+      border-bottom: 1px solid var(--gray-200);
+      background: var(--white);
+      z-index: 50;
+    }
+    .sidebar-nav::-webkit-scrollbar { display: none; }
+    .sidebar-heading { display: none; }
+    .sidebar-link {
+      white-space: nowrap;
+      padding: 0.7rem 1rem;
+      border-left: none;
+      border-bottom: 2px solid transparent;
+      font-size: 12px;
+    }
+    .sidebar-link.active {
+      border-left-color: transparent;
+      border-bottom-color: var(--red);
+    }
+
+    /* ── Secciones: menos padding ── */
+    .sections-col { padding: 1.5rem 1rem 4rem; }
+
+    /* ── Inventario & Presupuesto ── */
+    #inv-container { padding: 1rem 1rem 3rem !important; }
+
+    /* Filtros: ya tienen flex-wrap, solo reducir gap */
+    .inv-filter-row { gap: 4px; margin-bottom: 1rem; }
+    .inv-filter-btn { padding: 0.35rem 0.75rem; font-size: 11px; }
+
+    /* Total bar: apilar label y cifra en columna */
+    .total-bar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4rem;
+      padding: 1rem;
+    }
+    .total-bar-amount { font-size: 1.25rem; }
+
+    /* Tabla: scroll horizontal + ocultar columnas poco útiles en móvil */
+    .inv-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .inv-table { font-size: 11px; min-width: 480px; }
+    .inv-table th, .inv-table td { padding: 0.45rem 0.5rem; }
+
+    /* Ocultar Descripción (siempre vacía) y Evento (redundante con subtotal) */
+    .inv-table th:nth-child(1),
+    .inv-table td:nth-child(1),
+    .inv-table th:nth-child(3),
+    .inv-table td:nth-child(3) { display: none; }
+
+    /* Subtotales y total general */
+    .inv-total td { padding: 0.55rem 0.5rem; }
+    .inv-sec td { padding: 0.35rem 0.5rem; }
+
+    /* Barra totales al pie */
+    .total-bar-label { font-size: 10px; }
+  }
+
+</style>
+</head>
+<body>
+
+<nav class="nav" style="margin-bottom:0">
+  <a class="nav-logo" href="index.html" style="text-decoration:none"><span class="nav-cross">✛</span> Malta Camp 2026</a>
+  <div class="nav-tabs">
+    <a class="nav-tab" href="spanish_night.html" style="text-decoration:none">Spanish Night</a>
+    <a class="nav-tab" href="international_nights.html" style="text-decoration:none">International Nights</a>
+    <a class="nav-tab" href="comida_unav.html" style="text-decoration:none">Comida UNAV</a>
+    <a class="nav-tab" href="asado_final.html" style="text-decoration:none">Asado Final</a>
+    <div class="nav-tab active" style="cursor:default">Inventario</div>
+  </div>
+</nav>
+
+<div class="ficha-hero">
+  <div>
+    <div class="ficha-eyebrow">Presupuesto completo · Malta Camp 2026</div>
+    <div class="ficha-title">Inventario &amp; Presupuesto</div>
+    <div class="ficha-desc">Listado consolidado de materiales y alimentos de los cuatro eventos. Precios orientativos — pendiente revisión final.</div>
+  </div>
+  <div class="ficha-meta">
+    <div class="meta-item"><div class="meta-label">Estado</div><div class="meta-value">Borrador</div></div>
+  </div>
+</div>
+
+<div id="inv-container" style="padding: 2rem 2rem 4rem;"></div>
+
+<script>
+const INV_LABELS = {spanish:'Spanish Night', international:'International Nights', asado:'Asado Final'};
+const INV_DATA = [
+  {e:'spanish',a:'Empanadas hojaldre atún (30 trozos/ud)',pr:'Makro',ti:'Alimento',u:'19 uds',p:6.63,t:125.97,n:''},
+  {e:'spanish',a:'Bolsas Pulpo (potón cocido 800g)',pr:'Makro',ti:'Alimento',u:'9 uds',p:12.09,t:108.81,n:''},
+  {e:'spanish',a:'Packs Gildas (50 uds/pack)',pr:'Makro',ti:'Alimento',u:'12 uds',p:32.45,t:389.40,n:''},
+  {e:'spanish',a:'Packs Chistorra 1kg',pr:'Makro',ti:'Alimento',u:'10 uds',p:7.64,t:76.40,n:''},
+  {e:'spanish',a:'Queso Manchego entero',pr:'Mercadona',ti:'Alimento',u:'4,5 uds',p:40.00,t:180.00,n:''},
+  {e:'spanish',a:'Packs Torreznos (20 uds/pack)',pr:'Moreno Sáez',ti:'Alimento',u:'10 uds',p:12.95,t:129.50,n:''},
+  {e:'spanish',a:'Packs Morcilla de Burgos',pr:'Makro',ti:'Alimento',u:'19 uds',p:4.90,t:93.10,n:''},
+  {e:'spanish',a:'Botes Ensaladilla rusa 1kg',pr:'Makro',ti:'Alimento',u:'18 uds',p:5.22,t:93.96,n:''},
+  {e:'spanish',a:'Rosquillas marineras (≈130 uds/kg)',pr:'Pendiente',ti:'Alimento',u:'5 uds',p:3.69,t:18.45,n:''},
+  {e:'spanish',a:'Bolsas Mini Croquetas jamón (200/bolsa)',pr:'Makro',ti:'Alimento',u:'3 uds',p:5.01,t:15.03,n:''},
+  {e:'spanish',a:'Bolsas Patatas Bravas 2,5kg',pr:'Makro',ti:'Alimento',u:'4 uds',p:4.67,t:18.68,n:''},
+  {e:'spanish',a:'Botes Salsa Brava 1850g',pr:'Makro',ti:'Alimento',u:'1 ud',p:6.22,t:6.22,n:''},
+  {e:'spanish',a:'Tortillas de patata con cebolla (25 trozos/ud)',pr:'Mercadona',ti:'Alimento',u:'23 uds',p:2.60,t:59.80,n:''},
+  {e:'spanish',a:'Paquetes Pintxo Donostiarra 1,2kg',pr:'Makro',ti:'Alimento',u:'13 uds',p:8.13,t:105.69,n:''},
+  {e:'spanish',a:'Botes Sobrasada 1,5kg',pr:'Makro',ti:'Alimento',u:'5 uds',p:10.27,t:51.35,n:''},
+  {e:'spanish',a:'Packs Biscotes Minitosta 6 uds',pr:'Makro',ti:'Alimento',u:'6 uds',p:5.05,t:30.30,n:''},
+  {e:'spanish',a:'Botellas Gazpacho 1L',pr:'Mercadona',ti:'Alimento',u:'57 uds',p:1.70,t:96.90,n:''},
+  {e:'spanish',a:'Packs Ensaimadas 900g (18 uds/pack)',pr:'Makro',ti:'Alimento',u:'8 uds',p:7.80,t:62.40,n:''},
+  {e:'spanish',a:'Botes Crema Catalana Royal 800g',pr:'Makro',ti:'Alimento',u:'9 uds',p:6.70,t:60.30,n:''},
+  {e:'spanish',a:'Packs Churros fritos 875g',pr:'Makro',ti:'Alimento',u:'19 uds',p:7.78,t:147.82,n:''},
+  {e:'spanish',a:'Turrones Duros (15 trozos/tableta)',pr:'Mercadona',ti:'Alimento',u:'19 uds',p:2.95,t:56.05,n:''},
+  {e:'spanish',a:'Turrones Blandos (15 trozos/tableta)',pr:'Mercadona',ti:'Alimento',u:'19 uds',p:2.95,t:56.05,n:''},
+  {e:'spanish',a:'Aceite para freír 5L',pr:'Makro',ti:'Alimento',u:'6 uds',p:8.79,t:52.74,n:''},
+  {e:'spanish',a:'Packs Leche entera 1,5L (6 briks/pack)',pr:'Makro',ti:'Alimento',u:'5 uds',p:8.21,t:41.05,n:''},
+  {e:'spanish',a:'Aceite de oliva',pr:'Pendiente',ti:'Alimento',u:'1 ud',p:5.15,t:5.15,n:''},
+  {e:'spanish',a:'Pimentón dulce 800g',pr:'Makro',ti:'Alimento',u:'1 ud',p:6.11,t:6.11,n:''},
+  {e:'spanish',a:'Jamones cebo 50% ibérico',pr:'Makro',ti:'Alimento',u:'2 uds',p:170.00,t:340.00,n:''},
+  {e:'spanish',a:'Botellas Sangría 1,5L',pr:'Mercadona',ti:'Alimento',u:'172 uds',p:1.60,t:275.20,n:''},
+  {e:'spanish',a:'Botellas Tinto Verano SIN alcohol',pr:'Mercadona',ti:'Alimento',u:'55 uds',p:0.90,t:49.50,n:''},
+  {e:'spanish',a:'Cajas Vino Fino bag-in-box 5L',pr:'Alcampo',ti:'Alimento',u:'16 uds',p:16.77,t:268.32,n:''},
+  {e:'spanish',a:'Botellas Sprite 2L',pr:'Mercadona',ti:'Alimento',u:'81 uds',p:0.95,t:76.95,n:''},
+  {e:'spanish',a:'Botellas Sidra',pr:'Makro',ti:'Alimento',u:'168 uds',p:2.04,t:342.72,n:''},
+  {e:'spanish',a:'Briks Horchata chufa',pr:'Mercadona',ti:'Alimento',u:'130 uds',p:1.35,t:175.50,n:''},
+  {e:'spanish',a:'Vino Tinto Kalimotxo bag-box 5L',pr:'Makro',ti:'Alimento',u:'3 uds',p:6.35,t:19.05,n:''},
+  {e:'spanish',a:'Coca-Cola packs 6 uds (kalimotxo)',pr:'Makro',ti:'Alimento',u:'3 uds',p:8.77,t:26.31,n:''},
+  {e:'spanish',a:'Hielo Bolsas 2kg',pr:'Makro',ti:'Alimento',u:'25 uds',p:0.95,t:23.75,n:'En revisión'},
+  {e:'spanish',a:'Jarabe de fruta granizados',pr:'Amazon',ti:'Alimento',u:'20 uds',p:8.40,t:168.00,n:'En revisión'},
+  {e:'spanish',a:'Cortadores de Jamón profesionales',pr:'—',ti:'Objeto',u:'2 uds',p:300.00,t:600.00,n:'En revisión'},
+  {e:'spanish',a:'Fuentes acero inox 22×13cm',pr:'Makro',ti:'Objeto',u:'100 uds',p:1.49,t:149.00,n:'En revisión'},
+  {e:'spanish',a:'Platos hondos Bionic bagazo 680ml',pr:'Makro',ti:'Objeto',u:'2000 uds',p:0.12,t:240.00,n:''},
+  {e:'spanish',a:'Boles Bionic bagazo 950ml',pr:'Makro',ti:'Objeto',u:'2000 uds',p:0.20,t:400.00,n:''},
+  {e:'spanish',a:'Vasos reutilizables 20/40ml PP',pr:'Makro',ti:'Objeto',u:'2000 uds',p:0.05,t:100.00,n:''},
+  {e:'spanish',a:'Tenedores 18cm inox',pr:'Makro',ti:'Objeto',u:'2000 uds',p:0.24,t:480.00,n:''},
+  {e:'spanish',a:'Cuchillos 18cm inox',pr:'Makro',ti:'Objeto',u:'2000 uds',p:0.28,t:560.00,n:''},
+  {e:'spanish',a:'Cucharas 18cm inox',pr:'Makro',ti:'Objeto',u:'2000 uds',p:0.24,t:480.00,n:''},
+  {e:'spanish',a:'Cucharitas café mini 10cm',pr:'Makro',ti:'Objeto',u:'2000 uds',p:0.04,t:80.00,n:''},
+  {e:'spanish',a:'Servilletas papel 40×40cm burdeos',pr:'Makro',ti:'Objeto',u:'2400 uds',p:0.054,t:129.04,n:''},
+  {e:'spanish',a:'Telas decorativas 3m/caseta',pr:'Pendiente',ti:'Objeto',u:'33 m',p:15.00,t:495.00,n:''},
+  {e:'spanish',a:'Rollos Mantel Papel adamascado 25m',pr:'Amazon',ti:'Objeto',u:'4 uds',p:30.69,t:122.76,n:''},
+  {e:'spanish',a:'Disfraces temáticos',pr:'Pendiente',ti:'Objeto',u:'10 uds',p:45.00,t:450.00,n:''},
+  {e:'spanish',a:'Sellos customizables',pr:'Pendiente',ti:'Objeto',u:'75 uds',p:4.00,t:300.00,n:''},
+  {e:'spanish',a:'Tinta para sellos',pr:'Pendiente',ti:'Objeto',u:'75 uds',p:2.00,t:150.00,n:''},
+  {e:'spanish',a:'Impresora',pr:'Pendiente',ti:'Objeto',u:'1 ud',p:120.00,t:120.00,n:'En revisión'},
+  {e:'spanish',a:'Packs Listones madera abeto 200cm',pr:'Brico Depôt',ti:'Objeto',u:'22 packs',p:19.95,t:438.90,n:''},
+  {e:'spanish',a:'Tablero MDF 60×120×1,6cm',pr:'Leroy Merlin',ti:'Objeto',u:'11 uds',p:21.99,t:241.89,n:''},
+  {e:'spanish',a:'Tornillos para madera',pr:'Pendiente',ti:'Objeto',u:'350 uds',p:0.10,t:35.00,n:''},
+  {e:'spanish',a:'Arandelas',pr:'Pendiente',ti:'Objeto',u:'200 uds',p:0.20,t:40.00,n:''},
+  {e:'spanish',a:'Palominas',pr:'Pendiente',ti:'Objeto',u:'200 uds',p:0.20,t:40.00,n:''},
+  {e:'spanish',a:'Máquina Granizados',pr:'Amazon',ti:'Objeto',u:'1 ud',p:600.00,t:600.00,n:'En revisión'},
+  {e:'international',a:'Frescos por país (estimado)',pr:'Varios',ti:'Alimento',u:'110 uds',p:10.00,t:1100.00,n:'Pendiente confirmar con países'},
+  {e:'international',a:'Hielo Bolsas 2kg',pr:'Makro',ti:'Alimento',u:'30 uds',p:1.70,t:51.00,n:''},
+  {e:'international',a:'Cucharas de cocina',pr:'Makro',ti:'Objeto',u:'11 uds',p:2.99,t:32.89,n:'Pdte. confirmar si reutilizable de Javier'},
+  {e:'international',a:'Set Cuchillos cortar 15 uds',pr:'Makro',ti:'Objeto',u:'2 uds',p:24.99,t:49.98,n:'Pdte. confirmar si reutilizable de Javier'},
+  {e:'international',a:'Set Tablas de cortar 6 uds',pr:'Makro',ti:'Objeto',u:'2 uds',p:12.33,t:24.66,n:'Pdte. confirmar si reutilizable de Javier'},
+  {e:'international',a:'Set Tenedores cocina 12 uds',pr:'Makro',ti:'Objeto',u:'1 ud',p:3.09,t:3.09,n:'Pdte. confirmar si reutilizable de Javier'},
+  {e:'international',a:'Espátulas',pr:'Makro',ti:'Objeto',u:'4 uds',p:1.49,t:5.96,n:'Pdte. confirmar si reutilizable de Javier'},
+  {e:'international',a:'Cacerolas',pr:'Makro',ti:'Objeto',u:'2 uds',p:43.79,t:87.58,n:'Pdte. confirmar si reutilizable de Javier'},
+  {e:'international',a:'Sartenes',pr:'Makro',ti:'Objeto',u:'2 uds',p:61.15,t:122.30,n:'Pdte. confirmar si reutilizable de Javier'},
+  {e:'international',a:'Mini Pimer Braun',pr:'Amazon',ti:'Objeto',u:'1 ud',p:34.00,t:34.00,n:'Pdte. confirmar si reutilizable de Javier'},
+  {e:'international',a:'Hornillo Gas/Camping Gas',pr:'Amazon',ti:'Objeto',u:'2 uds',p:139.99,t:279.98,n:'Pdte. confirmar si reutilizable de Javier'},
+  {e:'international',a:'Guirnaldas banderas países',pr:'Amazon',ti:'Objeto',u:'4 uds',p:10.00,t:40.00,n:''},
+  {e:'international',a:'Set Banderitas comida por país 100 uds',pr:'Amazon',ti:'Objeto',u:'22 uds',p:6.59,t:144.98,n:''},
+  {e:'international',a:'Alargadores',pr:'Amazon',ti:'Objeto',u:'5 uds',p:8.30,t:41.50,n:''},
+  {e:'international',a:'Cajas de almacenamiento transporte',pr:'Amazon',ti:'Objeto',u:'2 uds',p:20.00,t:40.00,n:''},
+  {e:'asado',a:'Paella Mixta / Fideuá de Marisco (catering 566 pax, incluye desplazamiento+menaje)',pr:'Catering',ti:'Alimento',u:'566 pax',p:6.25,t:3537.50,n:''},
+  {e:'asado',a:'Hielo Bolsas 2kg',pr:'Makro',ti:'Alimento',u:'115 uds',p:0.95,t:109.25,n:''},
+  {e:'asado',a:'Brownie de Chocolate (1/persona)',pr:'Makro',ti:'Alimento',u:'566 uds',p:0.84,t:475.44,n:'Pendiente confirmar donación Frigo'},
+  {e:'asado',a:'Helado de Vainilla tarrina (~57L)',pr:'Makro',ti:'Alimento',u:'566 pax',p:1.25,t:707.50,n:'Pendiente confirmar donación Frigo'},
+  {e:'asado',a:'Platos Cartón 23cm',pr:'Makro',ti:'Objeto',u:'660 uds',p:0.077,t:51.15,n:'Pdte. confirmar si cubre catering'},
+  {e:'asado',a:'Tenedores desechables',pr:'Temu',ti:'Objeto',u:'660 uds',p:0.030,t:20.00,n:'Pdte. confirmar si cubre catering'},
+  {e:'asado',a:'Cuchillos desechables',pr:'Temu',ti:'Objeto',u:'660 uds',p:0.042,t:27.85,n:'Pdte. confirmar si cubre catering'},
+  {e:'asado',a:'Cucharillas desechables',pr:'Temu',ti:'Objeto',u:'660 uds',p:0.032,t:21.12,n:'Pdte. confirmar si cubre catering'},
+  {e:'asado',a:'Servilletas papel decoradas',pr:'Temu',ti:'Objeto',u:'1200 uds',p:0.072,t:86.40,n:'Pdte. confirmar si cubre catering'},
+  {e:'asado',a:'Vasos Plástico 300ml reutilizables',pr:'Makro',ti:'Objeto',u:'600 uds',p:0.31,t:186.00,n:'Pdte. confirmar si cubre catering'},
+  {e:'asado',a:'Manteles desechables de colores (8m, 14 uds)',pr:'Temu',ti:'Objeto',u:'14 uds',p:40.32,t:564.48,n:''},
+  {e:'asado',a:'Decoración Centros de Mesa (estimado)',pr:'Pendiente',ti:'Objeto',u:'1 partida',p:400.00,t:400.00,n:''},
+  {e:'asado',a:'Cucharillas Postre',pr:'Temu',ti:'Objeto',u:'566 uds',p:0.032,t:18.11,n:'Pdte. confirmar donación Frigo'},
+];
+
+function invFmt(n) {
+  return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';
+}
+function invFmtU(n) {
+  const d = (n>0 && n<0.1 && Math.round(n*1000)!==Math.round(n*100)*10) ? 3 : 2;
+  return n.toLocaleString('es-ES',{minimumFractionDigits:d,maximumFractionDigits:d})+' €';
+}
+
+function renderInv(filter) {
+  const c = document.getElementById('inv-container');
+  if (!c) return;
+  const events = filter==='all' ? ['spanish','international','asado'] : [filter];
+  const rows = INV_DATA.filter(r => filter==='all' || r.e===filter);
+  const gt = rows.reduce((s,r)=>s+r.t,0);
+
+  let h = '<div class="inv-filter-row">';
+  [['all','Todos'],['spanish','Spanish Night'],['international','International Nights'],['asado','Asado Final']].forEach(([f,l])=>{
+    h += `<button class="inv-filter-btn${filter===f?' active':''}" onclick="renderInv('${f}')">${l}</button>`;
+  });
+  h += '</div>';
+
+  h += `<div class="total-bar" style="margin-bottom:1.5rem"><div><div class="total-bar-label">${filter==='all'?'Total general estimado':INV_LABELS[filter]}</div></div><div class="total-bar-amount">${invFmt(gt)}</div></div>`;
+
+  h += '<div class="inv-table-wrap">';
+  h += `<table class="inv-table"><thead><tr>
+    <th>Evento</th><th>Artículo</th><th>Descripción</th><th>Proveedor</th><th>Tipo</th>
+    <th style="text-align:right">Uds.</th><th style="text-align:right">P. unit.</th>
+    <th style="text-align:right">Total</th><th style="text-align:left">Notas</th>
+  </tr></thead><tbody>`;
+
+  events.forEach(ev => {
+    const evRows = INV_DATA.filter(r=>r.e===ev);
+    const sub = evRows.reduce((s,r)=>s+r.t,0);
+    h += `<tr class="inv-sec"><td colspan="9">${INV_LABELS[ev]}</td></tr>`;
+    evRows.forEach(r => {
+      const isRed = r.n && (r.n.includes('En revisión')||r.n.includes('Pendiente')||r.n.includes('Pdte.'));
+      const ns = `style="text-align:left${isRed?';color:var(--red)':'"'}`;
+      h += `<tr><td>${INV_LABELS[r.e]}</td><td>${r.a}</td><td></td><td>${r.pr}</td>
+        <td><span class="tag ${r.ti==='Alimento'?'tag-a':'tag-o'}">${r.ti}</span></td>
+        <td style="text-align:right">${r.u}</td>
+        <td style="text-align:right">${invFmtU(r.p)}</td>
+        <td style="text-align:right">${invFmt(r.t)}</td>
+        <td ${ns}>${r.n}</td></tr>`;
+    });
+    h += `<tr class="inv-total"><td colspan="7">Subtotal ${INV_LABELS[ev]}</td><td style="text-align:right">${invFmt(sub)}</td><td></td></tr>`;
+  });
+
+  if (filter==='all') {
+    h += `<tr class="inv-total"><td colspan="7"><strong>TOTAL GENERAL</strong></td><td style="text-align:right"><strong>${invFmt(gt)}</strong></td><td></td></tr>`;
+  }
+
+  h += '</tbody></table></div>';
+  c.innerHTML = h;
+}
+
+renderInv('all');
+</script>
+</body>
+</html>
