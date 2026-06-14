@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malta Camp 2026 · Alérgenos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #FFFFFF;
+    --gray-50: #F7F7F7;
+    --gray-100: #EFEFEF;
+    --gray-200: #DEDEDE;
+    --gray-400: #ABABAB;
+    --gray-600: #6B6B6B;
+    --gray-800: #2E2E2E;
+    --gray-900: #1A1A1A;
+    --red: #CC0000;
+    --red-light: #FFF0F0;
+    --font: 'Plus Jakarta Sans', sans-serif;
+    --radius: 2px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font);
+    background: var(--white);
+    color: var(--gray-900);
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+    display: flex; align-items: stretch;
+    padding: 0 2rem;
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 8px;
+    padding: 0 1.5rem 0 0; margin-right: 1.5rem;
+    border-right: 1px solid var(--gray-200);
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--gray-900); text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .nav-cross { color: var(--red); font-size: 18px; font-weight: 300; }
+
+  .nav-tabs { display: flex; overflow-x: auto; scrollbar-width: none; }
+  .nav-tabs::-webkit-scrollbar { display: none; }
+
+  .nav-tab {
+    padding: 1rem 1.1rem;
+    font-size: 12.5px; font-weight: 400;
+    color: var(--gray-400); cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color 0.1s, border-color 0.1s;
+    user-select: none;
+    text-decoration: none;
+    display: flex; align-items: center;
+  }
+  .nav-tab:hover { color: var(--gray-800); }
+  .nav-tab.active { color: var(--gray-900); border-bottom-color: var(--red); font-weight: 500; }
+
+  /* ── HERO ── */
+  .ficha-hero {
+    padding: 2.5rem 2rem 2rem;
+    border-bottom: 1px solid var(--gray-200);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem; align-items: end;
+  }
+
+  .ficha-eyebrow {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 0.5rem;
+  }
+
+  .ficha-title {
+    font-size: 2rem; font-weight: 300;
+    color: var(--gray-900); letter-spacing: -0.02em;
+    line-height: 1.1; margin-bottom: 0.75rem;
+  }
+
+  .ficha-desc {
+    font-size: 13px; color: var(--gray-600);
+    line-height: 1.65; max-width: 500px; font-weight: 300;
+  }
+
+  .ficha-meta { display: flex; gap: 2rem; align-items: end; }
+  .meta-item { text-align: right; }
+  .meta-label {
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gray-400); margin-bottom: 3px;
+  }
+  .meta-value { font-size: 14px; font-weight: 500; color: var(--gray-900); }
+
+  /* ── CONTENT ── */
+  .content { padding: 2rem 2rem 6rem; max-width: 900px; }
+
+  .section-title {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gray-400); margin-bottom: 1.25rem;
+  }
+
+  /* ── STAT STRIP ── */
+  .stat-strip { display: flex; gap: 1px; background: var(--gray-200); border: 1px solid var(--gray-200); margin-bottom: 2rem; }
+  .stat-cell { background: var(--white); padding: 1rem 1.25rem; flex: 1; }
+  .stat-num { font-size: 1.75rem; font-weight: 300; color: var(--gray-900); letter-spacing: -0.03em; line-height: 1; margin-bottom: 4px; }
+  .stat-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400); }
+
+  /* ── ALLERGEN TABLE ── */
+  .alg-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .alg-table th {
+    text-align: left; font-size: 10px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400);
+    padding: 0 1rem 0.6rem; border-bottom: 1px solid var(--gray-900);
+  }
+  .alg-table th:nth-child(2) { text-align: center; }
+  .alg-table td {
+    padding: 0.75rem 1rem; border-bottom: 1px solid var(--gray-100);
+    color: var(--gray-800); vertical-align: middle; line-height: 1.4;
+  }
+  .alg-table td:nth-child(2) { text-align: center; font-size: 15px; font-weight: 500; color: var(--gray-900); }
+  .alg-table tr:last-child td { border-bottom: none; }
+  .alg-table th:first-child, .alg-table td:first-child { padding-left: 0; }
+
+  /* ── RISK BADGES ── */
+  .risk {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    padding: 3px 8px; border-radius: var(--radius);
+  }
+  .risk-critico  { background: #fee2e2; color: #991b1b; }
+  .risk-moderado { background: #ffedd5; color: #9a3412; }
+  .risk-bajo     { background: #fef9c3; color: #854d0e; }
+  .risk-ok       { background: #dcfce7; color: #166534; }
+
+  /* ── LEYENDA ── */
+  .leyenda {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-bottom: 1.5rem;
+  }
+
+  ::-webkit-scrollbar { width: 3px; height: 3px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--gray-200); }
+
+  @media (max-width: 768px) {
+    .nav { padding: 0 0.75rem; }
+    .nav-logo { padding-right: 0.75rem; margin-right: 0.75rem; font-size: 11px; }
+    .nav-tab { padding: 0.85rem 0.85rem; font-size: 12px; }
+    .ficha-hero { grid-template-columns: 1fr; padding: 1.5rem 1rem 1.25rem; gap: 1.25rem; }
+    .ficha-title { font-size: 1.6rem; }
+    .ficha-desc { max-width: 100%; }
+    .ficha-meta { flex-wrap: wrap; justify-content: flex-start; gap: 1rem 1.5rem; }
+    .meta-item { text-align: left; }
+    .content { padding: 1.5rem 1rem 4rem; }
+    .stat-strip { flex-wrap: wrap; }
+    .alg-table { font-size: 11px; }
+    .alg-table th, .alg-table td { padding: 0.55rem 0.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-logo" href="index.html"><span class="nav-cross">✛</span> Malta Camp 2026</a>
+  <div class="nav-tabs">
+    <a class="nav-tab" href="spanish_night.html">Spanish Night</a>
+    <a class="nav-tab" href="international_nights.html">International Nights</a>
+    <a class="nav-tab" href="comida_unav.html">Comida UNAV</a>
+    <a class="nav-tab" href="asado_final.html">Asado Final</a>
+    <a class="nav-tab" href="inventario.html">Inventario</a>
+    <a class="nav-tab active" href="alergenos.html">Alérgenos</a>
+  </div>
+</nav>
+
+<div class="ficha-hero">
+  <div>
+    <div class="ficha-eyebrow">Referencia · Malta Camp 2026</div>
+    <div class="ficha-title">Alérgenos &amp; Dietas</div>
+    <div class="ficha-desc">Restricciones alimentarias declaradas por los participantes. Usar como referencia al cerrar menús con catering y coordinar alternativas.</div>
+  </div>
+  <div class="ficha-meta">
+    <div class="meta-item"><div class="meta-label">Fuente</div><div class="meta-value">Excel dietas UNAV</div></div>
+    <div class="meta-item"><div class="meta-label">Estado</div><div class="meta-value">Borrador</div></div>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="stat-strip" style="margin-bottom:2rem">
+    <div class="stat-cell"><div class="stat-num">4</div><div class="stat-label">Restricciones críticas</div></div>
+    <div class="stat-cell"><div class="stat-num">~63</div><div class="stat-label">Personas con alguna restricción</div></div>
+    <div class="stat-cell"><div class="stat-num">~566</div><div class="stat-label">Asistentes totales</div></div>
+  </div>
+
+  <div class="section-title">Leyenda de riesgo</div>
+  <div class="leyenda" style="margin-bottom:2rem">
+    <span class="risk risk-critico">🔴 Crítico — reacción severa posible</span>
+    <span class="risk risk-moderado">🟠 Moderado — requiere alternativa</span>
+    <span class="risk risk-bajo">🟡 Bajo — vigilar ingredientes</span>
+    <span class="risk risk-ok">🟢 OK — no aplica en el menú</span>
+  </div>
+
+  <div class="section-title">Restricciones por evento</div>
+  <table class="alg-table">
+    <thead>
+      <tr>
+        <th>Restricción</th>
+        <th>Nº personas</th>
+        <th>Nivel de riesgo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Gluten / celiaquía</td>
+        <td>~12</td>
+        <td><span class="risk risk-critico">🔴 Crítico</span><br><span style="font-size:11px;color:var(--gray-400)">Reacción severa posible</span></td>
+      </tr>
+      <tr>
+        <td>Lácteos (dairy-free, lactose-free, no cow milk)</td>
+        <td>~11</td>
+        <td><span class="risk risk-bajo">🟡 Bajo</span><br><span style="font-size:11px;color:var(--gray-400)">No aplica en paella tradicional</span></td>
+      </tr>
+      <tr>
+        <td>Vegetariano</td>
+        <td>~9</td>
+        <td><span class="risk risk-moderado">🟠 Moderado</span><br><span style="font-size:11px;color:var(--gray-400)">Paella mixta lleva carne y marisco</span></td>
+      </tr>
+      <tr>
+        <td>Frutos secos (peanuts, tree nuts, hazelnut, sesame, cashew)</td>
+        <td>~5</td>
+        <td><span class="risk risk-bajo">🟡 Bajo</span><br><span style="font-size:11px;color:var(--gray-400)">No suele llevar, vigilar caldo</span></td>
+      </tr>
+      <tr>
+        <td>Sin pescado / marisco / gambas</td>
+        <td>~5</td>
+        <td><span class="risk risk-critico">🔴 Crítico</span><br><span style="font-size:11px;color:var(--gray-400)">Ingrediente principal de paella mixta</span></td>
+      </tr>
+      <tr>
+        <td>Sin carne / vegano</td>
+        <td>~2</td>
+        <td><span class="risk risk-moderado">🟠 Moderado</span><br><span style="font-size:11px;color:var(--gray-400)">Paella mixta lleva carne</span></td>
+      </tr>
+      <tr>
+        <td>Diabético / bajo en azúcar / bajo en carbos</td>
+        <td>~4</td>
+        <td><span class="risk risk-moderado">🟠 Moderado</span><br><span style="font-size:11px;color:var(--gray-400)">Arroz es alto en carbohidratos</span></td>
+      </tr>
+      <tr>
+        <td>Sin setas / champiñones</td>
+        <td>~2</td>
+        <td><span class="risk risk-bajo">🟡 Bajo</span><br><span style="font-size:11px;color:var(--gray-400)">Depende de la receta</span></td>
+      </tr>
+      <tr>
+        <td>Sin cerdo</td>
+        <td>~2</td>
+        <td><span class="risk risk-bajo">🟡 Bajo</span><br><span style="font-size:11px;color:var(--gray-400)">Depende de los ingredientes de la paella</span></td>
+      </tr>
+      <tr>
+        <td>Sin ajo</td>
+        <td>~1</td>
+        <td><span class="risk risk-moderado">🟠 Moderado</span><br><span style="font-size:11px;color:var(--gray-400)">El sofrito lleva ajo</span></td>
+      </tr>
+      <tr>
+        <td>Sin maíz</td>
+        <td>~2</td>
+        <td><span class="risk risk-ok">🟢 OK</span><br><span style="font-size:11px;color:var(--gray-400)">No lleva</span></td>
+      </tr>
+      <tr>
+        <td>Sin tomate</td>
+        <td>~1</td>
+        <td><span class="risk risk-moderado">🟠 Moderado</span><br><span style="font-size:11px;color:var(--gray-400)">El sofrito lleva tomate</span></td>
+      </tr>
+      <tr>
+        <td>Sin féculas (patata, pan, pasta, arroz)</td>
+        <td>~3</td>
+        <td><span class="risk risk-critico">🔴 Crítico</span><br><span style="font-size:11px;color:var(--gray-400)">El arroz es la base de la paella</span></td>
+      </tr>
+      <tr>
+        <td>Intolerancia al histamino</td>
+        <td>~2</td>
+        <td><span class="risk risk-critico">🔴 Crítico</span><br><span style="font-size:11px;color:var(--gray-400)">Marisco y tomate son altos en histamina</span></td>
+      </tr>
+      <tr>
+        <td>Otros puntuales (fresa, piña, aguacate, pomelo…)</td>
+        <td>~5</td>
+        <td><span class="risk risk-ok">🟢 OK</span><br><span style="font-size:11px;color:var(--gray-400)">No aplica en paella</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+</body>
+</html>
