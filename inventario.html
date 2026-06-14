@@ -167,7 +167,7 @@ function renderInv(filter) {
     h += `<tr class="inv-sec"><td colspan="10">${INV_LABELS[ev]}</td></tr>`;
     evRows.forEach(r => {
       const isRed = r.n && (r.n.includes('En revisión')||r.n.includes('Pendiente')||r.n.includes('Pdte.'));
-      const ns = `style="text-align:left${isRed?';color:var(--red)':'"'}`;
+      const ns = `style="text-align:left${isRed?';color:var(--red)':''}"`;
       h += `<tr><td>${INV_LABELS[r.e]}</td><td>${statusBadge(r.s)}</td><td>${r.a}</td><td></td><td>${r.pr}</td>
         <td><span class="tag ${r.ti==='Alimento'?'tag-a':'tag-o'}">${r.ti}</span></td>
         <td style="text-align:right">${r.u}</td>
