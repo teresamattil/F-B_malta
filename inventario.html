@@ -42,7 +42,7 @@
 <div id="inv-container" style="padding: 2rem 2rem 4rem;"></div>
 
 <script>
-const INV_LABELS = {spanish:'Spanish Night', international:'International Nights', asado:'Asado Final'};
+const INV_LABELS = {spanish:'Spanish Night', international:'International Nights', comida:'Comida UNAV', asado:'Asado Final'};
 const INV_DATA = [
   // ── Spanish Night ──────────────────────────────────────────
   {e:'spanish',s:'Pendiente',a:'Empanadas hojaldre atún (30 trozos/ud)',pr:'Makro',ti:'Alimento',u:'19 uds',p:6.63,t:125.97,n:''},
@@ -119,6 +119,8 @@ const INV_DATA = [
   {e:'international',s:'Pendiente',a:'Guirnaldas banderas países',pr:'Amazon',ti:'Objeto',u:'4 uds',p:10.00,t:40.00,n:''},
   {e:'international',s:'Pendiente',a:'Set Banderitas comida por país 100 uds',pr:'Amazon',ti:'Objeto',u:'22 uds',p:6.59,t:144.98,n:''},
   {e:'international',s:'Pendiente',a:'Cajas de almacenamiento transporte',pr:'Amazon',ti:'Objeto',u:'2 uds',p:20.00,t:40.00,n:''},
+  // ── Comida UNAV ────────────────────────────────────────────
+  {e:'comida',s:'Pendiente',a:'Catering UNAV',pr:'Pendiente',ti:'Alimento',u:'566 pax',p:10.00,t:5660.00,n:''},
   // ── Asado Final ────────────────────────────────────────────
   {e:'asado',s:'Pendiente',a:'Paella Mixta / Fideuá de Marisco (catering 566 pax, incluye desplazamiento+menaje)',pr:'Catering',ti:'Alimento',u:'566 pax',p:6.25,t:3537.50,n:''},
   {e:'asado',s:'Pendiente',a:'Hielo Bolsas 2kg',pr:'Makro',ti:'Alimento',u:'115 uds',p:0.95,t:109.25,n:''},
@@ -143,12 +145,12 @@ function invFmtU(n) {
 function renderInv(filter) {
   const c = document.getElementById('inv-container');
   if (!c) return;
-  const events = filter==='all' ? ['spanish','international','asado'] : [filter];
+  const events = filter==='all' ? ['spanish','international','comida','asado'] : [filter];
   const rows = INV_DATA.filter(r => filter==='all' || r.e===filter);
   const gt = rows.reduce((s,r)=>s+r.t,0);
 
   let h = '<div class="inv-filter-row">';
-  [['all','Todos'],['spanish','Spanish Night'],['international','International Nights'],['asado','Asado Final']].forEach(([f,l])=>{
+  [['all','Todos'],['spanish','Spanish Night'],['international','International Nights'],['comida','Comida UNAV'],['asado','Asado Final']].forEach(([f,l])=>{
     h += `<button class="inv-filter-btn${filter===f?' active':''}" onclick="renderInv('${f}')">${l}</button>`;
   });
   h += '</div>';
