@@ -227,6 +227,11 @@ body {
 .card-title { font-size: 14px; font-weight: 500; color: var(--gray-900); margin-bottom: 6px; }
 .card-body { font-size: 13px; color: var(--gray-600); line-height: 1.55; font-weight: 300; }
 
+/* ── FOOD STATUS (Spanish Night cards) ── */
+.food-ok  { color: #166534; font-weight: 500; }
+.food-tbd { color: var(--gray-400); }
+.food-remove { text-decoration: line-through; opacity: 0.35; }
+
 /* ── FUN GRID (Spanish Night) ── */
 .fun-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--gray-200); border: 1px solid var(--gray-200); }
 .fun-cell { background: var(--white); padding: 1rem; }
