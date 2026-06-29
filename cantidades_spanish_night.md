@@ -91,43 +91,48 @@ Target por ítem: ~350 porciones (60% del aforo)
 - **Cantidad:** 350 personas × 2 marineras = **700 picos** (oval) + **~10 kg ensaladilla** (700 × 15 g por marinera) + **700 anchoas** (~15 latas de ~50 unidades/lata).
 - **Servicio:** 2 marineras por persona en bandeja. Montar por tandas para que el pico no se humedezca.
 
+### Patatas Lays
+- **Preparación:** Sin preparación. Abrir bolsas y poner en cuencos.
+- **Cantidad:** **18 bolsas grandes (300 g)** = ~5,4 kg. ~15 g por persona.
+- **Servicio:** Cuencos en el mostrador, selfservice.
+
+### Mejillones en escabeche
+- **Preparación:** Abrir latas y servir directamente o trasladar a platitos.
+- **Cantidad:** **45 latas medianas (~16 uds/lata)** = ~720 mejillones. ~2 por persona.
+- **Servicio:** 1–2 mejillones en platito pequeño con palillo.
+
 ---
 
 ## ANDALUCÍA
 
 ### Gazpacho
-- **Preparación:** Preparar el día anterior (mejora de un día para otro). Guardar en frío. Servir en vasitos muy fríos. Opccionalmente un hilo de AOVE encima.
-- **Cantidad:** 350 personas × 100 ml = **35 litros**. Comprar gazpacho envasado de calidad (Alvalle o similar) para esta escala — mucho más práctico que hacerlo. 35 botellas de 1 L.
-- **Servicio:** Vasito de plástico pequeño (100 ml). Servir desde jarras o directamente de botella. **Mantener muy frío** (hielera o nevera portátil en el puesto).
+- **Preparación:** Preparar el día anterior (mejora de un día para otro). Guardar en frío. Servir en vasitos muy fríos. Opcionalmente un hilo de AOVE encima.
+- **Cantidad:** 350 personas × 100 ml = **35 litros**. Comprar gazpacho envasado de calidad (Alvalle o similar). 35 botellas de 1 L.
+- **Servicio:** Vasito de plástico pequeño (100 ml). **Mantener muy frío** (hielera o nevera portátil en el puesto).
 
 ### Tortilla de patata
 - **Preparación:** Hacer el día anterior o la mañana del evento. Temperatura ambiente (no calentar). Una tortilla de 10–12 huevos = ~20–24 porciones de tasting.
-- **Cantidad:** 350 porciones / 20 porciones por tortilla = **18 tortillas**. Cada tortilla: ~10 huevos + 600 g patata + aceite + sal → 180 huevos, 10 kg patatas.
+- **Cantidad:** 350 porciones / 20 porciones por tortilla = **18 tortillas**. Cada tortilla: ~10 huevos + 600 g patata → 180 huevos, 10 kg patatas.
 - **Servicio:** Trozos pequeños (triángulo o cuadrado), con palillo. Sobre servilleta.
 
 ### Croquetas
 - **Preparación:** Usar croquetas congeladas de calidad (jamón ibérico). Freír en aceite caliente 180°C, 3–4 minutos. En tandas durante el evento para que salgan siempre calientes.
-- **Cantidad:** 350 personas × 2 croquetas = **700 croquetas**. Comprar bolsas de 1 kg (~25–30 croquetas/bolsa) → **25 bolsas** (~25 kg). Este puesto también requiere freidora.
-- **Servicio:** 2 croquetas en vasito o sobre servilleta, con palillo. Calientes siempre — este es el reto logístico.
-
-### Patatas bravas
-- **Preparación:** Pelar y cortar en dados de 3 cm. Freír a 160°C primero (confitar 10 min), subir a 180°C (dorar 3 min). Preparar salsa brava y aioli por separado.
-- **Cantidad:** 350 personas × 80 g = **28 kg patata** + salsa brava + aioli (cada uno ~3–4 litros).
-- **Servicio:** 4–5 dados en vasito de papel, con chorrito de salsa brava + aioli encima. Este puesto también necesita freidora. Junto con bocata de calamares y croquetas, coordinar el uso de freidoras.
+- **Cantidad:** 350 personas × 2 croquetas = **700 croquetas**. Comprar bolsas de 1 kg (~25–30 croquetas/bolsa) → **25 bolsas** (~25 kg). Requiere freidora.
+- **Servicio:** 2 croquetas en vasito o sobre servilleta, con palillo. Calientes siempre.
 
 ---
 
 ## BALEARES, CANARIAS, CEUTA Y MELILLA
 
 ### Sobrasada con tosta
-- **Preparación:** Temperatura ambiente (la sobrasada se extiende mejor). Untar sobre tosta en el momento. Opcional: un hilo de miel por encima (muy buena combinación).
-- **Cantidad:** 350 tostas × 20 g sobrasada = **7 kg sobrasada** + **350 tostas**. Ya presupuestadas ~360 tostas (6 packs × 60) → correcto.
+- **Preparación:** Temperatura ambiente (la sobrasada se extiende mejor). Untar sobre tosta en el momento. Opcional: un hilo de miel por encima.
+- **Cantidad:** 350 tostas × 20 g sobrasada = **7 kg sobrasada** + **350 tostas**.
 - **Servicio:** 1 tosta untada por persona, servida en bandeja. Rápido de montar.
 
-### Tosta de mojo picón
-- **Preparación:** Mojo picón rojo (canario) sobre tosta. Opcional: anchoa o loncha fina de jamón serrano encima.
-- **Cantidad:** 350 tostas + **~5 kg mojo picón** (350 × 15 g) + 350 anchoas o lonchas de jamón (si se añade).
-- **Servicio:** 1 tosta por persona. Preparar en el momento. Si se añade anchoa, hacerlo en el último segundo para presentación.
+### Papas arrugadas con mojo picón
+- **Preparación:** Cocer patatas pequeñas enteras con abundante sal gruesa hasta que la piel arrugue. Servir templadas o a temperatura ambiente con mojo rojo.
+- **Cantidad:** 350 personas × ~45 g (3–4 papas) = **~16 kg patata pequeña** + **5 kg mojo picón rojo**.
+- **Servicio:** 3–4 papas en vasito con cucharada de mojo por encima.
 
 ---
 
@@ -136,40 +141,25 @@ Target por ítem: ~350 porciones (60% del aforo)
 
 ### Ensaimadas
 - **Preparación:** Cortar cada ensaimada en 4 partes. Espolvorear azúcar glas en el momento.
-- **Cantidad:** Ya planificado: 8 packs × 18 = 144 ensaimadas × 4 = **576 trocitos**. Cubre 100% del aforo.
+- **Cantidad:** 8 packs × 18 = 144 ensaimadas × 4 = **576 trocitos**. Cubre 100% del aforo.
 - **Servicio:** 1 trocito por persona sobre servilleta. No necesita plato.
 
-### Crema catalana
-- **Preparación:** Hacer con mezcla preparada (Royal o similar), cuajar en nevera. Servir fría. Ya presupuestados 800 botes/porciones.
-- **Cantidad:** **800 porciones** presupuestadas para 560 personas → holgado. Servir en vasitos pequeños desechables (50–80 ml).
-- **Servicio:** Vasito individual frío, con cuchara pequeña o sin ella (bebible). Mantener en frío hasta el pase.
-
-### Buñuelos
-- **Preparación:** Masa de buñuelos (agua, harina, huevo, levadura). Freír en aceite caliente (180°C) en el momento — **no aguantan si se hacen antes**. Espolvorear azúcar.
-- **Cantidad:** 350 × 2 buñuelos = **700 buñuelos**. Requiere freidora + alguien friendo durante toda la velada.
-- **Servicio:** 2 en bolsita de papel o vasito, calientes. Es el postre más complejo logísticamente: valorar si merece la pena o comprar hechos.
-
-### Filloas
-- **Preparación:** Crepes finas gallegas. Se pueden hacer la mañana del evento y guardar apiladas en frío. Servir a temperatura ambiente o templadas.
-- **Cantidad:** 350 filloas (1 por persona). Una mezcla de ~10 filloas = 2 huevos + 250 ml leche + 50 g harina. Para 350: ~70 huevos, ~9 litros leche, ~1,75 kg harina.
-- **Servicio:** 1 filloa doblada en cuatro, con azúcar o miel por encima. Sobre servilleta.
-
-### Turrón
-- **Preparación:** Romper o cortar en piezas pequeñas (2–3 cm). Mezclar tipos: Jijona (blando) + Alicante (duro) o sustituto tipo Suchard.
-- **Cantidad:** 350 personas × 1 trozo (~25 g) = **~9 kg turrón**. Una tableta de 300 g = ~12 trozos → **30 tabletas** (mezcla de tipos).
-- **Servicio:** En bandeja o cesta, selfservice. Sin palillo (se coge con la mano). Servilletas al lado.
+### Buñuelos de nata y crema (profiteroles)
+- **Preparación:** Comprar profiteroles congelados de calidad. Descongelar en nevera. Calentar la salsa de chocolate al momento del pase.
+- **Cantidad:** 350 personas × 3 profiteroles = **~1.050 uds** → **45 packs de ~24 uds**. Salsa de chocolate: **3–4 kg**.
+- **Servicio:** 2–3 profiteroles en vasito pequeño con hilo de chocolate caliente encima. Mantener en frío hasta el pase.
 
 ---
 
 ## NOTAS LOGÍSTICAS
 
 ### Freidoras necesarias
-Bocata de calamares + Croquetas + Patatas bravas + Buñuelos = **mínimo 3–4 freidoras en simultáneo**. Coordinar zonas y asegurarse de que hay suficiente aceite y espacio.
+Bocata de calamares + Croquetas = **mínimo 2 freidoras en simultáneo**. Coordinar zonas y asegurarse de que hay suficiente aceite y espacio.
 
 ### Temperatura
-- **Caliente:** Chistorra, Torreznos, Morcilla, Bocata calamares, Croquetas, Patatas bravas, Buñuelos
-- **Frío:** Gazpacho, Crema catalana, Marineras (ensaladilla), Gildas
+- **Caliente:** Chistorra, Torreznos, Morcilla, Bocata calamares, Croquetas, Papas arrugadas
+- **Frío:** Gazpacho, Marineras (ensaladilla), Gildas, Profiteroles
 - **Ambiente/temperatura libre:** Todo lo demás
 
 ### Orden recomendado del recorrido
-Salados primero, postres al final. Colocar postres (Ensaimadas, Crema catalana, Turrón, Filloas, Buñuelos) todos juntos en el último tramo para que la gente los encuentre como remate.
+Salados primero, postres al final. Colocar los profiteroles al final del recorrido como remate dulce.

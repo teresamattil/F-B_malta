@@ -108,13 +108,6 @@
 - 25 bolsas de 1 kg de croquetas de jamón congeladas
 - Aceite de freír
 
-**Patatas bravas**
-- 28 kg patatas
-- 3–4 L salsa brava (comprada o preparada)
-- 3–4 L aioli
-- Aceite de freír
-- 350 vasitos de papel
-
 ---
 
 ## BALEARES, CANARIAS, CEUTA Y MELILLA
@@ -124,10 +117,10 @@
 - 360 tostas *(ya presupuestadas)*
 - Miel (opcional)
 
-**Tosta de mojo picón**
-- 350 tostas adicionales
+**Papas arrugadas con mojo picón**
+- 16 kg patatas pequeñas (papa canaria o similar)
 - 5 kg mojo picón rojo canario
-- 350 anchoas o lonchas de jamón serrano (opcional)
+- Sal gruesa
 
 ---
 
@@ -137,28 +130,10 @@
 - 8 packs × 18 ensaimadas = 144 uds
 - Azúcar glas
 
-**Crema catalana** *(ya presupuestada)*
-- 800 vasitos de crema catalana
-- *(o mezcla Royal + 800 vasitos desechables de 50–80 ml)*
-
-**Buñuelos**
-- 2 kg harina
-- 12 huevos
-- Levadura
-- Azúcar
-- Aceite de freír
-- *(Alternativa: comprar hechos ~700 uds)*
-
-**Filloas**
-- 70 huevos
-- 9 L leche
-- 1,75 kg harina
-- Azúcar o miel
-
-**Turrón**
-- 15 tabletas turrón Jijona (blando)
-- 15 tabletas turrón Alicante (duro)
-- *(o sustituir alguno por Suchard)*
+**Buñuelos de nata y crema (profiteroles)**
+- 45 packs profiteroles congelados (~24 uds/pack) = ~1.050 uds
+- 3–4 kg salsa de chocolate
+- *(servir fríos con chocolate caliente encima)*
 
 ---
 
