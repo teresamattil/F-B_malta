@@ -100,7 +100,7 @@
           <div style="display:flex;flex-direction:column;gap:8px;margin-top:6px">
             <div><span class="food-ok">Gildas</span><span style="display:block;font-size:11px;color:var(--gray-400);margin-top:1px">brocheta guindilla + oliva + anchoa</span></div>
             <div><span class="food-ok">Chistorra</span><span style="display:block;font-size:11px;color:var(--gray-400);margin-top:1px">2 trozos en palillo, caliente</span></div>
-            <div><span class="food-ok">Pintxos de txaka</span><span style="display:block;font-size:11px;color:var(--gray-400);margin-top:1px">tosta con txaka y mayo</span></div>
+            <div><span class="food-ok">Pintxo Donostiarra</span><span style="display:block;font-size:11px;color:var(--gray-400);margin-top:1px">producto ya montado, bandeja selfservice</span></div>
           </div>
         </div>
         <div class="card">
@@ -153,7 +153,7 @@
         <div class="card">
           <div class="card-label">Puesto 9 · Dulces Típicos</div>
           <div style="display:flex;flex-direction:column;gap:8px;margin-top:6px">
-            <div><span class="food-ok">Buñuelos de nata y crema</span><span style="display:block;font-size:11px;color:var(--gray-400);margin-top:1px">2–3 profiteroles en vasito, con chocolate</span></div>
+            <div><span class="food-ok">Buñuelos nata</span><span style="display:block;font-size:11px;color:var(--gray-400);margin-top:1px">listos para consumir, vasito o servilleta</span></div>
             <div><span class="food-ok">Ensaimadas</span><span style="display:block;font-size:11px;color:var(--gray-400);margin-top:1px">¼ con azúcar glas sobre servilleta</span></div>
             <div><span class="food-remove">Crema catalana</span><span style="display:block;font-size:11px;color:var(--gray-400);margin-top:1px">vasito pequeño frío</span></div>
             <div><span class="food-remove">Filloas</span><span style="display:block;font-size:11px;color:var(--gray-400);margin-top:1px">doblada en cuatro con miel</span></div>
@@ -174,17 +174,62 @@
     </div>
 
     <div class="section-block" id="spanish-cocina">
-      <div class="section-title">Cocina - Verificar si está todo</div>
-      <table class="data-table">
-        <thead><tr><th>Elaboración</th><th>Platos</th><th>Tipo</th><th>Cuándo preparar</th></tr></thead>
+      <div class="section-title">Cocina</div>
+      <div style="font-size:13px;color:var(--gray-600);margin-bottom:1.5rem;line-height:1.6">Clasificación por método de cocinado, basada en el producto real de compra (ver <strong>detalle_spanish_night.md</strong>). La mayoría de platos son productos pre-elaborados — solo hay que freír, calentar o emplatar.</div>
+
+      <div class="section-subtitle">Frito (freidora)</div>
+      <table class="data-table" style="margin-bottom:1.25rem">
+        <thead><tr><th>Plato</th><th>Producto real</th><th>Cuándo</th></tr></thead>
         <tbody>
-          <tr><td>Sin cocción / frío directo</td><td>Gazpacho, horchata, sangría, sidra, kalimotxo, granizados, cerveza 0,0, rebujito, Croft Twist, gildas, sobrasada, queso manchego, turrón</td><td><span class="badge badge-gray">Frío</span></td><td>Día anterior / mañana misma</td></tr>
-          <tr><td>Fritura</td><td>Chistorra, morcilla, torreznos, patatas bravas, churros, croquetas, buñuelos, bocata de calamares</td><td><span class="badge badge-dark">Caliente</span></td><td>Durante el evento. Freidoras / sartenes grandes.</td></tr>
-          <tr><td>Temperatura ambiente</td><td>Jamón (cortado en vivo), tortilla de patata, ensaladilla, marineras, pintxos de txaka, empanada</td><td><span class="badge badge-gray">Ambiente</span></td><td>2 h antes del evento</td></tr>
-          <tr><td>Preparación previa (calentar)</td><td>Pulpo/lacón (solo calentar), crema catalana (mezcla Royal), filloas</td><td><span class="badge badge-dark">Caliente</span></td><td>Mañana. Recalentar 1 h antes.</td></tr>
+          <tr><td>Bocata de calamares</td><td>Calamares a la romana congelados, ya rebozados</td><td>Durante el evento, en tandas. Freír directo desde congelado, 180°C.</td></tr>
+          <tr><td>Croquetas</td><td>Mini croquetas de jamón congeladas</td><td>Durante el evento, en tandas. 180°C, 3–4 min.</td></tr>
+          <tr><td>Papas arrugadas con mojo picón</td><td>Patata brava congelada (reaprovechada de "patatas bravas")</td><td>Durante el evento. Freír y bañar en mojo picón al servir.</td></tr>
         </tbody>
       </table>
-      <div style="margin-top:1rem;padding:0.75rem 1rem;background:var(--gray-50);border-left:2px solid var(--gray-200);font-size:12px;color:var(--gray-600)"><strong>Material necesario:</strong> Freidoras o sartenes grandes, aceite de freír (6 botes 5 L), leche (para crema catalana), cortador de jamón</div>
+      <div style="font-size:11px;color:var(--gray-400);margin-bottom:1.5rem">Mínimo <strong>3 freidoras en simultáneo</strong> — coordinar zonas y aceite (5–6 garrafas de 5 L doble rendimiento).</div>
+
+      <div class="section-subtitle">Horno / tostadora</div>
+      <table class="data-table" style="margin-bottom:1.5rem">
+        <thead><tr><th>Plato</th><th>Producto real</th><th>Cuándo</th></tr></thead>
+        <tbody>
+          <tr><td>Torreznos</td><td>Torrezno de Soria, ya cocinado</td><td>Recalentar en horno antes del pase, para que crocantice.</td></tr>
+          <tr><td>Empanada</td><td>Empanada de hojaldre de atún</td><td>Hornear o solo calentar — <span class="tbd">confirmar con proveedor si viene cruda u horneada</span>. Cortar en piezas justo antes del pase.</td></tr>
+          <tr><td>Pan tumaca</td><td>Pan de cristal</td><td>Tostar por tandas durante el evento, montar al momento (se enfría rápido).</td></tr>
+        </tbody>
+      </table>
+
+      <div class="section-subtitle">Plancha / sartén</div>
+      <table class="data-table" style="margin-bottom:1.5rem">
+        <thead><tr><th>Plato</th><th>Producto real</th><th>Cuándo</th></tr></thead>
+        <tbody>
+          <tr><td>Pulpo (potón)</td><td>Rodaja de potón ya cocida</td><td>Calentar al momento del pase con AOVE, aliñar con pimentón al servir.</td></tr>
+          <tr><td>Chistorra</td><td>Chistorra cruda en paquete</td><td>Freír durante el evento, mantener caliente en chafer o cubeta.</td></tr>
+          <tr><td>Morcilla</td><td>Morcilla de Burgos</td><td>Calentar en sartén sin aceite (suelta grasa propia), durante el evento.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="section-subtitle">Frío / sin cocción</div>
+      <table class="data-table" style="margin-bottom:1.25rem">
+        <thead><tr><th>Plato</th><th>Producto real</th><th>Cuándo montar</th></tr></thead>
+        <tbody>
+          <tr><td>Gildas</td><td>Ya montadas, cubo con anchoa</td><td>Escurrir y servir el mismo día.</td></tr>
+          <tr><td>Pintxo Donostiarra</td><td>Producto ya montado</td><td>Descongelar/atemperar según proveedor, emplatar el mismo día.</td></tr>
+          <tr><td>Uvas y quesos</td><td>Queso garrotxa/aragonés + uva fresca</td><td>Cortar y montar en tabla 1–2 h antes.</td></tr>
+          <tr><td>Queso manchego</td><td>Pieza entera + membrillo</td><td>Cortar en láminas el mismo día.</td></tr>
+          <tr><td>Jamón</td><td>Jamón cebo 50% ibérico</td><td>Corte en vivo durante el evento — parte del espectáculo del puesto.</td></tr>
+          <tr><td>Marineras murcianas</td><td>Ensaladilla + rosquilla + anchoa</td><td>Montar máx. 1–2 h antes (la rosquilla se humedece). Mantener en frío.</td></tr>
+          <tr><td>Patatas Lays</td><td>Bolsa de patatas fritas</td><td>Abrir y servir el mismo día, sin antelación necesaria.</td></tr>
+          <tr><td>Mejillones en escabeche</td><td>Lata de conserva</td><td>Abrir el mismo día, mantener en frío hasta el pase.</td></tr>
+          <tr><td>Gazpacho</td><td>Botella, gazpacho tradicional</td><td>Mantener muy frío en hielera hasta el pase.</td></tr>
+          <tr><td>Tortilla de patata con cebolla</td><td>Tortilla ya elaborada, comprada</td><td>Cortar el mismo día, servir a temperatura ambiente.</td></tr>
+          <tr><td>Sobrasada con tosta</td><td>Sobrasada + minitosta ya tostada</td><td>Atemperar sobrasada, untar al momento.</td></tr>
+          <tr><td>Ensaimadas</td><td>Ensaimada ya horneada</td><td>Cortar en trozos y espolvorear azúcar el mismo día.</td></tr>
+          <tr><td>Buñuelos nata</td><td>Bolsa lista para consumir</td><td>Emplatar directamente, sin preparación.</td></tr>
+          <tr><td>Rebujito · Sidra · Tinto de verano</td><td>Vino fino + sprite / sidra / tinto de verano</td><td>Montar con hielo en el momento de servir.</td></tr>
+        </tbody>
+      </table>
+
+      <div style="padding:0.75rem 1rem;background:var(--gray-50);border-left:2px solid var(--gray-200);font-size:12px;color:var(--gray-600)"><strong>Material necesario:</strong> 3 freidoras (mínimo), horno o tostadora para pan tumaca/empanada/torreznos, plancha o sartenes grandes, cortador de jamón, aceite de freír (5–6 garrafas de 5 L), aceite de oliva (2–3 L), hieleras para los puestos de frío.</div>
     </div>
 
     <div class="section-block" id="spanish-puestecitos">

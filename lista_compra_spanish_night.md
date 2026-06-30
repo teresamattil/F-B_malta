@@ -1,33 +1,31 @@
 # Lista de la compra · Spanish Night
 560 personas · ~350 porciones por ítem
+Cantidades calculadas sobre el formato real de producto (ver detalle_spanish_night.md)
 
 ---
 
 ## GALICIA Y ASTURIAS
 
-**Pulpo**
-- 4–5 pulpos enteros (2 kg c/u)
+**Pulpo (potón)**
+- 6 bolsas de rodaja de potón cocida (800 g c/u)
 - Aceite de oliva virgen extra
 - Pimentón dulce
 
 **Empanada**
-- 18 empanadas gallegas grandes (compradas)
+- 12 empanadas de hojaldre de atún (30 trozos/empanada)
 
 ---
 
 ## PAÍS VASCO, NAVARRA Y CANTABRIA
 
-**Gildas** *(ya presupuestadas)*
-- 600 gildas (50 packs × 12)
+**Gildas**
+- 7 cubos Albizabal (836 g, 50 uds/cubo)
 
 **Chistorra**
-- 70 chistorras (~10–12 kg)
+- 12 paquetes Chistorra Floristán (1 kg, ≈60 trozos/paquete)
 
-**Pintxos de txaka**
-- 8 kg txaka
-- 5–6 baguettes
-- 1 kg mayonesa
-- 2–3 limones
+**Pintxo Donostiarra** *(producto ya montado, sustituye al txaka casero)*
+- 8 packs (1,2 kg, ≈45 pax/pack)
 
 ---
 
@@ -43,97 +41,87 @@
 - 20–25 tomates maduros
 - 2 cabezas de ajo
 - Aceite de oliva virgen extra
-- Sal en escamas
 
 ---
 
 ## MADRID Y CASTILLA-LA MANCHA
 
 **Queso manchego**
-- 10 kg queso manchego curado (3–4 piezas)
+- 4 piezas de queso manchego entero (Mercadona)
 - 2–3 kg membrillo
 - 350 regañás o tostadas
 
 **Bocata de calamares**
-- 15 kg calamar en anillas congelado
-- 350 medias noches mini
-- 2 kg harina de rebozar
-- 3-4 kg mayonesa
+- 7 bolsas calamares a la romana congelados (2 kg c/u, ya rebozados)
+- 44 packs medias noches (264 g/pack) *(estimación — confirmar uds/pack)*
+- 1 bidón mayonesa (5 L) *(compartido con otros usos)*
 - Aceite de freír
 
 ---
 
 ## CASTILLA Y LEÓN Y EXTREMADURA
 
-**Torreznos** *(ya presupuestados)*
-- 10 packs × 60 trozos = 600 trozos
+**Torreznos**
+- 12 packs torrezno de Soria (20 uds, ≈60 trozos/pack)
 
 **Morcilla**
-- 80 morcillas de Burgos (~20 kg)
+- 24 packs morcilla de Burgos (2 piezas/pack, ≈30 trozos/pack)
 
 **Jamón**
-- 2–3 jamones enteros (según donación Luque)
-- Pan tostado (si se sirve con pan)
+- 2–3 jamones cebo 50% ibérico (según donación Luque)
 
 ---
 
 ## VALENCIA Y MURCIA
 
 **Marineras murcianas**
-- 700 picos ovales (el pico murciano)
-- 5 kg patata (para ensaladilla)
-- 2 kg zanahoria
-- 500 g guisantes cocidos
-- 1,5 kg mayonesa
-- 3–4 latas de atún
+- 22 botes ensaladilla rusa con atún (1 kg, ≈33 marineras/bote)
+- 7 paquetes rosquillas tipo colín (1.000 g/paquete)
 - 15 latas de anchoas (~50 uds/lata)
-- Patatas Lays — 18 bolsas grandes (300 g)
-- Mejillones en escabeche — 45 latas medianas (~16 uds/lata) ó 28 latas grandes (~25 uds/lata)
+
+**Patatas Lays**
+- 18 bolsas grandes (300 g)
+
+**Mejillones en escabeche**
+- 45 latas medianas (~16 uds/lata) ó 28 latas grandes (~25 uds/lata)
 
 ---
 
 ## ANDALUCÍA
 
 **Gazpacho**
-- 35 botellas de gazpacho de 1 L (Alvalle o similar)
-- 350 vasitos de plástico de 100 ml
+- 35 botellas de gazpacho tradicional (1 L, ≈10 vasos/botella)
 
-**Tortilla de patata**
-- 180 huevos
-- 10 kg patatas
-- Aceite de oliva
-- Sal
+**Tortilla de patata con cebolla** *(comprada ya hecha)*
+- 14 tortillas (1 = 25 trozos)
 
 **Croquetas**
-- 25 bolsas de 1 kg de croquetas de jamón congeladas
+- 4 bolsas mini croquetas de jamón congeladas (200 mini/bolsa)
 - Aceite de freír
 
 ---
 
 ## BALEARES, CANARIAS, CEUTA Y MELILLA
 
-**Sobrasada con tosta** *(tostas ya presupuestadas)*
-- 7 kg sobrasada
-- 360 tostas *(ya presupuestadas)*
+**Sobrasada con tosta**
+- 3 botes sobrasada (1,5 kg, ≈120 panecillos/bote)
+- 3 packs Minitosta Diatosta (120 g, 6 uds) *(estimación — verificar formato exacto)*
 - Miel (opcional)
 
 **Papas arrugadas con mojo picón**
-- 16 kg patatas pequeñas (papa canaria o similar)
-- 5 kg mojo picón rojo canario
-- Sal gruesa
+- 8 bolsas de patata brava congelada (2,5 kg, ≈175 trozos/bolsa) *(reaprovechada de "patatas bravas", no papa canaria entera)*
+- 27 botes mojo picón (200 g/bote) *(formato pequeño — valorar granel)*
 
 ---
 
 ## POSTRES
 
-**Ensaimadas** *(ya presupuestadas)*
-- 8 packs × 18 ensaimadas = 144 uds
+**Ensaimadas**
+- 8 packs ensaimada (900 g, 18 uds/pack, ≈72 trocitos/pack)
 - Azúcar glas
 
-**Buñuelos de nata y crema (profiteroles)**
-- 45 packs profiteroles congelados (~24 uds/pack) = ~1.050 uds
-- 3–4 kg salsa de chocolate
-- *(servir fríos con chocolate caliente encima)*
+**Buñuelos nata** *(listos para consumir, no se elaboran)*
+- 18 bolsas buñuelos de nata (1 kg/bolsa)
 
 ---
 
@@ -144,4 +132,6 @@
 - Vasitos de papel/plástico pequeños (×1.500)
 - Bolsitas de papel para fritos (×700)
 - Papel absorbente (varios rollos)
-- Aceite de freír (mín. 20–25 L en total para todos los puestos fritos)
+- Aceite para freír: 5–6 garrafas de 5 L (doble rendimiento) — bocata de calamares, croquetas y papas arrugadas
+- Aceite de oliva: 2–3 L (pulpo y pan tumaca)
+- Pimentón dulce: 1 bolsa de 800 g
