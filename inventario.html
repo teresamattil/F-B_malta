@@ -60,39 +60,55 @@ function mapEvent(s) {
 }
 function mapStatus(s) {
   const l = (s||'').toLowerCase();
-  if (l.includes('comprado'))       return 'Comprado';
-  if (l.includes('donaci'))         return 'Donación';
-  if (l.includes('cancel'))         return 'Cancelado';
+  if (l.includes('comprado')) return 'Comprado';
+  if (l.includes('donaci'))   return 'Donación';
+  if (l.includes('cancel'))   return 'Cancelado';
   return 'Pendiente';
 }
 function parseCSV(text) {
-  const lines = text.trim().split('\n');
+  const lines = text.trim().split(/\r?\n/);
+  const headers = lines[0].split(';');
+  const idx = k => headers.findIndex(h => h.trim() === k);
+  const iEvento  = idx('Nombre Evento');
+  const iEstado  = idx('Comprado?');
+  const iTipo    = idx('Consumible o material');
+  const iProd    = idx('Producto');
+  const iDesc    = idx('Descripción');
+  const iUnidad  = idx('Unidad Real');
+  const iPUnit   = idx('Precio/Unidad Real');
+  const iPReal   = idx('Precio Real (€)');
+  const iLink    = idx('Link Compra');
+  const iProvee  = idx('Proveedor');
+  const iNotas   = idx('Notas');
   return lines.slice(1).filter(l => l.trim()).map(line => {
     const c = line.split(';');
     const g = i => (c[i]||'').trim();
     return {
-      e:    mapEvent(g(0)),
-      s:    mapStatus(g(1)),
-      a:    g(3),
-      desc: g(5),
-      pr:   g(12),
-      ti:   /material/i.test(g(2)) ? 'Objeto' : 'Alimento',
-      u:    g(7),
-      p:    parsePrice(g(8)),
-      t:    parsePrice(g(9)),
-      n:    g(14),
-      link: g(11),
+      e:    mapEvent(g(iEvento)),
+      s:    mapStatus(g(iEstado)),
+      a:    g(iProd),
+      desc: g(iDesc),
+      pr:   g(iProvee),
+      ti:   /material/i.test(g(iTipo)) ? 'Objeto' : 'Alimento',
+      u:    g(iUnidad),
+      p:    parsePrice(g(iPUnit)),
+      t:    parsePrice(g(iPReal)),
+      n:    g(iNotas),
+      link: g(iLink),
     };
   });
 }
 
-async function loadCSV() {
-  document.getElementById('inv-container').innerHTML = '<div class="inv-loading">Cargando inventario…</div>';
-  const resp = await fetch('./excel_ult_version.csv');
-  const text = await resp.text();
-  INV_DATA = parseCSV(text);
-  renderInv('all');
-}
+fetch('./excel_ult_version.csv')
+  .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.text(); })
+  .then(text => { INV_DATA = parseCSV(text); renderInv('all'); })
+  .catch(err => {
+    document.getElementById('inv-container').innerHTML =
+      `<div class="inv-loading" style="color:var(--red)">
+        Error cargando CSV: ${err.message}<br>
+        <span style="font-size:11px;opacity:.7">Abre el archivo desde un servidor local (VS Code → botón "Go Live").</span>
+      </div>`;
+  });
 
 function invFmt(n) {
   return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';
@@ -165,10 +181,6 @@ function renderInv(filter) {
   c.innerHTML = h;
 }
 
-loadCSV().catch(err => {
-  document.getElementById('inv-container').innerHTML =
-    `<div class="inv-loading" style="color:var(--red)">Error cargando CSV: ${err.message}</div>`;
-});
 </script>
 </body>
 </html>
