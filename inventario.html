@@ -47,6 +47,7 @@
 </style>
 <script>
 const INV_LABELS = {spanish:'Spanish Night', international:'International Nights', comida:'Comida UNAV', asado:'Asado Final'};
+const INV_BUDGET = {all:24098.45, spanish:10175.73, international:2057.92, asado:6204.80, comida:5660.00};
 let INV_DATA = [];
 
 function parsePrice(s) {
@@ -131,7 +132,33 @@ function renderInv(filter) {
   });
   h += '</div>';
 
-  h += `<div class="total-bar" style="margin-bottom:1.5rem"><div><div class="total-bar-label">${filter==='all'?'Total general estimado':INV_LABELS[filter]}</div></div><div class="total-bar-amount">${invFmt(gt)}</div></div>`;
+  const budget  = INV_BUDGET[filter] || 0;
+  const pct     = budget ? Math.min(gt / budget * 100, 100) : 0;
+  const margen  = budget - gt;
+  const barColor = pct >= 95 ? '#dc2626' : pct >= 80 ? '#d97706' : '#16a34a';
+  h += `
+  <div class="total-bar" style="margin-bottom:0.75rem">
+    <div>
+      <div class="total-bar-label">${filter==='all'?'Total general estimado':INV_LABELS[filter]}</div>
+      <div style="font-size:11px;color:var(--gray-400);margin-top:2px">Presupuesto: <strong style="color:var(--gray-700)">${invFmt(budget)}</strong></div>
+    </div>
+    <div style="text-align:right">
+      <div class="total-bar-amount">${invFmt(gt)}</div>
+      <div style="font-size:11px;margin-top:2px;color:${margen>=0?'#16a34a':'#dc2626'};font-weight:600">
+        ${margen>=0?'▼ Margen: '+invFmt(margen):'▲ Excedido: '+invFmt(-margen)}
+      </div>
+    </div>
+  </div>
+  <div style="margin-bottom:1.5rem">
+    <div style="background:var(--gray-100);border-radius:99px;height:6px;overflow:hidden">
+      <div style="height:100%;width:${pct.toFixed(1)}%;background:${barColor};border-radius:99px;transition:width .4s"></div>
+    </div>
+    <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--gray-400);margin-top:4px">
+      <span>0 €</span>
+      <span style="color:${barColor};font-weight:600">${pct.toFixed(1)}% usado</span>
+      <span>${invFmt(budget)}</span>
+    </div>
+  </div>`;
 
   h += '<div class="inv-table-wrap">';
   h += `<table class="inv-table"><thead><tr>
