@@ -41,9 +41,61 @@
 
 <div id="inv-container" style="padding: 2rem 2rem 4rem;"></div>
 
+<style>
+.status-cancelado { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; text-decoration: line-through; opacity: .7; }
+.inv-loading { padding: 3rem 2rem; color: var(--gray-400); font-size: 13px; }
+</style>
 <script>
 const INV_LABELS = {spanish:'Spanish Night', international:'International Nights', comida:'Comida UNAV', asado:'Asado Final'};
-const INV_DATA = [
+let INV_DATA = [];
+
+function parsePrice(s) {
+  return parseFloat((s||'').replace(/[€\s]/g,'').replace(/,/g,'')) || 0;
+}
+function mapEvent(s) {
+  if (/spanish/i.test(s))       return 'spanish';
+  if (/international/i.test(s)) return 'international';
+  if (/asado/i.test(s))         return 'asado';
+  return 'comida';
+}
+function mapStatus(s) {
+  const l = (s||'').toLowerCase();
+  if (l.includes('comprado'))       return 'Comprado';
+  if (l.includes('donaci'))         return 'Donación';
+  if (l.includes('cancel'))         return 'Cancelado';
+  return 'Pendiente';
+}
+function parseCSV(text) {
+  const lines = text.trim().split('\n');
+  return lines.slice(1).filter(l => l.trim()).map(line => {
+    const c = line.split(';');
+    const g = i => (c[i]||'').trim();
+    return {
+      e:    mapEvent(g(0)),
+      s:    mapStatus(g(1)),
+      a:    g(3),
+      desc: g(5),
+      pr:   g(12),
+      ti:   /material/i.test(g(2)) ? 'Objeto' : 'Alimento',
+      u:    g(7),
+      p:    parsePrice(g(8)),
+      t:    parsePrice(g(9)),
+      n:    g(14),
+      link: g(11),
+    };
+  });
+}
+
+async function loadCSV() {
+  document.getElementById('inv-container').innerHTML = '<div class="inv-loading">Cargando inventario…</div>';
+  const resp = await fetch('./excel_ult_version.csv');
+  const text = await resp.text();
+  INV_DATA = parseCSV(text);
+  renderInv('all');
+}
+
+// ── legacy array removed — data loaded from excel_ult_version.csv ──
+const _LEGACY = [
   // ── Spanish Night ──────────────────────────────────────────
   {e:'spanish',s:'Pendiente',a:'Empanadas hojaldre atún (30 trozos/ud)',pr:'Makro',ti:'Alimento',u:'19 uds',p:6.63,t:125.97,n:''},
   {e:'spanish',s:'Pendiente',a:'Bolsas Pulpo (potón cocido 800g)',pr:'Makro',ti:'Alimento',u:'9 uds',p:12.09,t:108.81,n:''},
@@ -103,36 +155,7 @@ const INV_DATA = [
   {e:'spanish',s:'Pendiente',a:'Hielo Bolsas 2kg',pr:'Makro',ti:'Alimento',u:'25 uds',p:0.95,t:23.75,n:'En revisión'},
   {e:'spanish',s:'Pendiente',a:'Jarabe de fruta granizados',pr:'Amazon',ti:'Alimento',u:'20 uds',p:8.40,t:168.00,n:'En revisión'},
   {e:'spanish',s:'Pendiente',a:'Aderezo puestecitos',pr:'Pendiente',ti:'Objeto',u:'1 ud',p:400.00,t:400.00,n:'Pendiente definir'},
-  // ── International Nights ───────────────────────────────────
-  {e:'international',s:'Pendiente',a:'Frescos por país (estimado)',pr:'Varios',ti:'Alimento',u:'110 uds',p:10.00,t:1100.00,n:'Pendiente confirmar con países'},
-  {e:'international',s:'Pendiente',a:'Hielo Bolsas 2kg',pr:'Makro',ti:'Alimento',u:'30 uds',p:1.70,t:51.00,n:''},
-  {e:'international',s:'Pendiente',a:'Cucharas de cocina',pr:'Makro',ti:'Objeto',u:'11 uds',p:2.99,t:32.89,n:'Pdte. confirmar si reutilizable de Javier'},
-  {e:'international',s:'Pendiente',a:'Set Cuchillos cortar 15 uds',pr:'Makro',ti:'Objeto',u:'2 uds',p:24.99,t:49.98,n:'Pdte. confirmar si reutilizable de Javier'},
-  {e:'international',s:'Pendiente',a:'Set Tablas de cortar 6 uds',pr:'Makro',ti:'Objeto',u:'2 uds',p:12.33,t:24.66,n:'Pdte. confirmar si reutilizable de Javier'},
-  {e:'international',s:'Pendiente',a:'Set Tenedores cocina 12 uds',pr:'Makro',ti:'Objeto',u:'1 ud',p:3.09,t:3.09,n:'Pdte. confirmar si reutilizable de Javier'},
-  {e:'international',s:'Pendiente',a:'Cazo de puchero',pr:'—',ti:'Objeto',u:'4 uds',p:0,t:0,n:'Pendiente precio'},
-  {e:'international',s:'Pendiente',a:'Espátulas',pr:'Makro',ti:'Objeto',u:'4 uds',p:1.49,t:5.96,n:'Pdte. confirmar si reutilizable de Javier'},
-  {e:'international',s:'Pendiente',a:'Cacerolas',pr:'Makro',ti:'Objeto',u:'2 uds',p:43.79,t:87.58,n:'Pdte. confirmar si reutilizable de Javier'},
-  {e:'international',s:'Pendiente',a:'Sartenes',pr:'Makro',ti:'Objeto',u:'2 uds',p:61.15,t:122.30,n:'Pdte. confirmar si reutilizable de Javier'},
-  {e:'international',s:'Pendiente',a:'Mini Pimer Braun',pr:'Amazon',ti:'Objeto',u:'1 ud',p:34.00,t:34.00,n:'Pdte. confirmar si reutilizable de Javier'},
-  {e:'international',s:'Pendiente',a:'Hornillo Gas/Camping Gas',pr:'Amazon',ti:'Objeto',u:'2 uds',p:139.99,t:279.98,n:'Pdte. confirmar si reutilizable de Javier'},
-  {e:'international',s:'Pendiente',a:'Guirnaldas banderas países',pr:'Amazon',ti:'Objeto',u:'4 uds',p:10.00,t:40.00,n:''},
-  {e:'international',s:'Pendiente',a:'Set Banderitas comida por país 100 uds',pr:'Amazon',ti:'Objeto',u:'22 uds',p:6.59,t:144.98,n:''},
-  {e:'international',s:'Pendiente',a:'Cajas de almacenamiento transporte',pr:'Amazon',ti:'Objeto',u:'2 uds',p:20.00,t:40.00,n:''},
-  // ── Comida UNAV ────────────────────────────────────────────
-  {e:'comida',s:'Pendiente',a:'Catering UNAV',pr:'Pendiente',ti:'Alimento',u:'566 pax',p:10.00,t:5660.00,n:''},
-  // ── Asado Final ────────────────────────────────────────────
-  {e:'asado',s:'Pendiente',a:'Paella Mixta / Fideuá de Marisco (catering 566 pax, incluye desplazamiento+menaje)',pr:'Catering',ti:'Alimento',u:'566 pax',p:6.25,t:3537.50,n:''},
-  {e:'asado',s:'Pendiente',a:'Hielo Bolsas 2kg',pr:'Makro',ti:'Alimento',u:'115 uds',p:0.95,t:109.25,n:''},
-  {e:'asado',s:'Pendiente',a:'Cucharillas desechables',pr:'Temu',ti:'Objeto',u:'660 uds',p:0.032,t:21.12,n:'Pdte. confirmar si cubre catering'},
-  {e:'asado',s:'Comprado',a:'Servilletas papel decoradas',pr:'Temu',ti:'Objeto',u:'1200 uds',p:0.072,t:86.40,n:'Pdte. confirmar si cubre catering'},
-  {e:'asado',s:'Comprado',a:'Vasos Plástico 300ml reutilizables',pr:'Makro',ti:'Objeto',u:'600 uds',p:0.31,t:186.00,n:'Pdte. confirmar si cubre catering'},
-  {e:'asado',s:'Donación',a:'Manteles desechables de colores (8m, 14 uds)',pr:'Temu',ti:'Objeto',u:'14 uds',p:40.32,t:564.48,n:''},
-  {e:'asado',s:'Pendiente',a:'Decoración Centros de Mesa (estimado)',pr:'Pendiente',ti:'Objeto',u:'1 partida',p:400.00,t:400.00,n:''},
-  {e:'asado',s:'Pendiente',a:'Brownie de Chocolate (1/persona)',pr:'Makro',ti:'Alimento',u:'566 uds',p:0.84,t:475.44,n:'Pendiente confirmar donación Frigo'},
-  {e:'asado',s:'Pendiente',a:'Helado de Vainilla tarrina (~57L)',pr:'Makro',ti:'Alimento',u:'566 pax',p:1.25,t:707.50,n:'Pendiente confirmar donación Frigo'},
-  {e:'asado',s:'Pendiente',a:'Cucharillas Postre',pr:'Temu',ti:'Objeto',u:'566 uds',p:0.032,t:18.11,n:'Pdte. confirmar donación Frigo'},
-];
+]; // end legacy (unused)
 
 function invFmt(n) {
   return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';
@@ -165,8 +188,17 @@ function renderInv(filter) {
   </tr></thead><tbody>`;
 
   const statusBadge = s => {
-    const cls = s==='Comprado' ? 'status-comprado' : s==='Donación' ? 'status-donacion' : 'status-pendiente';
+    const cls = s==='Comprado'  ? 'status-comprado'
+              : s==='Donación'  ? 'status-donacion'
+              : s==='Cancelado' ? 'status-cancelado'
+              : 'status-pendiente';
     return `<span class="status ${cls}">${s||'Pendiente'}</span>`;
+  };
+  const artCell = r => {
+    const name = r.link && r.link.startsWith('http')
+      ? `<a href="${r.link}" target="_blank" style="color:inherit;text-decoration:underline dotted">${r.a}</a>`
+      : r.a;
+    return `<td>${name}</td>`;
   };
 
   events.forEach(ev => {
@@ -176,11 +208,13 @@ function renderInv(filter) {
     evRows.forEach(r => {
       const isRed = r.n && (r.n.includes('En revisión')||r.n.includes('Pendiente')||r.n.includes('Pdte.'));
       const ns = `style="text-align:left${isRed?';color:var(--red)':''}"`;
-      h += `<tr><td>${INV_LABELS[r.e]}</td><td>${statusBadge(r.s)}</td><td>${r.a}</td><td></td><td>${r.pr}</td>
+      const cancelled = r.s === 'Cancelado';
+      const rowStyle = cancelled ? ' style="opacity:.5"' : '';
+      h += `<tr${rowStyle}><td>${INV_LABELS[r.e]}</td><td>${statusBadge(r.s)}</td>${artCell(r)}<td style="color:var(--gray-500);font-size:11px">${r.desc}</td><td>${r.pr}</td>
         <td><span class="tag ${r.ti==='Alimento'?'tag-a':'tag-o'}">${r.ti}</span></td>
-        <td style="text-align:right">${r.u}</td>
-        <td style="text-align:right">${invFmtU(r.p)}</td>
-        <td style="text-align:right">${invFmt(r.t)}</td>
+        <td style="text-align:right">${r.u||'—'}</td>
+        <td style="text-align:right">${r.p ? invFmtU(r.p) : '—'}</td>
+        <td style="text-align:right">${cancelled ? '<span style="text-decoration:line-through;opacity:.5">'+invFmt(r.t)+'</span>' : invFmt(r.t)}</td>
         <td ${ns}>${r.n}</td></tr>`;
     });
     h += `<tr class="inv-total"><td colspan="8">Subtotal ${INV_LABELS[ev]}</td><td style="text-align:right">${invFmt(sub)}</td><td></td></tr>`;
@@ -194,7 +228,10 @@ function renderInv(filter) {
   c.innerHTML = h;
 }
 
-renderInv('all');
+loadCSV().catch(err => {
+  document.getElementById('inv-container').innerHTML =
+    `<div class="inv-loading" style="color:var(--red)">Error cargando CSV: ${err.message}</div>`;
+});
 </script>
 </body>
 </html>
