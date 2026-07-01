@@ -51,9 +51,10 @@ Basado en los productos reales de compra (no genéricos)
 - **Servicio:** Tablas de queso y uvas, selfservice. Palillos y cuchillos de queso al lado.
 
 ### Pan tumaca
-- **Preparación:** Tostar rodajas de pan de cristal. Frotar con ajo y medio tomate maduro. Regar con AOVE y sal en escamas.
-- **Cantidad:** 350 rodajas → **5–6 barras de pan de cristal** + **20–25 tomates maduros** + 2 cabezas de ajo + AOVE.
-- **Servicio:** 1 rodaja por persona, tostar y montar por tandas para que no se enfríe.
+- **Producto real:** Tostas ya tostadas (compradas) + tumaca comprado. Sin cocción.
+- **Preparación:** Ninguna cocción. Untar tumaca sobre la tosta al momento de servir. Regar con AOVE y sal en escamas.
+- **Cantidad:** **350 tostas** (compradas, ya tostadas) + **tumaca comprado** (~350 porciones) + AOVE.
+- **Servicio:** 1 tosta/persona, montar al momento. No necesita tostadora.
 
 ---
 
@@ -197,7 +198,7 @@ Usado en: Pulpo. Una bolsa cubre de sobra.
 Estos elementos tienen preparación y cantidad calculadas arriba como si ya estuvieran presupuestados, pero **no aparecen en la hoja de compra oficial** — hay que añadirlos al pedido:
 
 1. **Aragón/Cataluña** — queso garrotxa/aragonés (~9 kg) + uvas (10–12 racimos).
-2. **Pan tumaca** — pan de cristal (5–6 barras), tomates (20–25), ajo (2 cabezas), AOVE.
+2. **Pan tumaca** — tostas ya tostadas compradas (~350 uds) + tumaca comprado.
 3. **Membrillo + regañás** (queso manchego) — ~2–3 kg membrillo + 350 tostadas.
 4. **Anchoas para marineras** — ~15 latas de ~50 unidades/lata.
 5. **Patatas Lays** (Valencia) — 18 bolsas de 300 g.
@@ -217,9 +218,9 @@ Bocata de calamares + Croquetas + Papas arrugadas = **mínimo 3 freidoras en sim
 
 ### Método de cocinado (ver tabla completa en spanish_night.html, sección Cocina)
 - **Frito (freidora):** Bocata de calamares, Croquetas, Papas arrugadas con mojo picón
-- **Horno/tostadora:** Torreznos (recalentar), Empanada (hornear o calentar), Pan tumaca (tostar)
+- **Horno/tostadora:** Torreznos (recalentar), Empanada (hornear o calentar)
 - **Plancha/sartén:** Pulpo (calentar), Chistorra (freír), Morcilla (calentar)
-- **Frío/sin cocción:** Gildas, Pintxo Donostiarra, Uvas y quesos, Queso manchego, Jamón, Marineras murcianas, Patatas Lays, Mejillones en escabeche, Gazpacho, Tortilla de patata, Sobrasada con tosta, Ensaimadas, Buñuelos nata, Rebujito, Sidra, Tinto de verano
+- **Frío/sin cocción:** Gildas, Pintxo Donostiarra, Uvas y quesos, Pan tumaca (tostas + tumaca comprado), Queso manchego, Jamón, Marineras murcianas, Patatas Lays, Mejillones en escabeche, Gazpacho, Tortilla de patata, Sobrasada con tosta, Ensaimadas, Buñuelos nata, Rebujito, Sidra, Tinto de verano
 
 ### Orden recomendado del recorrido
 Salados primero, postres al final. Ensaimadas y buñuelos nata juntos en el último tramo como remate dulce.

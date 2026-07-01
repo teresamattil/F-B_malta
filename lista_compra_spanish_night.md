@@ -36,11 +36,11 @@ Cantidades calculadas sobre el formato real de producto (ver detalle_spanish_nig
 - 4 kg queso aragonés (p.ej. Tronchón)
 - 10–12 racimos de uva
 
-**Pan tumaca**
-- 5–6 barras de pan de cristal
-- 20–25 tomates maduros
-- 2 cabezas de ajo
+**Pan tumaca** *(sin cocción — producto comprado)*
+- Tostas ya tostadas compradas (~350 uds)
+- Tumaca comprado (tomate para pan)
 - Aceite de oliva virgen extra
+- Sal en escamas
 
 ---
 
