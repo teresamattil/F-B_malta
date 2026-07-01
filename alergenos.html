@@ -51,6 +51,9 @@
   </div>
 
   <div class="section-title">Restricciones por evento</div>
+  <div style="font-size:12px;color:var(--gray-500);margin-bottom:1rem;padding:0.6rem 0.9rem;background:var(--gray-50);border-left:2px solid var(--gray-200)">
+    Ingredientes paella: <strong>Pollo · Conejo · Costilla de cerdo · Pimientos · Cebolla · Judía verde · Alcachofa · Guisantes · Arroz</strong>
+  </div>
   <table class="alg-table">
     <thead>
       <tr>
@@ -61,54 +64,69 @@
     </thead>
     <tbody>
       <tr>
-        <td>Gluten / celiaquía</td>
-        <td>20</td>
-        <td><span class="risk risk-critico">🔴 Crítico</span><br><span style="font-size:11px;color:var(--gray-400)">Reacción severa posible</span></td>
-      </tr>
-      <tr>
-        <td>Lácteos (dairy-free, lactose-free, no cow milk)</td>
-        <td>14</td>
-        <td><span class="risk risk-bajo">🟡 Bajo</span><br><span style="font-size:11px;color:var(--gray-400)">No aplica en paella tradicional</span></td>
-      </tr>
-      <tr>
         <td>Vegetariano</td>
         <td>9</td>
-        <td><span class="risk risk-moderado">🟠 Moderado</span><br><span style="font-size:11px;color:var(--gray-400)">Paella mixta lleva carne y marisco</span></td>
-      </tr>
-      <tr>
-        <td>Frutos secos (peanuts, tree nuts, hazelnut, sesame, cashew, soy)</td>
-        <td>6</td>
-        <td><span class="risk risk-bajo">🟡 Bajo</span><br><span style="font-size:11px;color:var(--gray-400)">No suele llevar, vigilar caldo</span></td>
-      </tr>
-      <tr>
-        <td>Sin pescado / marisco / gambas</td>
-        <td>5</td>
-        <td><span class="risk risk-critico">🔴 Crítico</span><br><span style="font-size:11px;color:var(--gray-400)">Ingrediente principal de paella mixta</span></td>
+        <td><span class="risk risk-critico">🔴 Crítico</span><br><span style="font-size:11px;color:var(--gray-400)">Lleva pollo, conejo y cerdo — necesita menú alternativo</span></td>
       </tr>
       <tr>
         <td>Sin carne / vegano</td>
         <td>1</td>
-        <td><span class="risk risk-moderado">🟠 Moderado</span><br><span style="font-size:11px;color:var(--gray-400)">Paella mixta lleva carne</span></td>
-      </tr>
-      <tr>
-        <td>Diabético / bajo en azúcar / bajo en carbos</td>
-        <td>7</td>
-        <td><span class="risk risk-moderado">🟠 Moderado</span><br><span style="font-size:11px;color:var(--gray-400)">Arroz es alto en carbohidratos</span></td>
-      </tr>
-      <tr>
-        <td>Sin setas / champiñones / trufa</td>
-        <td>3</td>
-        <td><span class="risk risk-bajo">🟡 Bajo</span><br><span style="font-size:11px;color:var(--gray-400)">Depende de la receta</span></td>
+        <td><span class="risk risk-critico">🔴 Crítico</span><br><span style="font-size:11px;color:var(--gray-400)">Lleva carne — necesita menú alternativo</span></td>
       </tr>
       <tr>
         <td>Sin cerdo</td>
         <td>2</td>
-        <td><span class="risk risk-bajo">🟡 Bajo</span><br><span style="font-size:11px;color:var(--gray-400)">Depende de los ingredientes de la paella</span></td>
+        <td><span class="risk risk-critico">🔴 Crítico</span><br><span style="font-size:11px;color:var(--gray-400)">Lleva costilla de cerdo — necesita menú alternativo</span></td>
+      </tr>
+      <tr>
+        <td>Diabético / bajo en azúcar / bajo en carbos</td>
+        <td>7</td>
+        <td><span class="risk risk-moderado">🟠 Moderado</span><br><span style="font-size:11px;color:var(--gray-400)">Arroz es alto en carbohidratos — informar, pero no hay alternativa necesaria</span></td>
       </tr>
       <tr>
         <td>Sin ajo</td>
         <td>1</td>
-        <td><span class="risk risk-moderado">🟠 Moderado</span><br><span style="font-size:11px;color:var(--gray-400)">El sofrito lleva ajo</span></td>
+        <td><span class="risk risk-bajo">🟡 Bajo</span><br><span style="font-size:11px;color:var(--gray-400)">Consultar con catering si el sofrito lleva ajo</span></td>
+      </tr>
+      <tr>
+        <td>Sin tomate</td>
+        <td>1</td>
+        <td><span class="risk risk-bajo">🟡 Bajo</span><br><span style="font-size:11px;color:var(--gray-400)">Consultar con catering si el sofrito lleva tomate</span></td>
+      </tr>
+      <tr>
+        <td>Sin féculas (patata, pan, pasta, arroz)</td>
+        <td>6</td>
+        <td><span class="risk risk-bajo">🟡 Bajo</span><br><span style="font-size:11px;color:var(--gray-400)">El arroz es la base — informar, restricción incompatible con el plato</span></td>
+      </tr>
+      <tr>
+        <td>Gluten / celiaquía</td>
+        <td>20</td>
+        <td><span class="risk risk-ok">🟢 OK</span><br><span style="font-size:11px;color:var(--gray-400)">Ingredientes naturalmente sin gluten — vigilar caldo y contaminación cruzada</span></td>
+      </tr>
+      <tr>
+        <td>Lácteos (dairy-free, lactose-free)</td>
+        <td>14</td>
+        <td><span class="risk risk-ok">🟢 OK</span><br><span style="font-size:11px;color:var(--gray-400)">No lleva lácteos</span></td>
+      </tr>
+      <tr>
+        <td>Sin pescado / marisco / gambas</td>
+        <td>5</td>
+        <td><span class="risk risk-ok">🟢 OK</span><br><span style="font-size:11px;color:var(--gray-400)">Paella de carne — no lleva marisco</span></td>
+      </tr>
+      <tr>
+        <td>Frutos secos (peanuts, tree nuts, hazelnut, sesame, cashew, soy)</td>
+        <td>6</td>
+        <td><span class="risk risk-ok">🟢 OK</span><br><span style="font-size:11px;color:var(--gray-400)">No lleva frutos secos</span></td>
+      </tr>
+      <tr>
+        <td>Sin setas / champiñones / trufa</td>
+        <td>3</td>
+        <td><span class="risk risk-ok">🟢 OK</span><br><span style="font-size:11px;color:var(--gray-400)">No lleva</span></td>
+      </tr>
+      <tr>
+        <td>Intolerancia al histamino</td>
+        <td>2</td>
+        <td><span class="risk risk-ok">🟢 OK</span><br><span style="font-size:11px;color:var(--gray-400)">Sin marisco — riesgo mínimo con estos ingredientes</span></td>
       </tr>
       <tr>
         <td>Sin maíz</td>
@@ -116,24 +134,9 @@
         <td><span class="risk risk-ok">🟢 OK</span><br><span style="font-size:11px;color:var(--gray-400)">No lleva</span></td>
       </tr>
       <tr>
-        <td>Sin tomate</td>
-        <td>1</td>
-        <td><span class="risk risk-moderado">🟠 Moderado</span><br><span style="font-size:11px;color:var(--gray-400)">El sofrito lleva tomate</span></td>
-      </tr>
-      <tr>
-        <td>Sin féculas (patata, pan, pasta, arroz)</td>
-        <td>6</td>
-        <td><span class="risk risk-critico">🔴 Crítico</span><br><span style="font-size:11px;color:var(--gray-400)">El arroz es la base de la paella</span></td>
-      </tr>
-      <tr>
-        <td>Intolerancia al histamino</td>
-        <td>2</td>
-        <td><span class="risk risk-critico">🔴 Crítico</span><br><span style="font-size:11px;color:var(--gray-400)">Marisco y tomate son altos en histamina</span></td>
-      </tr>
-      <tr>
-        <td>Otros puntuales (fresa, piña, aguacate, pomelo, judías…)</td>
+        <td>Otros puntuales (fresa, piña, aguacate, pomelo…)</td>
         <td>~7</td>
-        <td><span class="risk risk-ok">🟢 OK</span><br><span style="font-size:11px;color:var(--gray-400)">No aplica en paella</span></td>
+        <td><span class="risk risk-ok">🟢 OK</span><br><span style="font-size:11px;color:var(--gray-400)">No aplica</span></td>
       </tr>
     </tbody>
   </table>
