@@ -31,10 +31,8 @@ Cantidades calculadas sobre el formato real de producto (ver detalle_spanish_nig
 
 ## ARAGÓN, LA RIOJA Y CATALUÑA
 
-**Uvas y quesos**
-- 5 kg queso garrotxa (catalán)
-- 4 kg queso aragonés (p.ej. Tronchón)
-- 10–12 racimos de uva
+**Fuet**
+- 4 packs de 3 fuets (12 fuets en total)
 
 **Pan tumaca** *(sin cocción — producto comprado)*
 - Tostas ya tostadas compradas (~350 uds)

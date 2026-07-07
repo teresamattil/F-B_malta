@@ -14,8 +14,8 @@ Basado en los productos reales de compra (no genéricos)
 - **Servicio:** Rodaja en tabla o platito con palillo, pimentón al momento.
 
 ### Empanada
-- **Producto real:** Empanada de hojaldre de atún, 1 empanada = 30 trozos.
-- **Preparación:** Si viene cruda, hornear; si precocinada, solo calentar. Cortar en cuadrados pequeños justo antes del pase.
+- **Producto real:** Empanada de hojaldre de atún, ya horneada, 1 empanada = 30 trozos.
+- **Preparación:** Servir fría o a temperatura ambiente — no hace falta calentar. Cortar en cuadrados pequeños el mismo día.
 - **Cantidad:** 350 / 30 = 11,7 → **12 empanadas** (360 trozos).
 - **Servicio:** Cuadrado pequeño sobre servilleta de papel.
 
@@ -45,10 +45,11 @@ Basado en los productos reales de compra (no genéricos)
 
 ## ARAGÓN, LA RIOJA Y CATALUÑA
 
-### Uvas y quesos
-- **Preparación:** Sin cocción. Lavar uvas, cortar queso en dados de ~20 g (queso catalán tipo garrotxa y queso aragonés). Montar en tabla por zonas.
-- **Cantidad:** 350 personas × 2–3 uvas + 1 dado de queso (20 g) → **~9 kg queso** (mezcla de los dos tipos) + **10–12 racimos de uva**.
-- **Servicio:** Tablas de queso y uvas, selfservice. Palillos y cuchillos de queso al lado.
+### Fuet
+- **Producto real:** Fuet en packs de 3 uds. Sin cocción.
+- **Preparación:** Abrir packs y cortar en rodajas finas el mismo día. Sin preparación adicional.
+- **Cantidad:** **4 packs × 3 fuets = 12 fuets**. ~35–40 rodajas/fuet ≈ 450 rodajas. Cubre el aforo con margen.
+- **Servicio:** Bandeja selfservice con palillos.
 
 ### Pan tumaca
 - **Producto real:** Tostas ya tostadas (compradas) + tumaca comprado. Sin cocción.
@@ -80,7 +81,7 @@ Basado en los productos reales de compra (no genéricos)
 
 ### Torreznos
 - **Producto real:** Bandeja torrezno de Soria, 20 uds ≈60 trozos/pack.
-- **Preparación:** Recalentar en horno o sartén (ya vienen cocinados, solo crocantizar).
+- **Preparación:** Calentar en sartén sin aceite (ya vienen cocinados, suelta grasa propia). Crocantizar a fuego medio. Sin horno. Si al final son cortezas, la técnica varía mínimamente.
 - **Cantidad:** 700 trozos / 60 = 11,7 → **12 packs**.
 - **Servicio:** 1 trozo en vasito de papel, caliente.
 
@@ -197,7 +198,7 @@ Usado en: Pulpo. Una bolsa cubre de sobra.
 
 Estos elementos tienen preparación y cantidad calculadas arriba como si ya estuvieran presupuestados, pero **no aparecen en la hoja de compra oficial** — hay que añadirlos al pedido:
 
-1. **Aragón/Cataluña** — queso garrotxa/aragonés (~9 kg) + uvas (10–12 racimos).
+1. **Aragón/Cataluña** — fuet (4 packs × 3 uds = 12 fuets).
 2. **Pan tumaca** — tostas ya tostadas compradas (~350 uds) + tumaca comprado.
 3. **Membrillo + regañás** (queso manchego) — ~2–3 kg membrillo + 350 tostadas.
 4. **Anchoas para marineras** — ~15 latas de ~50 unidades/lata.
@@ -218,9 +219,8 @@ Bocata de calamares + Croquetas + Papas arrugadas = **mínimo 3 freidoras en sim
 
 ### Método de cocinado (ver tabla completa en spanish_night.html, sección Cocina)
 - **Frito (freidora):** Bocata de calamares, Croquetas, Papas arrugadas con mojo picón
-- **Horno/tostadora:** Torreznos (recalentar), Empanada (hornear o calentar)
-- **Plancha/sartén:** Pulpo (calentar), Chistorra (freír), Morcilla (calentar)
-- **Frío/sin cocción:** Gildas, Pintxo Donostiarra, Uvas y quesos, Pan tumaca (tostas + tumaca comprado), Queso manchego, Jamón, Marineras murcianas, Patatas Lays, Mejillones en escabeche, Gazpacho, Tortilla de patata, Sobrasada con tosta, Ensaimadas, Buñuelos nata, Rebujito, Sidra, Tinto de verano
+- **Plancha/sartén:** Torreznos (sartén, crocantizar), Pulpo (calentar), Chistorra (freír), Morcilla (calentar)
+- **Frío/sin cocción:** Empanada (fría/ambiente), Gildas, Pintxo Donostiarra, Fuet, Pan tumaca (tostas + tumaca comprado), Queso manchego, Jamón, Marineras murcianas, Patatas Lays, Mejillones en escabeche, Gazpacho, Tortilla de patata, Sobrasada con tosta, Ensaimadas, Buñuelos nata, Rebujito, Sidra, Tinto de verano
 
 ### Orden recomendado del recorrido
 Salados primero, postres al final. Ensaimadas y buñuelos nata juntos en el último tramo como remate dulce.
