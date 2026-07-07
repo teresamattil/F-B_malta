@@ -75,8 +75,9 @@
 const INV_LABELS = {spanish:'Spanish Night', international:'International Nights', comida:'Comida UNAV', asado:'Asado Final'};
 const INV_BUDGET = {all:24098.45, spanish:10175.73, international:2057.92, asado:6204.80, comida:5660.00};
 let INV_DATA = [];
-let currentEvent = 'all';
-let currentType  = 'all';
+let currentEvent  = 'all';
+let currentType   = 'all';
+let currentStatus = 'all';
 
 function parsePrice(s) {
   return parseFloat((s||'').replace(/[€\s]/g,'').replace(/,/g,'')) || 0;
@@ -130,7 +131,7 @@ function parseCSV(text) {
 
 fetch('./excel_ult_version.csv')
   .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.text(); })
-  .then(text => { INV_DATA = parseCSV(text); renderInv('all', 'all'); })
+  .then(text => { INV_DATA = parseCSV(text); renderInv('all', 'all', 'all'); })
   .catch(err => {
     document.getElementById('inv-container').innerHTML =
       `<div class="inv-loading" style="color:var(--red)">
@@ -147,12 +148,14 @@ function invFmtU(n) {
   return n.toLocaleString('es-ES',{minimumFractionDigits:d,maximumFractionDigits:d})+' €';
 }
 
-function setEvent(ev) { renderInv(ev, currentType); }
-function setType(ty)   { renderInv(currentEvent, ty); }
+function setEvent(ev)  { renderInv(ev, currentType, currentStatus); }
+function setType(ty)   { renderInv(currentEvent, ty, currentStatus); }
+function setStatus(st) { renderInv(currentEvent, currentType, st); }
 
-function renderInv(ev, ty) {
-  currentEvent = ev;
-  currentType  = ty;
+function renderInv(ev, ty, st) {
+  currentEvent  = ev;
+  currentType   = ty;
+  currentStatus = st;
   const c = document.getElementById('inv-container');
   if (!c) return;
 
@@ -161,8 +164,9 @@ function renderInv(ev, ty) {
     : [currentEvent];
 
   const filteredRows = INV_DATA.filter(r =>
-    (currentEvent === 'all' || r.e === currentEvent) &&
-    (currentType  === 'all' || r.ti === currentType)
+    (currentEvent  === 'all' || r.e  === currentEvent) &&
+    (currentType   === 'all' || r.ti === currentType) &&
+    (currentStatus === 'all' || r.s  === currentStatus)
   );
   const gt = filteredRows.reduce((s,r) => s+r.t, 0);
 
@@ -175,6 +179,12 @@ function renderInv(ev, ty) {
   h += '<div class="inv-filter-row" style="margin-top:-0.5rem">';
   [['all','Todos los tipos'],['Alimento','Alimentos'],['Objeto','Objetos']].forEach(([f,l])=>{
     h += `<button class="inv-filter-btn${currentType===f?' active':''}" onclick="setType('${f}')">${l}</button>`;
+  });
+  h += '</div>';
+
+  h += '<div class="inv-filter-row" style="margin-top:-0.5rem">';
+  [['all','Todos los estados'],['Pendiente','Pendiente'],['Comprado','Comprado'],['Donación','Donación'],['Cancelado','Cancelado']].forEach(([f,l])=>{
+    h += `<button class="inv-filter-btn${currentStatus===f?' active':''}" onclick="setStatus('${f}')">${l}</button>`;
   });
   h += '</div>';
 
@@ -231,7 +241,8 @@ function renderInv(ev, ty) {
   events.forEach(evKey => {
     const evRows = INV_DATA.filter(r =>
       r.e === evKey &&
-      (currentType === 'all' || r.ti === currentType)
+      (currentType   === 'all' || r.ti === currentType) &&
+      (currentStatus === 'all' || r.s  === currentStatus)
     );
     if (!evRows.length) return;
     const sub = evRows.reduce((s,r) => s+r.t, 0);
