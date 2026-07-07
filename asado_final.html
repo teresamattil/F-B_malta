@@ -77,6 +77,8 @@
   <nav class="sidebar-nav">
     <div class="sidebar-heading">Secciones</div>
     <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('asado-catering', this)">Catering</a>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('asado-aperitivo', this)">Aperitivo</a>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('asado-postres', this)">Postres</a>
     <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('asado-montaje', this)">Montaje</a>
   </nav>
 
@@ -134,23 +136,91 @@
         <div class="info-cell"><div class="info-cell-label">Barra</div><div class="info-cell-value">Montar barra con sobras de la semana (pendiente)</div></div>
       </div>
 
-      <div class="section-subtitle">Postres (nosotros)</div>
+    </div>
+
+    <div class="section-block" id="asado-aperitivo">
+      <div class="section-title">Aperitivo</div>
+      <div style="font-size:13px;color:var(--gray-600);margin-bottom:1.25rem;line-height:1.6">Todos los productos del aperitivo son donaciones externas. Los cancelados han sido descartados del plan — el resto está pendiente de confirmar cantidad y formato con cada donante.</div>
+      <table class="data-table">
+        <thead><tr><th>Producto</th><th>Cantidad</th><th>Donante</th><th>Estado</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Aceitunas verdes sin hueso</td>
+            <td>23 kg</td>
+            <td>Maestros aceituneros / Congelados Navarros</td>
+            <td><span class="don-pend">Pendiente</span></td>
+          </tr>
+          <tr>
+            <td>Ensaladilla rusa sin atún</td>
+            <td>17 kg</td>
+            <td>Ensalandia</td>
+            <td><span class="don-pend">Pendiente</span></td>
+          </tr>
+          <tr>
+            <td>Trenzas de Peralta</td>
+            <td>Por confirmar</td>
+            <td>Pan Barcos</td>
+            <td><span class="don-pend">Pendiente</span></td>
+          </tr>
+          <tr style="opacity:.4">
+            <td><s>Cocktail encurtidos</s></td>
+            <td>20 kg</td>
+            <td>Sarasa</td>
+            <td><span class="don-canc">Cancelado</span></td>
+          </tr>
+          <tr style="opacity:.4">
+            <td><s>Mix frutos secos</s></td>
+            <td>20 kg</td>
+            <td>Plis Plas</td>
+            <td><span class="don-canc">Cancelado</span></td>
+          </tr>
+          <tr style="opacity:.4">
+            <td><s>Manzana troceada</s></td>
+            <td>24 kg</td>
+            <td>Florette</td>
+            <td><span class="don-canc">Cancelado</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-block" id="asado-postres">
+      <div class="section-title">Postres</div>
+
+      <div class="section-subtitle">Opción preferida · Donación Häagen-Dazs</div>
+      <table class="data-table" style="margin-bottom:1.25rem">
+        <thead><tr><th>Producto</th><th>Cantidad</th><th>Donante</th><th>Estado</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Mini tarrinas Häagen-Dazs</td>
+            <td>600 uds</td>
+            <td>General Mills</td>
+            <td><span class="don-pend">Pendiente</span></td>
+          </tr>
+          <tr style="opacity:.4">
+            <td><s>Limonada Häagen-Dazs</s></td>
+            <td>600 uds</td>
+            <td>General Mills</td>
+            <td><span class="don-canc">Cancelado</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="section-subtitle">Opción A · Fallback si no hay donación</div>
       <div class="info-grid">
         <div class="info-cell">
-          <div class="info-cell-label">Opción A</div>
-          <div class="info-cell-value">
-            Helado de vainilla + brownie de chocolate (Makro)<br>
-            707,50 € + 475,44 € = <strong>1.182,94 €</strong>
-          </div>
+          <div class="info-cell-label">Brownie de chocolate</div>
+          <div class="info-cell-value">Brownie Makro · 566 uds · <strong>475,44 €</strong></div>
         </div>
         <div class="info-cell">
-          <div class="info-cell-label">Opción B</div>
-          <div class="info-cell-value">
-            <span class="tbd">Donación de Frigo pendiente de confirmar</span>
-          </div>
+          <div class="info-cell-label">Helado de vainilla</div>
+          <div class="info-cell-value">Tarrina Makro · ~57 L (1 L/10 pax) · <strong>707,50 €</strong></div>
+        </div>
+        <div class="info-cell">
+          <div class="info-cell-label">Total Opción A</div>
+          <div class="info-cell-value"><strong>1.182,94 €</strong></div>
         </div>
       </div>
-
     </div>
 
     <div class="section-block" id="asado-montaje">
@@ -195,6 +265,10 @@
   </div>
 </div>
 
+<style>
+.don-pend { display:inline-block;padding:2px 8px;border-radius:99px;font-size:11px;font-weight:600;background:#fef3c7;color:#92400e;border:1px solid #fde68a; }
+.don-canc { display:inline-block;padding:2px 8px;border-radius:99px;font-size:11px;font-weight:600;background:#fef2f2;color:#991b1b;border:1px solid #fecaca; }
+</style>
 <script>
 function scrollToSection(id, link) {
   const el = document.getElementById(id);
