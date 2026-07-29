@@ -42,17 +42,16 @@ body {
 
 .nav-logo {
   display: flex; align-items: center; gap: 8px;
-  padding: 0 1.5rem 0 0; margin-right: 1.5rem;
-  border-right: 1px solid var(--gray-200);
+  padding: 0 0.75rem 0 0; margin-right: 0;
   font-size: 12px; font-weight: 600;
   letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--gray-900); text-decoration: none;
-  white-space: nowrap;
+  white-space: nowrap; flex-shrink: 0;
 }
 
 .nav-cross { color: var(--accent); font-size: 18px; font-weight: 300; }
 
-.nav-tabs { display: flex; overflow-x: auto; scrollbar-width: none; }
+.nav-tabs { display: flex; overflow-x: auto; scrollbar-width: none; flex: 1; min-width: 0; }
 .nav-tabs::-webkit-scrollbar { display: none; }
 
 .nav-tab {
@@ -326,18 +325,16 @@ body {
 
 /* ── LANG TOGGLE ── */
 .lang-toggle {
-  margin-left: auto;
   align-self: center;
-  padding: 4px 10px;
-  font-size: 11px; font-weight: 600; font-family: var(--font);
-  letter-spacing: 0.06em;
-  background: var(--gray-900); color: var(--white);
-  border: none; border-radius: var(--radius);
+  padding: 2px 6px;
+  font-size: 20px; line-height: 1;
+  background: transparent;
+  border: none; border-radius: 4px;
   cursor: pointer; white-space: nowrap;
   transition: opacity 0.1s;
   flex-shrink: 0;
 }
-.lang-toggle:hover { opacity: 0.75; }
+.lang-toggle:hover { opacity: 0.65; }
 
 /* ── SCROLLBAR ── */
 ::-webkit-scrollbar { width: 3px; height: 3px; }

@@ -282,7 +282,7 @@
 
     /* update all toggle buttons on the page */
     document.querySelectorAll('.lang-toggle').forEach(btn => {
-      btn.textContent = lang === 'es' ? 'EN' : 'ES';
+      btn.textContent = lang === 'es' ? '🇬🇧' : '🇪🇸';
     });
   }
 
