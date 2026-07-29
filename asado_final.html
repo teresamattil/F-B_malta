@@ -15,37 +15,38 @@
   <div class="nav-tabs">
     <a class="nav-tab" href="spanish_night.html">Spanish Night</a>
     <a class="nav-tab" href="international_nights.html">International Nights</a>
-    <a class="nav-tab" href="comida_unav.html">Comida UNAV</a>
-    <a class="nav-tab active" href="asado_final.html">Asado Final</a>
+    <a class="nav-tab" href="comida_unav.html" data-i18n="nav.comida-unav">Comida UNAV</a>
+    <a class="nav-tab active" href="asado_final.html" data-i18n="nav.asado-final">Asado Final</a>
     <a class="nav-tab" href="inventario.html">Inventario</a>
-    <a class="nav-tab" href="alergenos.html">Alérgenos</a>
+    <a class="nav-tab" href="alergenos.html" data-i18n="nav.alergenos">Alérgenos</a>
   </div>
+  <button class="lang-toggle" onclick="toggleLang()">EN</button>
 </nav>
 
 <div class="ficha-hero">
   <div>
-    <div class="ficha-eyebrow">Evento 04 · Javier, Navarra</div>
-    <div class="ficha-title">Asado Final</div>
-    <div class="ficha-desc">El gran cierre del camp. Paella y asado para todos los participantes, con bebidas, postres y ambiente de despedida. El evento más grande en términos de logística y montaje.</div>
+    <div class="ficha-eyebrow" data-i18n="asado.eyebrow">Evento 04 · Javier, Navarra</div>
+    <div class="ficha-title" data-i18n="asado.title">Asado Final</div>
+    <div class="ficha-desc" data-i18n="asado.desc">El gran cierre del camp. Paella y asado para todos los participantes, con bebidas, postres y ambiente de despedida. El evento más grande en términos de logística y montaje.</div>
   </div>
   <div class="ficha-meta">
-    <div class="meta-item"><div class="meta-label">Día</div><div class="meta-value">Domingo 9 agosto</div></div>
-    <div class="meta-item"><div class="meta-label">Hora</div><div class="meta-value">19:30–21:30 h</div></div>
-    <div class="meta-item"><div class="meta-label">Asistentes</div><div class="meta-value">~566 pers.</div></div>
+    <div class="meta-item"><div class="meta-label" data-i18n="meta.day">Día</div><div class="meta-value" data-i18n="asado.meta.day.v">Domingo 9 agosto</div></div>
+    <div class="meta-item"><div class="meta-label" data-i18n="meta.hour">Hora</div><div class="meta-value">19:30–21:30 h</div></div>
+    <div class="meta-item"><div class="meta-label" data-i18n="meta.attendees">Asistentes</div><div class="meta-value">~566 pers.</div></div>
   </div>
 </div>
 
 <div class="friso">
-  <div class="friso-label">Cronograma</div>
+  <div class="friso-label" data-i18n="friso.label">Cronograma</div>
   <div class="friso-track">
     <div class="friso-seg">
       <div class="friso-node">
         <div class="friso-dot-row"><div class="friso-dot on"></div><div class="friso-line"></div></div>
         <div class="friso-node-content">
           <div class="friso-time">17:00</div>
-          <div class="friso-action">Montaje mesas</div>
+          <div class="friso-action" data-i18n="asado.friso.montaje">Montaje mesas</div>
           <div class="friso-people">
-            <div class="friso-person">Equipo montaje (10)</div>
+            <div class="friso-person" data-i18n="asado.friso.equipo">Equipo montaje (10)</div>
           </div>
         </div>
       </div>
@@ -55,10 +56,10 @@
         <div class="friso-dot-row"><div class="friso-dot on"></div><div class="friso-line"></div></div>
         <div class="friso-node-content">
           <div class="friso-time">19:30</div>
-          <div class="friso-action">Cena</div>
+          <div class="friso-action" data-i18n="asado.friso.cena">Cena</div>
           <div class="friso-people">
-            <div class="friso-person">Servicio mesas (10)</div>
-            <div class="friso-person">Segundoturno 20:00-23:00</div>
+            <div class="friso-person" data-i18n="asado.friso.mesas">Servicio mesas (10)</div>
+            <div class="friso-person" data-i18n="asado.friso.turno">Segundoturno 20:00-23:00</div>
           </div>
         </div>
       </div>
@@ -67,7 +68,7 @@
       <div class="friso-end-dot-row"><div class="friso-end-dot"></div></div>
       <div class="friso-end-content">
         <div class="friso-time">22:30</div>
-        <div class="friso-action">Recogida</div>
+        <div class="friso-action" data-i18n="friso.recogida">Recogida</div>
       </div>
     </div>
   </div>
@@ -75,34 +76,34 @@
 
 <div class="content-wrapper">
   <nav class="sidebar-nav">
-    <div class="sidebar-heading">Secciones</div>
-    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('asado-catering', this)">Catering</a>
-    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('asado-aperitivo', this)">Aperitivo</a>
-    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('asado-postres', this)">Postres</a>
-    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('asado-montaje', this)">Montaje</a>
+    <div class="sidebar-heading" data-i18n="sidebar.heading">Secciones</div>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('asado-catering', this)" data-i18n="asado.sidebar.catering">Catering</a>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('asado-aperitivo', this)" data-i18n="asado.sidebar.aperitivo">Aperitivo</a>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('asado-postres', this)" data-i18n="asado.sidebar.postres">Postres</a>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('asado-montaje', this)" data-i18n="asado.sidebar.montaje">Montaje</a>
   </nav>
 
   <div class="sections-col">
 
     <div class="section-block" id="asado-catering">
 
-      <div class="section-subtitle">Menú</div>
+      <div class="section-subtitle" data-i18n="asado.sub.menu">Menú</div>
       <div class="info-grid">
         <div class="info-cell">
-          <div class="info-cell-label">Menú confirmado</div>
-          <div class="info-cell-value">
+          <div class="info-cell-label" data-i18n="asado.info.menu.label">Menú confirmado</div>
+          <div class="info-cell-value" data-i18n="asado.info.menu.v">
             Paella carne · 566 pax · incluye desplazamiento, cocinado, emplatado y menaje ·
             <strong>6,50 €/pax +10% IVA = 4.046,90 €</strong>
           </div>
         </div>
 
         <div class="info-cell">
-          <div class="info-cell-label">Ingredientes paella</div>
-          <div class="info-cell-value">Pollo · Conejo · Costilla de cerdo · Pimientos · Cebolla · Judía verde · Alcachofa · Guisantes · Arroz</div>
+          <div class="info-cell-label" data-i18n="asado.info.ingr.label">Ingredientes paella</div>
+          <div class="info-cell-value" data-i18n="asado.info.ingr.v">Pollo · Conejo · Costilla de cerdo · Pimientos · Cebolla · Judía verde · Alcachofa · Guisantes · Arroz</div>
         </div>
         <div class="info-cell">
-          <div class="info-cell-label">Menú alternativo</div>
-          <div class="info-cell-value">
+          <div class="info-cell-label" data-i18n="asado.info.alt.label">Menú alternativo</div>
+          <div class="info-cell-value" data-i18n="asado.info.alt.v">
             Necesario solo para <strong>~20 personas</strong> — vegetarianos, veganos y sin cerdo.<br>
             El resto de restricciones (gluten, marisco, lácteos, frutos secos…) no aplican con estos ingredientes.<br><br>
             <a
@@ -115,7 +116,7 @@
         </div>
       </div>
 
-      <div class="section-subtitle">Contacto</div>
+      <div class="section-subtitle" data-i18n="asado.sub.contacto">Contacto</div>
       <div class="contact-row">
         <div class="contact-init">EC</div>
         <div>
@@ -128,21 +129,21 @@
         </div>
       </div>
 
-      <div class="section-subtitle">Bebidas (nosotros)</div>
+      <div class="section-subtitle" data-i18n="asado.sub.bebidas">Bebidas (nosotros)</div>
       <div class="info-grid">
-        <div class="info-cell"><div class="info-cell-label">Agua</div><div class="info-cell-value">Confirmado y presupuestado</div></div>
-        <div class="info-cell"><div class="info-cell-label">Hielo</div><div class="info-cell-value">Confirmado y presupuestado</div></div>
-        <div class="info-cell"><div class="info-cell-label">Jarras</div><div class="info-cell-value">Pendiente</div></div>
-        <div class="info-cell"><div class="info-cell-label">Barra</div><div class="info-cell-value">Montar barra con sobras de la semana (pendiente)</div></div>
+        <div class="info-cell"><div class="info-cell-label" data-i18n="asado.beb.agua">Agua</div><div class="info-cell-value" data-i18n="asado.beb.agua.v">Confirmado y presupuestado</div></div>
+        <div class="info-cell"><div class="info-cell-label" data-i18n="asado.beb.hielo">Hielo</div><div class="info-cell-value" data-i18n="asado.beb.hielo.v">Confirmado y presupuestado</div></div>
+        <div class="info-cell"><div class="info-cell-label" data-i18n="asado.beb.jarras">Jarras</div><div class="info-cell-value" data-i18n="asado.beb.jarras.v">Pendiente</div></div>
+        <div class="info-cell"><div class="info-cell-label" data-i18n="asado.beb.barra">Barra</div><div class="info-cell-value" data-i18n="asado.beb.barra.v">Montar barra con sobras de la semana (pendiente)</div></div>
       </div>
 
     </div>
 
     <div class="section-block" id="asado-aperitivo">
-      <div class="section-title">Aperitivo</div>
-      <div style="font-size:13px;color:var(--gray-600);margin-bottom:1.25rem;line-height:1.6">Todos los productos del aperitivo son donaciones externas. Los cancelados han sido descartados del plan — el resto está pendiente de confirmar cantidad y formato con cada donante.</div>
+      <div class="section-title" data-i18n="asado.sec.aperitivo">Aperitivo</div>
+      <div style="font-size:13px;color:var(--gray-600);margin-bottom:1.25rem;line-height:1.6" data-i18n="asado.aper.note">Todos los productos del aperitivo son donaciones externas. Los cancelados han sido descartados del plan — el resto está pendiente de confirmar cantidad y formato con cada donante.</div>
       <table class="data-table">
-        <thead><tr><th>Producto</th><th>Cantidad</th><th>Donante</th><th>Estado</th></tr></thead>
+        <thead><tr><th data-i18n="asado.th.producto">Producto</th><th data-i18n="asado.th.cantidad">Cantidad</th><th data-i18n="asado.th.donante">Donante</th><th data-i18n="asado.th.estado">Estado</th></tr></thead>
         <tbody>
           <tr>
             <td>Aceitunas verdes sin hueso</td>
@@ -185,11 +186,11 @@
     </div>
 
     <div class="section-block" id="asado-postres">
-      <div class="section-title">Postres</div>
+      <div class="section-title" data-i18n="asado.sec.postres">Postres</div>
 
-      <div class="section-subtitle">Opción preferida · Donación Häagen-Dazs</div>
+      <div class="section-subtitle" data-i18n="asado.sub.hd">Opción preferida · Donación Häagen-Dazs</div>
       <table class="data-table" style="margin-bottom:1.25rem">
-        <thead><tr><th>Producto</th><th>Cantidad</th><th>Donante</th><th>Estado</th></tr></thead>
+        <thead><tr><th data-i18n="asado.th.producto">Producto</th><th data-i18n="asado.th.cantidad">Cantidad</th><th data-i18n="asado.th.donante">Donante</th><th data-i18n="asado.th.estado">Estado</th></tr></thead>
         <tbody>
           <tr>
             <td>Mini tarrinas Häagen-Dazs</td>
@@ -206,18 +207,18 @@
         </tbody>
       </table>
 
-      <div class="section-subtitle">Opción A · Fallback si no hay donación</div>
+      <div class="section-subtitle" data-i18n="asado.sub.fallback">Opción A · Fallback si no hay donación</div>
       <div class="info-grid">
         <div class="info-cell">
-          <div class="info-cell-label">Brownie de chocolate</div>
+          <div class="info-cell-label" data-i18n="asado.post.brownie.label">Brownie de chocolate</div>
           <div class="info-cell-value">Brownie Makro · 566 uds · <strong>475,44 €</strong></div>
         </div>
         <div class="info-cell">
-          <div class="info-cell-label">Helado de vainilla</div>
+          <div class="info-cell-label" data-i18n="asado.post.helado.label">Helado de vainilla</div>
           <div class="info-cell-value">Tarrina Makro · ~57 L (1 L/10 pax) · <strong>707,50 €</strong></div>
         </div>
         <div class="info-cell">
-          <div class="info-cell-label">Total Opción A</div>
+          <div class="info-cell-label" data-i18n="asado.post.total.label">Total Opción A</div>
           <div class="info-cell-value"><strong>1.182,94 €</strong></div>
         </div>
       </div>
@@ -225,31 +226,31 @@
 
     <div class="section-block" id="asado-montaje">
 
-      <div class="section-title">Montaje</div>
+      <div class="section-title" data-i18n="asado.sec.montaje">Montaje</div>
 
-      <div class="section-subtitle">Organización del espacio</div>
+      <div class="section-subtitle" data-i18n="asado.sub.espacio">Organización del espacio</div>
       <div class="info-grid">
-        <div class="info-cell"><div class="info-cell-label">Mesas recogida paella</div><div class="info-cell-value">Mesas largas en zona central. Cola por grupos y delegaciones.</div></div>
-        <div class="info-cell"><div class="info-cell-label">Puesto bebidas</div><div class="info-cell-value">Mesa lateral con agua, refrescos e hielo. 4 voluntarios.</div></div>
-        <div class="info-cell"><div class="info-cell-label">Postres</div><div class="info-cell-value">Puesto separado. Se sirven al terminar el servicio principal.</div></div>
+        <div class="info-cell"><div class="info-cell-label" data-i18n="asado.esp.paella">Mesas recogida paella</div><div class="info-cell-value" data-i18n="asado.esp.paella.v">Mesas largas en zona central. Cola por grupos y delegaciones.</div></div>
+        <div class="info-cell"><div class="info-cell-label" data-i18n="asado.esp.bebidas">Puesto bebidas</div><div class="info-cell-value" data-i18n="asado.esp.bebidas.v">Mesa lateral con agua, refrescos e hielo. 4 voluntarios.</div></div>
+        <div class="info-cell"><div class="info-cell-label" data-i18n="asado.esp.postres">Postres</div><div class="info-cell-value" data-i18n="asado.esp.postres.v">Puesto separado. Se sirven al terminar el servicio principal.</div></div>
       </div>
 
-      <div class="section-subtitle">Mesas</div>
+      <div class="section-subtitle" data-i18n="asado.sub.mesas">Mesas</div>
       <div class="stat-strip">
-        <div class="stat-cell"><div class="stat-num">43</div><div class="stat-label">Mesas redondas</div></div>
-        <div class="stat-cell"><div class="stat-num">~13</div><div class="stat-label">Personas / mesa</div></div>
-        <div class="stat-cell"><div class="stat-num">566</div><div class="stat-label">Asistentes est.</div></div>
+        <div class="stat-cell"><div class="stat-num">43</div><div class="stat-label" data-i18n="asado.stat.mesas">Mesas redondas</div></div>
+        <div class="stat-cell"><div class="stat-num">~13</div><div class="stat-label" data-i18n="asado.stat.pers">Personas / mesa</div></div>
+        <div class="stat-cell"><div class="stat-num">566</div><div class="stat-label" data-i18n="asado.stat.asist">Asistentes est.</div></div>
       </div>
 
       <div class="info-grid">
-        <div class="info-cell"><div class="info-cell-label">Contacto mesas</div><div class="info-cell-value">Nena Alarcón</div></div>
+        <div class="info-cell"><div class="info-cell-label" data-i18n="asado.mesa.contacto">Contacto mesas</div><div class="info-cell-value">Nena Alarcón</div></div>
         <div class="info-cell">
-          <div class="info-cell-label">Manteles</div>
-          <div class="info-cell-value">Donación tía de César. <strong style="color:#16a34a">Recibidas!</strong></div>
+          <div class="info-cell-label" data-i18n="asado.mesa.manteles">Manteles</div>
+          <div class="info-cell-value" data-i18n="asado.mesa.manteles.v">Donación tía de César. <strong style="color:#16a34a">Recibidas!</strong></div>
         </div>
         <div class="info-cell">
-          <div class="info-cell-label">Decoración</div>
-          <div class="info-cell-value">
+          <div class="info-cell-label" data-i18n="asado.mesa.deco">Decoración</div>
+          <div class="info-cell-value" data-i18n="asado.mesa.deco.v">
             · Manteles<br>
             · Cartelitos santos<br>
             · Servilletas vichy<br>
@@ -257,7 +258,7 @@
             <span style="color:var(--red);font-weight:500;display:block;margin-top:0.5rem">Pendiente aún de comprar</span>
           </div>
         </div>
-        <div class="info-cell"><div class="info-cell-label">Qué usar de la Gala Night</div><div class="info-cell-value"><span class="tbd">revisar inventario — centros, velas…</span></div></div>
+        <div class="info-cell"><div class="info-cell-label" data-i18n="asado.mesa.gala">Qué usar de la Gala Night</div><div class="info-cell-value" data-i18n="asado.mesa.gala.v"><span class="tbd">revisar inventario — centros, velas…</span></div></div>
       </div>
 
     </div>
@@ -265,6 +266,7 @@
   </div>
 </div>
 
+<script src="lang.js"></script>
 <style>
 .don-pend { display:inline-block;padding:2px 8px;border-radius:99px;font-size:11px;font-weight:600;background:#fef3c7;color:#92400e;border:1px solid #fde68a; }
 .don-canc { display:inline-block;padding:2px 8px;border-radius:99px;font-size:11px;font-weight:600;background:#fef2f2;color:#991b1b;border:1px solid #fecaca; }

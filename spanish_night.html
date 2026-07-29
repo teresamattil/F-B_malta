@@ -15,37 +15,38 @@
   <div class="nav-tabs">
     <a class="nav-tab active" href="spanish_night.html">Spanish Night</a>
     <a class="nav-tab" href="international_nights.html">International Nights</a>
-    <a class="nav-tab" href="comida_unav.html">Comida UNAV</a>
-    <a class="nav-tab" href="asado_final.html">Asado Final</a>
+    <a class="nav-tab" href="comida_unav.html" data-i18n="nav.comida-unav">Comida UNAV</a>
+    <a class="nav-tab" href="asado_final.html" data-i18n="nav.asado-final">Asado Final</a>
     <a class="nav-tab" href="inventario.html">Inventario</a>
-    <a class="nav-tab" href="alergenos.html">Alérgenos</a>
+    <a class="nav-tab" href="alergenos.html" data-i18n="nav.alergenos">Alérgenos</a>
   </div>
+  <button class="lang-toggle" onclick="toggleLang()">EN</button>
 </nav>
 
 <div class="ficha-hero">
   <div>
-    <div class="ficha-eyebrow">Evento 01 · Javier, Navarra</div>
+    <div class="ficha-eyebrow" data-i18n="sn.eyebrow">Evento 01 · Javier, Navarra</div>
     <div class="ficha-title">Spanish Night</div>
-    <div class="ficha-desc">Una noche de puestecitos por provincias de España. Los participantes recorren los stands, prueban la gastronomía española y viven una experiencia inmersiva de la cultura del país.</div>
+    <div class="ficha-desc" data-i18n="sn.desc">Una noche de puestecitos por provincias de España. Los participantes recorren los stands, prueban la gastronomía española y viven una experiencia inmersiva de la cultura del país.</div>
   </div>
   <div class="ficha-meta">
-    <div class="meta-item"><div class="meta-label">Día</div><div class="meta-value">Lunes 3 agosto</div></div>
-    <div class="meta-item"><div class="meta-label">Hora</div><div class="meta-value">20:30–21:30 h</div></div>
-    <div class="meta-item"><div class="meta-label">Asistentes</div><div class="meta-value">~560 pers.</div></div>
+    <div class="meta-item"><div class="meta-label" data-i18n="meta.day">Día</div><div class="meta-value" data-i18n="sn.meta.day">Lunes 3 agosto</div></div>
+    <div class="meta-item"><div class="meta-label" data-i18n="meta.hour">Hora</div><div class="meta-value">20:30–21:30 h</div></div>
+    <div class="meta-item"><div class="meta-label" data-i18n="meta.attendees">Asistentes</div><div class="meta-value">~560 pers.</div></div>
   </div>
 </div>
 
 <div class="friso">
-  <div class="friso-label">Cronograma</div>
+  <div class="friso-label" data-i18n="friso.label">Cronograma</div>
   <div class="friso-track">
     <div class="friso-seg">
       <div class="friso-node">
         <div class="friso-dot-row"><div class="friso-dot on"></div><div class="friso-line"></div></div>
         <div class="friso-node-content">
           <div class="friso-time">17:00</div>
-          <div class="friso-action">Montaje puestecitos</div>
+          <div class="friso-action" data-i18n="sn.friso.montaje">Montaje puestecitos</div>
           <div class="friso-people">
-            <div class="friso-person">Equipo asignado: 17 personas</div>
+            <div class="friso-person" data-i18n="sn.friso.equipo">Equipo asignado: 17 personas</div>
           </div>
         </div>
       </div>
@@ -55,9 +56,9 @@
         <div class="friso-dot-row"><div class="friso-dot on"></div><div class="friso-line"></div></div>
         <div class="friso-node-content">
           <div class="friso-time">20:00</div>
-          <div class="friso-action">Apertura al público</div>
+          <div class="friso-action" data-i18n="sn.friso.apertura">Apertura al público</div>
           <div class="friso-people">
-            <div class="friso-person">Equipo asignado: 17 personas</div>
+            <div class="friso-person" data-i18n="sn.friso.equipo">Equipo asignado: 17 personas</div>
           </div>
         </div>
       </div>
@@ -66,7 +67,7 @@
       <div class="friso-end-dot-row"><div class="friso-end-dot"></div></div>
       <div class="friso-end-content">
         <div class="friso-time">23:00</div>
-        <div class="friso-action">Recogida</div>
+        <div class="friso-action" data-i18n="friso.recogida">Recogida</div>
       </div>
     </div>
   </div>
@@ -74,19 +75,19 @@
 
 <div class="content-wrapper">
   <nav class="sidebar-nav">
-    <div class="sidebar-heading">Secciones</div>
-    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('spanish-provincias', this)">Provincias</a>
-    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('spanish-cocina', this)">Cocina</a>
-    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('spanish-puestecitos', this)">Puestecitos</a>
-    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('spanish-pasaporte', this)">Pasaporte</a>
-    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('spanish-fun', this)">Para hacerlo fun</a>
-    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('spanish-cantidades', this)">Cantidades y servicio</a>
+    <div class="sidebar-heading" data-i18n="sidebar.heading">Secciones</div>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('spanish-provincias', this)" data-i18n="sn.sidebar.provincias">Provincias</a>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('spanish-cocina', this)" data-i18n="sn.sidebar.cocina">Cocina</a>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('spanish-puestecitos', this)" data-i18n="sn.sidebar.puestecitos">Puestecitos</a>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('spanish-pasaporte', this)" data-i18n="sn.sidebar.pasaporte">Pasaporte</a>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('spanish-fun', this)" data-i18n="sn.sidebar.fun">Para hacerlo fun</a>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('spanish-cantidades', this)" data-i18n="sn.sidebar.cantidades">Cantidades y servicio</a>
   </nav>
 
   <div class="sections-col">
 
     <div class="section-block" id="spanish-provincias">
-      <div class="section-title">Provincias</div>
+      <div class="section-title" data-i18n="sn.sec.provincias">Provincias</div>
       <div class="cards-grid">
         <div class="card">
           <div class="card-label">Puesto 1 · Galicia y Asturias</div>
@@ -175,23 +176,23 @@
     </div>
 
     <div class="section-block" id="spanish-cocina">
-      <div class="section-title">Cocina</div>
-      <div style="font-size:13px;color:var(--gray-600);margin-bottom:1.5rem;line-height:1.6">Clasificación por método de cocinado, basada en el producto real de compra (ver <strong>detalle_spanish_night.md</strong>). La mayoría de platos son productos pre-elaborados — solo hay que freír, calentar o emplatar.</div>
+      <div class="section-title" data-i18n="sn.sec.cocina">Cocina</div>
+      <div style="font-size:13px;color:var(--gray-600);margin-bottom:1.5rem;line-height:1.6" data-i18n="sn.sec.cocina.note">Clasificación por método de cocinado, basada en el producto real de compra (ver <strong>detalle_spanish_night.md</strong>). La mayoría de platos son productos pre-elaborados — solo hay que freír, calentar o emplatar.</div>
 
-      <div class="section-subtitle">Frito (freidora)</div>
+      <div class="section-subtitle" data-i18n="sn.sec.frito">Frito (freidora)</div>
       <table class="data-table" style="margin-bottom:1.25rem">
-        <thead><tr><th>Plato</th><th>Producto real</th><th>Cuándo</th></tr></thead>
+        <thead><tr><th data-i18n="sn.th.plato">Plato</th><th data-i18n="sn.th.producto">Producto real</th><th data-i18n="sn.th.cuando">Cuándo</th></tr></thead>
         <tbody>
           <tr><td>Bocata de calamares</td><td>Calamares a la romana congelados, ya rebozados</td><td>Durante el evento, en tandas. Freír directo desde congelado, 180°C.</td></tr>
           <tr><td>Croquetas</td><td>Mini croquetas de jamón congeladas</td><td>Durante el evento, en tandas. 180°C, 3–4 min.</td></tr>
           <tr><td>Papas arrugadas con mojo picón</td><td>Patata brava congelada (reaprovechada de "patatas bravas")</td><td>Durante el evento. Freír y bañar en mojo picón al servir.</td></tr>
         </tbody>
       </table>
-      <div style="font-size:11px;color:var(--gray-400);margin-bottom:1.5rem">Mínimo <strong>3 freidoras en simultáneo</strong> — coordinar zonas y aceite (5–6 garrafas de 5 L doble rendimiento).</div>
+      <div style="font-size:11px;color:var(--gray-400);margin-bottom:1.5rem" data-i18n="sn.freidoras.note">Mínimo <strong>3 freidoras en simultáneo</strong> — coordinar zonas y aceite (5–6 garrafas de 5 L doble rendimiento).</div>
 
-      <div class="section-subtitle">Plancha / sartén</div>
+      <div class="section-subtitle" data-i18n="sn.sec.plancha">Plancha / sartén</div>
       <table class="data-table" style="margin-bottom:1.5rem">
-        <thead><tr><th>Plato</th><th>Producto real</th><th>Cuándo</th></tr></thead>
+        <thead><tr><th data-i18n="sn.th.plato">Plato</th><th data-i18n="sn.th.producto">Producto real</th><th data-i18n="sn.th.cuando">Cuándo</th></tr></thead>
         <tbody>
           <tr><td>Torreznos</td><td>Torrezno de Soria, ya cocinado</td><td>Calentar en sartén sin aceite para crocantizar. Sin horno. (Si al final son cortezas, adaptar mínimamente.)</td></tr>
           <tr><td>Pulpo (potón)</td><td>Rodaja de potón ya cocida</td><td>Calentar al momento del pase con AOVE, aliñar con pimentón al servir.</td></tr>
@@ -200,9 +201,9 @@
         </tbody>
       </table>
 
-      <div class="section-subtitle">Frío / sin cocción</div>
+      <div class="section-subtitle" data-i18n="sn.sec.frio">Frío / sin cocción</div>
       <table class="data-table" style="margin-bottom:1.25rem">
-        <thead><tr><th>Plato</th><th>Producto real</th><th>Cuándo montar</th></tr></thead>
+        <thead><tr><th data-i18n="sn.th.plato">Plato</th><th data-i18n="sn.th.producto">Producto real</th><th data-i18n="sn.th.montaje">Cuándo montar</th></tr></thead>
         <tbody>
           <tr><td>Empanada</td><td>Empanada de hojaldre de atún, ya horneada</td><td>Servir fría o a temperatura ambiente. Cortar el mismo día.</td></tr>
           <tr><td>Gildas</td><td>Ya montadas, cubo con anchoa</td><td>Escurrir y servir el mismo día.</td></tr>
@@ -223,17 +224,17 @@
         </tbody>
       </table>
 
-      <div style="padding:0.75rem 1rem;background:var(--gray-50);border-left:2px solid var(--gray-200);font-size:12px;color:var(--gray-600)"><strong>Material necesario:</strong> 3 freidoras (mínimo), plancha o sartenes grandes, cortador de jamón, aceite de freír (5–6 garrafas de 5 L), aceite de oliva (2–3 L), hieleras para los puestos de frío.</div>
+      <div style="padding:0.75rem 1rem;background:var(--gray-50);border-left:2px solid var(--gray-200);font-size:12px;color:var(--gray-600)" data-i18n="sn.cocina.material"><strong>Material necesario:</strong> 3 freidoras (mínimo), plancha o sartenes grandes, cortador de jamón, aceite de freír (5–6 garrafas de 5 L), aceite de oliva (2–3 L), hieleras para los puestos de frío.</div>
     </div>
 
     <div class="section-block" id="spanish-puestecitos">
-      <div class="section-title">Puestecitos</div>
+      <div class="section-title" data-i18n="sn.sec.puestecitos">Puestecitos</div>
       <div class="info-grid" style="margin-bottom:1.25rem">
-        <div class="info-cell"><div class="info-cell-label">Total puestos</div><div class="info-cell-value">11 puestecitos</div></div>
-        <div class="info-cell"><div class="info-cell-label">Estructura por puesto</div><div class="info-cell-value">3 m tela decorativa · 2 packs listones abeto 200 cm · 1 tablero MDF 60×120 cm</div></div>
-        <div class="info-cell"><div class="info-cell-label">Fijación</div><div class="info-cell-value">Tornillos, arandelas, palominas</div></div>
+        <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.total">Total puestos</div><div class="info-cell-value">11 puestecitos</div></div>
+        <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.estructura">Estructura por puesto</div><div class="info-cell-value">3 m tela decorativa · 2 packs listones abeto 200 cm · 1 tablero MDF 60×120 cm</div></div>
+        <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.fijacion">Fijación</div><div class="info-cell-value" data-i18n="sn.info.fijacion.v">Tornillos, arandelas, palominas</div></div>
       </div>
-      <div class="section-subtitle">Vajilla compartida (todos los puestos)</div>
+      <div class="section-subtitle" data-i18n="sn.subsec.vajilla">Vajilla compartida (todos los puestos)</div>
       <div class="cards-grid">
         <div class="card"><div class="card-label">Platos</div><div class="card-title">Platos hondos bagazo 680 ml</div><div class="card-body">2.000 uds · Makro</div></div>
         <div class="card"><div class="card-label">Boles</div><div class="card-title">Boles bagazo 950 ml</div><div class="card-body">2.000 uds · Makro</div></div>
@@ -242,8 +243,8 @@
         <div class="card"><div class="card-label">Cucharitas</div><div class="card-title">Cucharitas café mini 10 cm</div><div class="card-body">2.000 uds · Makro</div></div>
         <div class="card"><div class="card-label">Servilletas</div><div class="card-title">Servilletas papel burdeos 40×40 cm</div><div class="card-body">2.400 uds · Makro</div></div>
       </div>
-      <div class="section-subtitle">Decoración puestecitos</div>
-      <div style="padding:0.75rem 1rem;background:var(--gray-50);border-left:2px solid var(--gray-200);font-size:12px;color:var(--gray-600);margin-bottom:1.25rem">
+      <div class="section-subtitle" data-i18n="sn.subsec.deco">Decoración puestecitos</div>
+      <div style="padding:0.75rem 1rem;background:var(--gray-50);border-left:2px solid var(--gray-200);font-size:12px;color:var(--gray-600);margin-bottom:1.25rem" data-i18n="sn.deco.comun">
         <strong>Común a todos:</strong> Rollo Mantel Papel (25 m) · Servilletas burdeos · Banderas CCAA · Pilas AA (16) · Cuerda guirnaldas · Globos helio · Bombona · Rotuladores decoración · Telas decorativas (3 m/caseta)
       </div>
       <div class="cards-grid">
@@ -320,9 +321,9 @@
     </div>
 
    <div class="section-block" id="spanish-pasaporte">
-      <div class="section-title">Pasaporte</div>
+      <div class="section-title" data-i18n="sn.sec.pasaporte">Pasaporte</div>
 
-      <div class="info-cell-value">
+      <div class="info-cell-value" data-i18n="sn.pasaporte.body">
         Concepto: cada participante recibe un pasaporte impreso y sella en cada puestecito.
         <br><br>
 
@@ -339,233 +340,233 @@
     </div>
 
     <div class="section-block" id="spanish-fun">
-      <div class="section-title">Para hacerlo fun</div>
+      <div class="section-title" data-i18n="sn.sec.fun">Para hacerlo fun</div>
       <div class="fun-grid">
-        <div class="fun-cell" style="opacity:.45"><div class="fun-title" style="text-decoration:line-through">Photomatón</div><div style="font-size:12px;color:var(--gray-500)">Cancelado.</div></div>
-        <div class="fun-cell"><div class="fun-title">Pululantes</div><div class="card-body">10 disfraces temáticos confirmados (Don Quijote, Isabel la Católica…).<br>Presupuesto: 45 €/ud × 10 = <strong>450 €</strong>.</div></div>
+        <div class="fun-cell" style="opacity:.45"><div class="fun-title" style="text-decoration:line-through" data-i18n="sn.fun.photo.title">Photomatón</div><div style="font-size:12px;color:var(--gray-500)" data-i18n="sn.fun.photo.canc">Cancelado.</div></div>
+        <div class="fun-cell"><div class="fun-title" data-i18n="sn.fun.pul.title">Pululantes</div><div class="card-body" data-i18n="sn.fun.pul.body">10 disfraces temáticos confirmados (Don Quijote, Isabel la Católica…).<br>Presupuesto: 45 €/ud × 10 = <strong>450 €</strong>.</div></div>
       </div>
     </div>
 
     <div class="section-block" id="spanish-cantidades">
-      <div class="section-title">Cantidades y Servicio</div>
-      <div style="font-size:13px;color:var(--gray-600);margin-bottom:2rem;line-height:1.6">560 personas · post-cena · formato cata por puestos. Target por ítem: <strong>~350 porciones</strong> (60% del aforo).</div>
+      <div class="section-title" data-i18n="sn.sec.cantidades">Cantidades y Servicio</div>
+      <div style="font-size:13px;color:var(--gray-600);margin-bottom:2rem;line-height:1.6" data-i18n="sn.cant.intro">560 personas · post-cena · formato cata por puestos. Target por ítem: <strong>~350 porciones</strong> (60% del aforo).</div>
 
-      <div class="section-subtitle">Galicia y Asturias</div>
+      <div class="section-subtitle" data-i18n="sn.subsec.galicia">Galicia y Asturias</div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Pulpo</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Pulpo cocido (día anterior). Enfriar, cortar en rodajas de 1 cm. Calentar al momento con AOVE y pimentón dulce. Sin sal hasta el pase.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value"><strong>4–5 pulpos de 2 kg</strong> (~6–7 patas grandes). 1 rodaja/persona = 350 rodajas. Una pata = 50–60 rodajas finas.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">Rodaja en tabla de madera o platito con palillo. AOVE + pimentón encima en el momento.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Pulpo cocido (día anterior). Enfriar, cortar en rodajas de 1 cm. Calentar al momento con AOVE y pimentón dulce. Sin sal hasta el pase.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value"><strong>4–5 pulpos de 2 kg</strong> (~6–7 patas grandes). 1 rodaja/persona = 350 rodajas. Una pata = 50–60 rodajas finas.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">Rodaja en tabla de madera o platito con palillo. AOVE + pimentón encima en el momento.</div></div>
         </div>
       </div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Empanada</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Comprar empanadas gallegas grandes hechas (atún + tomate o bacalá). Servir fría o a temperatura ambiente — no hace falta calentar. Cortar en piezas de ~5×5 cm el mismo día.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value"><strong>18 empanadas</strong> grandes (350 porciones / ~20 por empanada).</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">Cuadrado pequeño con servilleta de papel debajo. Sin plato.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Comprar empanadas gallegas grandes hechas (atún + tomate o bacalá). Servir fría o a temperatura ambiente — no hace falta calentar. Cortar en piezas de ~5×5 cm el mismo día.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value"><strong>18 empanadas</strong> grandes (350 porciones / ~20 por empanada).</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">Cuadrado pequeño con servilleta de papel debajo. Sin plato.</div></div>
         </div>
       </div>
 
-      <div class="section-subtitle" style="margin-top:1.5rem">País Vasco, Navarra y Cantabria</div>
+      <div class="section-subtitle" style="margin-top:1.5rem" data-i18n="sn.subsec.pv">País Vasco, Navarra y Cantabria</div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Gildas</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Sin cocción. Sacar de la salmuera, escurrir. Brocheta: guindilla + oliva + anchoa.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value">Ya presupuestadas <strong>600 gildas</strong> (50 packs × 12). Cubre el 100% del aforo.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">En bote de cristal o bandeja. 1 gilda/persona, palillo incluido.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Sin cocción. Sacar de la salmuera, escurrir. Brocheta: guindilla + oliva + anchoa.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value">Ya presupuestadas <strong>600 gildas</strong> (50 packs × 12). Cubre el 100% del aforo.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">En bote de cristal o bandeja. 1 gilda/persona, palillo incluido.</div></div>
         </div>
       </div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Chistorra</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Freír en sartén o plancha en trozos de 4–5 cm. Sin aceite extra (suelta grasa). Mantener caliente en chafer.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value"><strong>70 chistorras</strong> (~10–12 kg). 350 × 2 trozos = 700 trozos. 1 chistorra de 40 cm = 10 trozos.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">2 trozos en palillo, en bandeja o vasito de papel.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Freír en sartén o plancha en trozos de 4–5 cm. Sin aceite extra (suelta grasa). Mantener caliente en chafer.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value"><strong>70 chistorras</strong> (~10–12 kg). 350 × 2 trozos = 700 trozos. 1 chistorra de 40 cm = 10 trozos.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">2 trozos en palillo, en bandeja o vasito de papel.</div></div>
         </div>
       </div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Pintxos de txaka</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Mezclar txaka desmenuzada con mayonesa y unas gotas de limón. Montar sobre rodaja de baguette. Máx. 2 h antes (el pan se ablanda).</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value"><strong>350 pintxos</strong> — 5–6 baguettes + ~8 kg txaka (350 × 25 g) + mayonesa.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">1 pintxo/persona en bandeja larga. Montar por tandas.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Mezclar txaka desmenuzada con mayonesa y unas gotas de limón. Montar sobre rodaja de baguette. Máx. 2 h antes (el pan se ablanda).</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value"><strong>350 pintxos</strong> — 5–6 baguettes + ~8 kg txaka (350 × 25 g) + mayonesa.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">1 pintxo/persona en bandeja larga. Montar por tandas.</div></div>
         </div>
       </div>
 
-      <div class="section-subtitle" style="margin-top:1.5rem">Aragón, La Rioja y Cataluña</div>
+      <div class="section-subtitle" style="margin-top:1.5rem" data-i18n="sn.subsec.aragon">Aragón, La Rioja y Cataluña</div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Fuet</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Sin cocción. Abrir packs y cortar en rodajas finas el mismo día. Montar en bandeja.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value"><strong>4 packs × 3 fuets = 12 fuets</strong>. ~35–40 rodajas/fuet ≈ 450 rodajas en total. Cubre bien el aforo.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">Bandeja selfservice con palillos. Rápido de montar y sin desperdicio.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Sin cocción. Abrir packs y cortar en rodajas finas el mismo día. Montar en bandeja.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value"><strong>4 packs × 3 fuets = 12 fuets</strong>. ~35–40 rodajas/fuet ≈ 450 rodajas en total. Cubre bien el aforo.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">Bandeja selfservice con palillos. Rápido de montar y sin desperdicio.</div></div>
         </div>
       </div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Pan tumaca</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Sin cocción. Untar tumaca comprado sobre las tostas al momento. Regar con AOVE y sal en escamas.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value"><strong>350 tostas</strong> (compradas, ya tostadas) + tumaca comprado + AOVE.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">1 tosta/persona, montar al momento. No necesita tostadora.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Sin cocción. Untar tumaca comprado sobre las tostas al momento. Regar con AOVE y sal en escamas.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value"><strong>350 tostas</strong> (compradas, ya tostadas) + tumaca comprado + AOVE.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">1 tosta/persona, montar al momento. No necesita tostadora.</div></div>
         </div>
       </div>
 
-      <div class="section-subtitle" style="margin-top:1.5rem">Madrid y Castilla-La Mancha</div>
+      <div class="section-subtitle" style="margin-top:1.5rem" data-i18n="sn.subsec.madrid">Madrid y Castilla-La Mancha</div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Queso manchego</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Cortar en cuñas o láminas finas. Acompañar con membrillo en dados pequeños.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value"><strong>~10 kg queso manchego</strong> (3–4 piezas) + <strong>2–3 kg membrillo</strong>. 350 × 2 láminas (~30 g).</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">2 láminas + 1 dado membrillo + 1 regañá. Tabla o bandeja, selfservice.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Cortar en cuñas o láminas finas. Acompañar con membrillo en dados pequeños.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value"><strong>~10 kg queso manchego</strong> (3–4 piezas) + <strong>2–3 kg membrillo</strong>. 350 × 2 láminas (~30 g).</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">2 láminas + 1 dado membrillo + 1 regañá. Tabla o bandeja, selfservice.</div></div>
         </div>
       </div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Bocata de calamares</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Freír anillas de calamar rebozadas a 180°C. Montar en medias noches mini. Usar calamar congelado en anillas (más práctico). Necesita freidora en el puesto.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value"><strong>350 medias noches mini</strong> + <strong>~15 kg calamar</strong> (350 × 40 g neto).</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">1 mini bocata/persona, servir recién fritos en tandas de 30–40 uds. Requiere <strong>alguien friendo constantemente</strong>.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Freír anillas de calamar rebozadas a 180°C. Montar en medias noches mini. Usar calamar congelado en anillas (más práctico). Necesita freidora en el puesto.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value"><strong>350 medias noches mini</strong> + <strong>~15 kg calamar</strong> (350 × 40 g neto).</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">1 mini bocata/persona, servir recién fritos en tandas de 30–40 uds. Requiere <strong>alguien friendo constantemente</strong>.</div></div>
         </div>
       </div>
 
-      <div class="section-subtitle" style="margin-top:1.5rem">Castilla y León y Extremadura</div>
+      <div class="section-subtitle" style="margin-top:1.5rem" data-i18n="sn.subsec.castilla">Castilla y León y Extremadura</div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Torreznos</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Calentar en sartén sin aceite (suelta grasa propia) para crocantizar. Sin horno ni tostadora. Si al final son cortezas, la técnica varía mínimamente.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value">Ya presupuestados <strong>600 trozos</strong> (10 packs × 60). Cubre el 100% del aforo + margen.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">1 torrezno en vasito de papel o pincho, caliente. Papel absorbente debajo.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Calentar en sartén sin aceite (suelta grasa propia) para crocantizar. Sin horno ni tostadora. Si al final son cortezas, la técnica varía mínimamente.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value">Ya presupuestados <strong>600 trozos</strong> (10 packs × 60). Cubre el 100% del aforo + margen.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">1 torrezno en vasito de papel o pincho, caliente. Papel absorbente debajo.</div></div>
         </div>
       </div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Morcilla</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Morcilla de Burgos (con arroz). Cortar en rodajas de 1,5–2 cm. Freír en sartén sin aceite (suelta grasa). Mantener caliente.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value"><strong>75–90 morcillas</strong> (~20 kg). 350 × 2 rodajas = 700 rodajas. 1 morcilla de Burgos (~250 g) = 8–10 rodajas.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">2 rodajas en pincho, servir caliente. Opcionalmente sobre tostada pequeña.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Morcilla de Burgos (con arroz). Cortar en rodajas de 1,5–2 cm. Freír en sartén sin aceite (suelta grasa). Mantener caliente.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value"><strong>75–90 morcillas</strong> (~20 kg). 350 × 2 rodajas = 700 rodajas. 1 morcilla de Burgos (~250 g) = 8–10 rodajas.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">2 rodajas en pincho, servir caliente. Opcionalmente sobre tostada pequeña.</div></div>
         </div>
       </div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Jamón</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Corte en vivo por cortador (efecto espectáculo). Servir en el momento.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value"><strong>2–3 jamones</strong> enteros (según donación Luque). ~7 kg neto/pieza = ~150 lonchas. Target: ~7 kg loncheado total.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">2–3 lonchas sobre pan tostado o solas. El cortador en vivo es parte del montaje.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Corte en vivo por cortador (efecto espectáculo). Servir en el momento.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value"><strong>2–3 jamones</strong> enteros (según donación Luque). ~7 kg neto/pieza = ~150 lonchas. Target: ~7 kg loncheado total.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">2–3 lonchas sobre pan tostado o solas. El cortador en vivo es parte del montaje.</div></div>
         </div>
       </div>
 
-      <div class="section-subtitle" style="margin-top:1.5rem">Valencia y Murcia</div>
+      <div class="section-subtitle" style="margin-top:1.5rem" data-i18n="sn.subsec.valencia">Valencia y Murcia</div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Marineras murcianas</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Hacer ensaladilla rusa (patata + zanahoria + guisantes + mayo + atún). Cucharada sobre pico ovalado. Coronar con 1 anchoa. Montar máx. 1–2 h antes.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value"><strong>700 picos</strong> ovales + <strong>~10 kg ensaladilla</strong> (700 × 15 g) + <strong>700 anchoas</strong> (~15 latas). 350 personas × 2 marineras.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">2 marineras/persona en bandeja. Montar por tandas para que el pico no se humedezca.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Hacer ensaladilla rusa (patata + zanahoria + guisantes + mayo + atún). Cucharada sobre pico ovalado. Coronar con 1 anchoa. Montar máx. 1–2 h antes.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value"><strong>700 picos</strong> ovales + <strong>~10 kg ensaladilla</strong> (700 × 15 g) + <strong>700 anchoas</strong> (~15 latas). 350 personas × 2 marineras.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">2 marineras/persona en bandeja. Montar por tandas para que el pico no se humedezca.</div></div>
         </div>
       </div>
 
-      <div class="section-subtitle" style="margin-top:1.5rem">Andalucía</div>
+      <div class="section-subtitle" style="margin-top:1.5rem" data-i18n="sn.subsec.andalucia">Andalucía</div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Gazpacho</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Comprar gazpacho envasado de calidad (Alvalle o similar). Guardar muy frío hasta el pase.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value"><strong>35 litros</strong> (350 × 100 ml). ~35 botellas de 1 L.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">Vasito de 100 ml. Mantener en hielera o nevera portátil. Servir muy frío.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Comprar gazpacho envasado de calidad (Alvalle o similar). Guardar muy frío hasta el pase.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value"><strong>35 litros</strong> (350 × 100 ml). ~35 botellas de 1 L.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">Vasito de 100 ml. Mantener en hielera o nevera portátil. Servir muy frío.</div></div>
         </div>
       </div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Tortilla de patata</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Hacer el día anterior o la mañana del evento. Servir a temperatura ambiente — no calentar.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value"><strong>18 tortillas</strong> (350 / ~20 porciones por tortilla). ~180 huevos + ~10 kg patatas.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">Trozos pequeños (triángulo o cuadrado) con palillo, sobre servilleta.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Hacer el día anterior o la mañana del evento. Servir a temperatura ambiente — no calentar.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value"><strong>18 tortillas</strong> (350 / ~20 porciones por tortilla). ~180 huevos + ~10 kg patatas.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">Trozos pequeños (triángulo o cuadrado) con palillo, sobre servilleta.</div></div>
         </div>
       </div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Croquetas</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Usar croquetas congeladas de calidad (jamón ibérico). Freír a 180°C, 3–4 min, en tandas durante el evento.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value"><strong>700 croquetas</strong> (350 × 2). ~25 bolsas de 1 kg. Requiere freidora.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">2 croquetas en vasito o sobre servilleta con palillo. Siempre calientes.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Usar croquetas congeladas de calidad (jamón ibérico). Freír a 180°C, 3–4 min, en tandas durante el evento.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value"><strong>700 croquetas</strong> (350 × 2). ~25 bolsas de 1 kg. Requiere freidora.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">2 croquetas en vasito o sobre servilleta con palillo. Siempre calientes.</div></div>
         </div>
       </div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Patatas bravas</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Dados de 3 cm. Freír a 160°C (10 min) y subir a 180°C (3 min). Salsa brava y aioli por separado.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value"><strong>28 kg patata</strong> + salsa brava (~3–4 L) + aioli (~3–4 L). Requiere freidora. Coordinar con croquetas y calamares.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">4–5 dados en vasito de papel, con salsa brava + aioli encima.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Dados de 3 cm. Freír a 160°C (10 min) y subir a 180°C (3 min). Salsa brava y aioli por separado.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value"><strong>28 kg patata</strong> + salsa brava (~3–4 L) + aioli (~3–4 L). Requiere freidora. Coordinar con croquetas y calamares.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">4–5 dados en vasito de papel, con salsa brava + aioli encima.</div></div>
         </div>
       </div>
 
-      <div class="section-subtitle" style="margin-top:1.5rem">Baleares, Canarias, Ceuta y Melilla</div>
+      <div class="section-subtitle" style="margin-top:1.5rem" data-i18n="sn.subsec.baleares">Baleares, Canarias, Ceuta y Melilla</div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Sobrasada con tosta</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Temperatura ambiente (se extiende mejor). Untar sobre tosta. Opcional: hilo de miel encima.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value"><strong>7 kg sobrasada</strong> + <strong>350 tostas</strong> (ya presupuestadas ~360 uds). 350 × 20 g.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">1 tosta untada/persona en bandeja. Rápido de montar.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Temperatura ambiente (se extiende mejor). Untar sobre tosta. Opcional: hilo de miel encima.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value"><strong>7 kg sobrasada</strong> + <strong>350 tostas</strong> (ya presupuestadas ~360 uds). 350 × 20 g.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">1 tosta untada/persona en bandeja. Rápido de montar.</div></div>
         </div>
       </div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Tosta de mojo picón</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Mojo picón rojo canario sobre tosta. Opcional: anchoa o loncha de jamón serrano encima.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value"><strong>350 tostas</strong> + <strong>~5 kg mojo picón</strong> (350 × 15 g) + 350 anchoas o lonchas de jamón (si se añade).</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">1 tosta/persona. Preparar en el momento. Anchoa en el último segundo.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Mojo picón rojo canario sobre tosta. Opcional: anchoa o loncha de jamón serrano encima.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value"><strong>350 tostas</strong> + <strong>~5 kg mojo picón</strong> (350 × 15 g) + 350 anchoas o lonchas de jamón (si se añade).</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">1 tosta/persona. Preparar en el momento. Anchoa en el último segundo.</div></div>
         </div>
       </div>
 
-      <div class="section-subtitle" style="margin-top:1.5rem">Postres</div>
+      <div class="section-subtitle" style="margin-top:1.5rem" data-i18n="sn.subsec.postres">Postres</div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Ensaimadas</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Cortar cada ensaimada en 4 partes. Espolvorear azúcar glas en el momento.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value">8 packs × 18 = 144 ensaimadas × 4 = <strong>576 trocitos</strong>. Cubre el 100% del aforo.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">1 trocito/persona sobre servilleta. Sin plato.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Cortar cada ensaimada en 4 partes. Espolvorear azúcar glas en el momento.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value">8 packs × 18 = 144 ensaimadas × 4 = <strong>576 trocitos</strong>. Cubre el 100% del aforo.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">1 trocito/persona sobre servilleta. Sin plato.</div></div>
         </div>
       </div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Crema catalana</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Mezcla preparada (Royal o similar), cuajar en nevera. Servir fría.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value"><strong>800 porciones</strong> presupuestadas. Vasitos desechables de 50–80 ml.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">Vasito individual frío, bebible o con cucharita. Mantener en frío hasta el pase.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Mezcla preparada (Royal o similar), cuajar en nevera. Servir fría.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value"><strong>800 porciones</strong> presupuestadas. Vasitos desechables de 50–80 ml.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">Vasito individual frío, bebible o con cucharita. Mantener en frío hasta el pase.</div></div>
         </div>
       </div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Buñuelos nata · Buñuelos crema</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Bolsas compradas, listas para consumir (Frostena). Sin freidora. Emplatar directamente.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value"><strong>5 bolsas de nata + 5 bolsas de crema</strong> (1 kg/bolsa). ~50 uds/bolsa = ~500 de cada tipo.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">2–3 buñuelos en vasito o sobre servilleta. Mezclar nata y crema en bandeja.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Bolsas compradas, listas para consumir (Frostena). Sin freidora. Emplatar directamente.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value"><strong>5 bolsas de nata + 5 bolsas de crema</strong> (1 kg/bolsa). ~50 uds/bolsa = ~500 de cada tipo.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">2–3 buñuelos en vasito o sobre servilleta. Mezclar nata y crema en bandeja.</div></div>
         </div>
       </div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Filloas</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Crepes finas gallegas. Hacer la mañana del evento, guardar apiladas. Servir a temperatura ambiente o templadas.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value"><strong>350 filloas</strong>. Para 350: ~70 huevos, ~9 L leche, ~1,75 kg harina.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">1 filloa doblada en cuatro, con azúcar o miel. Sobre servilleta.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Crepes finas gallegas. Hacer la mañana del evento, guardar apiladas. Servir a temperatura ambiente o templadas.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value"><strong>350 filloas</strong>. Para 350: ~70 huevos, ~9 L leche, ~1,75 kg harina.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">1 filloa doblada en cuatro, con azúcar o miel. Sobre servilleta.</div></div>
         </div>
       </div>
       <div style="margin-bottom:1.25rem">
         <div style="font-size:13px;font-weight:600;color:var(--gray-800);margin-bottom:0.5rem">Turrón</div>
         <div class="info-grid">
-          <div class="info-cell"><div class="info-cell-label">Preparación</div><div class="info-cell-value">Romper o cortar en piezas de 2–3 cm. Mezclar tipos: Jijona (blando) + Alicante (duro) o Suchard.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Cantidad</div><div class="info-cell-value"><strong>30 tabletas</strong> (mezcla). 350 × 1 trozo de ~25 g = ~9 kg. 1 tableta de 300 g = ~12 trozos.</div></div>
-          <div class="info-cell"><div class="info-cell-label">Servicio</div><div class="info-cell-value">Bandeja o cesta, selfservice. Sin palillo. Servilletas al lado.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.prep">Preparación</div><div class="info-cell-value">Romper o cortar en piezas de 2–3 cm. Mezclar tipos: Jijona (blando) + Alicante (duro) o Suchard.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.cantidad">Cantidad</div><div class="info-cell-value"><strong>30 tabletas</strong> (mezcla). 350 × 1 trozo de ~25 g = ~9 kg. 1 tableta de 300 g = ~12 trozos.</div></div>
+          <div class="info-cell"><div class="info-cell-label" data-i18n="sn.info.servicio">Servicio</div><div class="info-cell-value">Bandeja o cesta, selfservice. Sin palillo. Servilletas al lado.</div></div>
         </div>
       </div>
 
-      <div class="section-subtitle" style="margin-top:2rem">Notas logísticas</div>
+      <div class="section-subtitle" style="margin-top:2rem" data-i18n="sn.subsec.logistica">Notas logísticas</div>
       <div class="info-grid">
-        <div class="info-cell"><div class="info-cell-label">Freidoras necesarias</div><div class="info-cell-value">Mínimo <strong>3–4 freidoras en simultáneo</strong>: bocata de calamares · croquetas · patatas bravas · buñuelos</div></div>
-        <div class="info-cell"><div class="info-cell-label">Platos calientes</div><div class="info-cell-value">Chistorra · Torreznos · Morcilla · Bocata de calamares · Croquetas · Patatas bravas · Buñuelos</div></div>
-        <div class="info-cell"><div class="info-cell-label">Platos fríos</div><div class="info-cell-value">Gazpacho · Crema catalana · Marineras · Gildas</div></div>
-        <div class="info-cell"><div class="info-cell-label">Orden recorrido</div><div class="info-cell-value">Salados primero. Postres juntos al final del recorrido como remate.</div></div>
+        <div class="info-cell"><div class="info-cell-label" data-i18n="sn.log.freidoras">Freidoras necesarias</div><div class="info-cell-value" data-i18n="sn.log.freidoras.v">Mínimo <strong>3–4 freidoras en simultáneo</strong>: bocata de calamares · croquetas · patatas bravas · buñuelos</div></div>
+        <div class="info-cell"><div class="info-cell-label" data-i18n="sn.log.calientes">Platos calientes</div><div class="info-cell-value" data-i18n="sn.log.calientes.v">Chistorra · Torreznos · Morcilla · Bocata de calamares · Croquetas · Patatas bravas · Buñuelos</div></div>
+        <div class="info-cell"><div class="info-cell-label" data-i18n="sn.log.frios">Platos fríos</div><div class="info-cell-value" data-i18n="sn.log.frios.v">Gazpacho · Crema catalana · Marineras · Gildas</div></div>
+        <div class="info-cell"><div class="info-cell-label" data-i18n="sn.log.orden">Orden recorrido</div><div class="info-cell-value" data-i18n="sn.log.orden.v">Salados primero. Postres juntos al final del recorrido como remate.</div></div>
       </div>
     </div>
 
@@ -573,6 +574,7 @@
   </div>
 </div>
 
+<script src="lang.js"></script>
 <script>
 function scrollToSection(id, link) {
   const el = document.getElementById(id);

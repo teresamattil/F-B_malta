@@ -15,51 +15,52 @@
   <div class="nav-tabs">
     <a class="nav-tab" href="spanish_night.html">Spanish Night</a>
     <a class="nav-tab" href="international_nights.html">International Nights</a>
-    <a class="nav-tab" href="comida_unav.html">Comida UNAV</a>
-    <a class="nav-tab" href="asado_final.html">Asado Final</a>
+    <a class="nav-tab" href="comida_unav.html" data-i18n="nav.comida-unav">Comida UNAV</a>
+    <a class="nav-tab" href="asado_final.html" data-i18n="nav.asado-final">Asado Final</a>
     <a class="nav-tab" href="inventario.html">Inventario</a>
-    <a class="nav-tab active" href="alergenos.html">Alérgenos</a>
+    <a class="nav-tab active" href="alergenos.html" data-i18n="nav.alergenos">Alérgenos</a>
   </div>
+  <button class="lang-toggle" onclick="toggleLang()">EN</button>
 </nav>
 
 <div class="ficha-hero">
   <div>
-    <div class="ficha-eyebrow">Referencia · Malta Camp 2026</div>
-    <div class="ficha-title">Alérgenos &amp; Dietas</div>
-    <div class="ficha-desc">Restricciones alimentarias declaradas por los participantes. Usar como referencia al cerrar menús con catering y coordinar alternativas.</div>
+    <div class="ficha-eyebrow" data-i18n="alg.eyebrow">Referencia · Malta Camp 2026</div>
+    <div class="ficha-title" data-i18n="alg.title">Alérgenos &amp; Dietas</div>
+    <div class="ficha-desc" data-i18n="alg.desc">Restricciones alimentarias declaradas por los participantes. Usar como referencia al cerrar menús con catering y coordinar alternativas.</div>
   </div>
   <div class="ficha-meta">
-    <div class="meta-item"><div class="meta-label">Fuente</div><div class="meta-value">Excel dietas UNAV</div></div>
-    <div class="meta-item"><div class="meta-label">Estado</div><div class="meta-value">Borrador</div></div>
+    <div class="meta-item"><div class="meta-label" data-i18n="meta.source">Fuente</div><div class="meta-value" data-i18n="alg.meta.fuente.v">Excel dietas UNAV</div></div>
+    <div class="meta-item"><div class="meta-label" data-i18n="meta.status">Estado</div><div class="meta-value" data-i18n="alg.meta.estado.v">Borrador</div></div>
   </div>
 </div>
 
 <div class="content">
 
   <div class="stat-strip" style="margin-bottom:2rem">
-    <div class="stat-cell"><div class="stat-num">4</div><div class="stat-label">Restricciones críticas</div></div>
-    <div class="stat-cell"><div class="stat-num">69</div><div class="stat-label">Personas con alguna restricción</div></div>
-    <div class="stat-cell"><div class="stat-num">~566</div><div class="stat-label">Asistentes totales</div></div>
+    <div class="stat-cell"><div class="stat-num">4</div><div class="stat-label" data-i18n="alg.stat.criticas">Restricciones críticas</div></div>
+    <div class="stat-cell"><div class="stat-num">69</div><div class="stat-label" data-i18n="alg.stat.personas">Personas con alguna restricción</div></div>
+    <div class="stat-cell"><div class="stat-num">~566</div><div class="stat-label" data-i18n="alg.stat.total">Asistentes totales</div></div>
   </div>
 
-  <div class="section-title">Leyenda de riesgo</div>
+  <div class="section-title" data-i18n="alg.sec.leyenda">Leyenda de riesgo</div>
   <div class="leyenda" style="margin-bottom:2rem">
-    <span class="risk risk-critico">🔴 Crítico — reacción severa posible</span>
-    <span class="risk risk-moderado">🟠 Moderado — requiere alternativa</span>
-    <span class="risk risk-bajo">🟡 Bajo — vigilar ingredientes</span>
-    <span class="risk risk-ok">🟢 OK — no aplica en el menú</span>
+    <span class="risk risk-critico" data-i18n="alg.risk.critico">🔴 Crítico — reacción severa posible</span>
+    <span class="risk risk-moderado" data-i18n="alg.risk.moderado">🟠 Moderado — requiere alternativa</span>
+    <span class="risk risk-bajo" data-i18n="alg.risk.bajo">🟡 Bajo — vigilar ingredientes</span>
+    <span class="risk risk-ok" data-i18n="alg.risk.ok">🟢 OK — no aplica en el menú</span>
   </div>
 
-  <div class="section-title">Restricciones por evento</div>
-  <div style="font-size:12px;color:var(--gray-500);margin-bottom:1rem;padding:0.6rem 0.9rem;background:var(--gray-50);border-left:2px solid var(--gray-200)">
+  <div class="section-title" data-i18n="alg.sec.restricciones">Restricciones por evento</div>
+  <div style="font-size:12px;color:var(--gray-500);margin-bottom:1rem;padding:0.6rem 0.9rem;background:var(--gray-50);border-left:2px solid var(--gray-200)" data-i18n="alg.paella.note">
     Ingredientes paella: <strong>Pollo · Conejo · Costilla de cerdo · Pimientos · Cebolla · Judía verde · Alcachofa · Guisantes · Arroz</strong>
   </div>
   <table class="alg-table">
     <thead>
       <tr>
-        <th>Restricción</th>
-        <th>Nº personas</th>
-        <th>Nivel de riesgo</th>
+        <th data-i18n="alg.th.restriccion">Restricción</th>
+        <th data-i18n="alg.th.num">Nº personas</th>
+        <th data-i18n="alg.th.nivel">Nivel de riesgo</th>
       </tr>
     </thead>
     <tbody>
@@ -143,5 +144,6 @@
 
 </div>
 
+<script src="lang.js"></script>
 </body>
 </html>

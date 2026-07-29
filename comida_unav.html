@@ -15,35 +15,36 @@
   <div class="nav-tabs">
     <a class="nav-tab" href="spanish_night.html">Spanish Night</a>
     <a class="nav-tab" href="international_nights.html">International Nights</a>
-    <a class="nav-tab active" href="comida_unav.html">Comida UNAV</a>
-    <a class="nav-tab" href="asado_final.html">Asado Final</a>
+    <a class="nav-tab active" href="comida_unav.html" data-i18n="nav.comida-unav">Comida UNAV</a>
+    <a class="nav-tab" href="asado_final.html" data-i18n="nav.asado-final">Asado Final</a>
     <a class="nav-tab" href="inventario.html">Inventario</a>
-    <a class="nav-tab" href="alergenos.html">Alérgenos</a>
+    <a class="nav-tab" href="alergenos.html" data-i18n="nav.alergenos">Alérgenos</a>
   </div>
+  <button class="lang-toggle" onclick="toggleLang()">EN</button>
 </nav>
 
 <div class="ficha-hero">
   <div>
-    <div class="ficha-eyebrow">Evento 03 · Universidad de Navarra</div>
-    <div class="ficha-title">Comida en la UNAV</div>
-    <div class="ficha-desc">Comida oficial del camp en la Universidad de Navarra. Servicio de catering externo. Momento de excursión y vínculo con Pamplona.</div>
+    <div class="ficha-eyebrow" data-i18n="unav.eyebrow">Evento 03 · Universidad de Navarra</div>
+    <div class="ficha-title" data-i18n="unav.title">Comida en la UNAV</div>
+    <div class="ficha-desc" data-i18n="unav.desc">Comida oficial del camp en la Universidad de Navarra. Servicio de catering externo. Momento de excursión y vínculo con Pamplona.</div>
   </div>
   <div class="ficha-meta">
-    <div class="meta-item"><div class="meta-label">Día</div><div class="meta-value">Jueves 6 agosto</div></div>
-    <div class="meta-item"><div class="meta-label">Hora</div><div class="meta-value">12:30–14:00 h</div></div>
-    <div class="meta-item"><div class="meta-label">Presupuesto</div><div class="meta-value">10 €/pax</div></div>
+    <div class="meta-item"><div class="meta-label" data-i18n="meta.day">Día</div><div class="meta-value" data-i18n="unav.meta.day.v">Jueves 6 agosto</div></div>
+    <div class="meta-item"><div class="meta-label" data-i18n="meta.hour">Hora</div><div class="meta-value">12:30–14:00 h</div></div>
+    <div class="meta-item"><div class="meta-label" data-i18n="meta.budget">Presupuesto</div><div class="meta-value">10 €/pax</div></div>
   </div>
 </div>
 
 <div class="friso">
-  <div class="friso-label">Cronograma</div>
+  <div class="friso-label" data-i18n="friso.label">Cronograma</div>
   <div class="friso-track">
     <div class="friso-seg">
       <div class="friso-node">
         <div class="friso-dot-row"><div class="friso-dot on"></div><div class="friso-line"></div></div>
         <div class="friso-node-content">
           <div class="friso-time">xx:00</div>
-          <div class="friso-action">Llegada UNAV</div>
+          <div class="friso-action" data-i18n="unav.friso.llegada">Llegada UNAV</div>
           <div class="friso-people">
             <div class="friso-person">xxxx (x)</div>
             <div class="friso-person">xxxx (x)</div>
@@ -56,7 +57,7 @@
         <div class="friso-dot-row"><div class="friso-dot on"></div><div class="friso-line"></div></div>
         <div class="friso-node-content">
           <div class="friso-time">xx:00</div>
-          <div class="friso-action">Preparación mesas</div>
+          <div class="friso-action" data-i18n="unav.friso.mesas">Preparación mesas</div>
           <div class="friso-people">
             <div class="friso-person">xxxx (x)</div>
           </div>
@@ -67,7 +68,7 @@
       <div class="friso-end-dot-row"><div class="friso-end-dot"></div></div>
       <div class="friso-end-content">
         <div class="friso-time">xx:00</div>
-        <div class="friso-action">Comida</div>
+        <div class="friso-action" data-i18n="unav.friso.comida">Comida</div>
       </div>
     </div>
   </div>
@@ -75,21 +76,21 @@
 
 <div class="content-wrapper">
   <nav class="sidebar-nav">
-    <div class="sidebar-heading">Secciones</div>
-    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('unav-catering', this)">Catering</a>
-    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('unav-menu', this)">Menú</a>
+    <div class="sidebar-heading" data-i18n="sidebar.heading">Secciones</div>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('unav-catering', this)" data-i18n="unav.sidebar.catering">Catering</a>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('unav-menu', this)" data-i18n="unav.sidebar.menu">Menú</a>
   </nav>
 
   <div class="sections-col">
 
     <div class="section-block" id="unav-catering">
-      <div class="section-title">Catering</div>
+      <div class="section-title" data-i18n="unav.sec.catering">Catering</div>
       <div class="contact-row">
         <div class="contact-init">ES</div>
         <div>
           <div class="contact-name">Elena Samper</div>
           <div class="contact-role">
-            Sodexo · Catering UNAV<br>
+            <span data-i18n="unav.contact.role">Sodexo · Catering UNAV</span><br>
             <a href="mailto:elena.samper@sodexo.com">elena.samper@sodexo.com</a><br>
             T. xxxx
           </div>
@@ -98,29 +99,29 @@
     </div>
 
     <div class="section-block" id="unav-menu">
-      <div class="section-title">Menú</div>
+      <div class="section-title" data-i18n="unav.sec.menu">Menú</div>
       <div class="info-grid">
         <div class="info-cell">
-          <div class="info-cell-label">Primero</div>
-          <div class="info-cell-value">Gazpacho o Salmorejo</div>
+          <div class="info-cell-label" data-i18n="unav.menu.primero">Primero</div>
+          <div class="info-cell-value" data-i18n="unav.menu.primero.v">Gazpacho o Salmorejo</div>
         </div>
         <div class="info-cell">
-          <div class="info-cell-label">Segundo</div>
-          <div class="info-cell-value">
+          <div class="info-cell-label" data-i18n="unav.menu.segundo">Segundo</div>
+          <div class="info-cell-value" data-i18n="unav.menu.segundo.v">
             Albóndigas en salsa con patatas fritas <span style="font-size:11px;color:var(--gray-400)">60%</span><br>
             Ensalada de pasta <span style="font-size:11px;color:var(--gray-400)">40%</span>
           </div>
         </div>
         <div class="info-cell">
-          <div class="info-cell-label">Postre</div>
-          <div class="info-cell-value">Variedad de lácteos (yogures, natillas, flanes, cuajada…) y fruta <span class="tbd">si pueden</span></div>
+          <div class="info-cell-label" data-i18n="unav.menu.postre">Postre</div>
+          <div class="info-cell-value" data-i18n="unav.menu.postre.v">Variedad de lácteos (yogures, natillas, flanes, cuajada…) y fruta <span class="tbd">si pueden</span></div>
         </div>
         <div class="info-cell">
-          <div class="info-cell-label">Acompañamiento</div>
-          <div class="info-cell-value">Pan · Agua · Refrescos</div>
+          <div class="info-cell-label" data-i18n="unav.menu.acomp">Acompañamiento</div>
+          <div class="info-cell-value" data-i18n="unav.menu.acomp.v">Pan · Agua · Refrescos</div>
         </div>
         <div class="info-cell">
-          <div class="info-cell-label">Precio</div>
+          <div class="info-cell-label" data-i18n="unav.menu.precio">Precio</div>
           <div class="info-cell-value"><strong>8,60 €/pers.</strong></div>
         </div>
       </div>
@@ -129,6 +130,7 @@
   </div>
 </div>
 
+<script src="lang.js"></script>
 <script>
 function scrollToSection(id, link) {
   const el = document.getElementById(id);

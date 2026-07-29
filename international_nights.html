@@ -15,43 +15,44 @@
   <div class="nav-tabs">
     <a class="nav-tab" href="spanish_night.html">Spanish Night</a>
     <a class="nav-tab active" href="international_nights.html">International Nights</a>
-    <a class="nav-tab" href="comida_unav.html">Comida UNAV</a>
-    <a class="nav-tab" href="asado_final.html">Asado Final</a>
+    <a class="nav-tab" href="comida_unav.html" data-i18n="nav.comida-unav">Comida UNAV</a>
+    <a class="nav-tab" href="asado_final.html" data-i18n="nav.asado-final">Asado Final</a>
     <a class="nav-tab" href="inventario.html">Inventario</a>
-    <a class="nav-tab" href="alergenos.html">Alérgenos</a>
+    <a class="nav-tab" href="alergenos.html" data-i18n="nav.alergenos">Alérgenos</a>
   </div>
+  <button class="lang-toggle" onclick="toggleLang()">EN</button>
 </nav>
 
 <div class="ficha-hero">
   <div>
-    <div class="ficha-eyebrow">Evento 02 · Javier, Navarra</div>
+    <div class="ficha-eyebrow" data-i18n="intl.eyebrow">Evento 02 · Javier, Navarra</div>
     <div class="ficha-title">International Nights</div>
-    <div class="ficha-desc">Cada delegación prepara un plato típico de su país. Dos noches con países repartidos. Cada delegación dispone de cocina y presupuesto para frescos.</div>
+    <div class="ficha-desc" data-i18n="intl.desc">Cada delegación prepara un plato típico de su país. Dos noches con países repartidos. Cada delegación dispone de cocina y presupuesto para frescos.</div>
   </div>
   <div class="ficha-meta">
-    <div class="meta-item"><div class="meta-label">Días</div><div class="meta-value">Miérc. 5 y Viern. 7</div></div>
-    <div class="meta-item"><div class="meta-label">Hora</div><div class="meta-value">20:30–21:30 h</div></div>
-    <div class="meta-item"><div class="meta-label">Países</div><div class="meta-value">~25 países</div></div>
+    <div class="meta-item"><div class="meta-label" data-i18n="meta.days">Días</div><div class="meta-value" data-i18n="intl.meta.days.v">Miérc. 5 y Viern. 7</div></div>
+    <div class="meta-item"><div class="meta-label" data-i18n="meta.hour">Hora</div><div class="meta-value">20:30–21:30 h</div></div>
+    <div class="meta-item"><div class="meta-label" data-i18n="meta.countries">Países</div><div class="meta-value">~25 países</div></div>
   </div>
 </div>
 
 <div class="stat-strip" style="padding:1.5rem 2rem;border-bottom:1px solid var(--gray-100)">
-  <div class="stat-cell"><div class="stat-num">25</div><div class="stat-label">Países</div></div>
-  <div class="stat-cell"><div class="stat-num">13</div><div class="stat-label">Miércoles 5</div></div>
-  <div class="stat-cell"><div class="stat-num">12</div><div class="stat-label">Viernes 7</div></div>
+  <div class="stat-cell"><div class="stat-num">25</div><div class="stat-label" data-i18n="intl.stat.paises">Países</div></div>
+  <div class="stat-cell"><div class="stat-num">13</div><div class="stat-label" data-i18n="intl.stat.wed">Miércoles 5</div></div>
+  <div class="stat-cell"><div class="stat-num">12</div><div class="stat-label" data-i18n="intl.stat.fri">Viernes 7</div></div>
 </div>
 
 <div class="friso">
-  <div class="friso-label">Cronograma</div>
+  <div class="friso-label" data-i18n="friso.label">Cronograma</div>
   <div class="friso-track">
     <div class="friso-seg">
       <div class="friso-node">
         <div class="friso-dot-row"><div class="friso-dot on"></div><div class="friso-line"></div></div>
         <div class="friso-node-content">
           <div class="friso-time">17:00</div>
-          <div class="friso-action">Preparación cocinas</div>
+          <div class="friso-action" data-i18n="intl.friso.prep">Preparación cocinas</div>
           <div class="friso-people">
-            <div class="friso-person">7 voluntarios además de delegaciones</div>
+            <div class="friso-person" data-i18n="intl.friso.vol">7 voluntarios además de delegaciones</div>
           </div>
         </div>
       </div>
@@ -61,9 +62,9 @@
         <div class="friso-dot-row"><div class="friso-dot on"></div><div class="friso-line"></div></div>
         <div class="friso-node-content">
           <div class="friso-time">19:30</div>
-          <div class="friso-action">Apertura puestos</div>
+          <div class="friso-action" data-i18n="intl.friso.apertura">Apertura puestos</div>
           <div class="friso-people">
-            <div class="friso-person">7 voluntarios además de delegaciones</div>
+            <div class="friso-person" data-i18n="intl.friso.vol">7 voluntarios además de delegaciones</div>
           </div>
         </div>
       </div>
@@ -72,139 +73,141 @@
       <div class="friso-end-dot-row"><div class="friso-end-dot"></div></div>
       <div class="friso-end-content">
         <div class="friso-time">22:30</div>
-        <div class="friso-action">Recogida</div>
+        <div class="friso-action" data-i18n="friso.recogida">Recogida</div>
       </div>
     </div>
   </div>
 </div>
 
 <div style="padding:0.75rem 2rem;border-bottom:1px solid var(--gray-100);display:flex;align-items:center;gap:0.75rem">
-  <span style="font-size:13px;font-weight:600;color:var(--gray-700)">Respuestas formulario</span>
-  <a href="https://docs.google.com/spreadsheets/d/1og_IXTx4rsRmjW3PbQrKAqSkZZrBqitufwmp7ePvamI/edit?gid=1489578606#gid=1489578606" target="_blank" style="display:inline-flex;align-items:center;gap:5px;padding:6px 12px;background:#111827;color:#fff;text-decoration:none;border-radius:6px;font-size:12px;font-weight:600">Ver hoja ↗</a>
+  <span style="font-size:13px;font-weight:600;color:var(--gray-700)" data-i18n="intl.resp.label">Respuestas formulario</span>
+  <a href="https://docs.google.com/spreadsheets/d/1og_IXTx4rsRmjW3PbQrKAqSkZZrBqitufwmp7ePvamI/edit?gid=1489578606#gid=1489578606" target="_blank" style="display:inline-flex;align-items:center;gap:5px;padding:6px 12px;background:#111827;color:#fff;text-decoration:none;border-radius:6px;font-size:12px;font-weight:600" data-i18n="intl.resp.btn">Ver hoja ↗</a>
 </div>
 
 <div class="content-wrapper">
   <nav class="sidebar-nav">
-    <div class="sidebar-heading">Secciones</div>
-    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('intl-paises', this)">Países</a>
-    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('intl-cocina', this)">Material de cocina</a>
-    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('intl-formulario', this)">Formulario delegaciones</a>
+    <div class="sidebar-heading" data-i18n="sidebar.heading">Secciones</div>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('intl-paises', this)" data-i18n="intl.sidebar.paises">Países</a>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('intl-cocina', this)" data-i18n="intl.sidebar.cocina">Material de cocina</a>
+    <a class="sidebar-link" href="javascript:void(0)" onclick="scrollToSection('intl-formulario', this)" data-i18n="intl.sidebar.form">Formulario delegaciones</a>
   </nav>
 
   <div class="sections-col">
 
     <div class="section-block" id="intl-paises">
-      <div class="section-title">Países por día</div>
-      <div style="padding:0.75rem 1rem;background:var(--gray-50);border-left:2px solid var(--gray-200);font-size:12px;color:var(--gray-600);margin-bottom:1.25rem">Todos los utensilios de cocina (cacerolas, sartenes, cuchillos, tablas, espátulas, hornillos de gas) están presupuestados pero <strong>pendientes de confirmar si se pueden reutilizar del equipamiento del Castillo de Javier</strong>.</div>
+      <div class="section-title" data-i18n="intl.sec.paises">Países por día</div>
+      <div style="padding:0.75rem 1rem;background:var(--gray-50);border-left:2px solid var(--gray-200);font-size:12px;color:var(--gray-600);margin-bottom:1.25rem" data-i18n="intl.utensils.note">Todos los utensilios de cocina (cacerolas, sartenes, cuchillos, tablas, espátulas, hornillos de gas) están presupuestados pero <strong>pendientes de confirmar si se pueden reutilizar del equipamiento del Castillo de Javier</strong>.</div>
       <table class="data-table">
-        <thead><tr><th>País</th><th>Día</th><th>Plato previsto</th><th>Nota</th></tr></thead>
+        <thead><tr><th data-i18n="intl.th.pais">País</th><th data-i18n="intl.th.dia">Día</th><th data-i18n="intl.th.plato">Plato previsto</th><th data-i18n="intl.th.nota">Nota</th></tr></thead>
         <tbody>
-          <tr style="background:var(--gray-50)"><td colspan="4" style="font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.06em;border-bottom:1px solid var(--gray-200)">MIÉRCOLES 5 · DÍA 1 — 13 países</td></tr>
-          <tr><td>🇧🇪 Bélgica</td><td><span class="badge badge-dark">Día 1 · Miérc. 5</span></td><td>Fuente de chocolate · Gofres · Galletas · Salchichitas · Shots</td><td style="font-size:11px;color:var(--gray-500)">🔌 Enchufe para fuente de chocolate · sin nevera</td></tr>
-          <tr><td>🇨🇿 Rep. Checa</td><td><span class="badge badge-dark">Día 1 · Miérc. 5</span></td><td>Caramelos y dulces · Bebidas retro</td><td style="font-size:11px;color:var(--gray-500)">🛒 Agua mineral · sin nevera · sin cocina</td></tr>
-          <tr><td>🇩🇪 Alemania</td><td><span class="badge badge-dark">Día 1 · Miérc. 5</span></td><td>Licores y dulces alemanes</td><td style="font-size:11px;color:var(--gray-500)">❄️ 1 estante · sin cocina</td></tr>
-          <tr><td>🇮🇪 Irlanda</td><td><span class="badge badge-dark">Día 1 · Miérc. 5</span></td><td>Pan · Queso · Crackers · Relish · Bizcocho · Limonada roja · Baby Guinness</td><td style="font-size:11px;color:var(--gray-500)">❄️ 1 estante · sin cocina · piden acceso para sillas de ruedas</td></tr>
-          <tr><td>🇲🇹 Malta</td><td><span class="badge badge-dark">Día 1 · Miérc. 5</span></td><td>Snacks · Bebidas</td><td style="font-size:11px;color:var(--gray-500)">🛒 Limones x3 + hielo · piden espacio frío para enfriar bebidas · sin cocina</td></tr>
-          <tr><td>🇲🇽 México</td><td><span class="badge badge-dark">Día 1 · Miérc. 5</span></td><td>Cochinita Pibil · Margaritas</td><td style="font-size:11px;color:var(--gray-500)">🍳 Necesita cocina (olla grande + plancha) · ❄️ 1 estante</td></tr>
-          <tr><td>🇸🇰 Eslovaquia</td><td><span class="badge badge-dark">Día 1 · Miérc. 5</span></td><td>Quesos y salchichas tradicionales · Queso a la plancha · Bebidas</td><td style="font-size:11px;color:var(--gray-500)">🔌 Placa eléctrica (enchufe) · 🛒 5 cebollas rojas + 1-2 barras pan · ❄️ 2 estantes</td></tr>
-          <tr><td>🇨🇭 Suiza</td><td><span class="badge badge-dark">Día 1 · Miérc. 5</span></td><td>Fondue · Pan · Carne · Queso · Chocolate · Refrescos · Vino blanco · Licor</td><td style="font-size:11px;color:var(--gray-500)">🍳 Necesita cocina · 🛒 1 kg pan fresco · ❄️ 2 estantes</td></tr>
-          <tr><td>🇺🇦 Ucrania</td><td><span class="badge badge-dark">Día 1 · Miérc. 5</span></td><td>Sandwiches con ensaladas · Dulces · Alcohol</td><td style="font-size:11px;color:var(--gray-500)">🛒 Pan negro (4 barras) · queso fundido · huevos · pepinillos y varios · ❄️ 1 estante · sin cocina</td></tr>
-          <tr><td>🇺🇸 USA</td><td><span class="badge badge-dark">Día 1 · Miérc. 5</span></td><td>Brownies caseros · Coca-Cola · Jack Daniel's</td><td style="font-size:11px;color:var(--gray-500)">🔥 Necesita horno + enchufe · trae mezclas e ingredientes · ~350-400 raciones</td></tr>
-          <tr><td>🇵🇱 Polonia</td><td><span class="badge badge-dark">Día 1 · Miérc. 5</span></td><td>Pierogi · Borsch · Salchichas · Untado de manteca</td><td style="font-size:11px;color:var(--gray-500)">🍳 Necesita sartén + olla grande · ❄️ 2 estantes</td></tr>
-          <tr><td>🇵🇹 Portugal</td><td><span class="badge badge-dark">Día 1 · Miérc. 5</span></td><td>Caldo verde · Chorizos y jamón · Garbanzos · Judías · Atún · Sardinas · Puré · Vino de Oporto</td><td style="font-size:11px;color:var(--gray-500)">🍳 Necesita cocina · 🛒 pan con aceite de oliva · ❄️ 3 estantes · piden 500 vasitos</td></tr>
-          <tr><td>🇳🇱 Países Bajos</td><td><span class="badge badge-dark">Día 1 · Miérc. 5</span></td><td>Quesos · Salchichas · Fritos holandeses · Licores · Cerveza · Panqueques</td><td style="font-size:11px;color:var(--gray-500)">🍳 Necesita freidora grande + sartén grande · 🛒 harinas + levadura + leche + huevos + mantequilla · ❄️ 4 estantes</td></tr>
-          <tr style="background:var(--gray-50)"><td colspan="4" style="font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.06em;border-bottom:1px solid var(--gray-200)">VIERNES 7 · DÍA 2 — 12 países</td></tr>
-          <tr><td>🇦🇱 Albania</td><td><span class="badge badge-gray">Día 2 · Viern. 7</span></td><td>Licores</td><td style="font-size:11px;color:var(--gray-500)">Sin nevera · sin cocina</td></tr>
-          <tr><td>🇧🇬 Bulgaria</td><td><span class="badge badge-gray">Día 2 · Viern. 7</span></td><td>Embutidos secos · Lukum (dulce de rosa) · Luteniza (paté de verdura) · Rakia</td><td style="font-size:11px;color:var(--gray-500)">🛒 5 kg pan estilo baguette · ❄️ 2 estantes + congelador 3h (Rakia)</td></tr>
-          <tr><td>🇪🇪 Estonia</td><td><span class="badge badge-gray">Día 2 · Viern. 7</span></td><td>Licor · Palitos dulces · Golosinas</td><td style="font-size:11px;color:var(--gray-500)">❄️ 1 estante · sin cocina · piden 100 vasitos + 2 boles grandes</td></tr>
-          <tr><td>🇦🇹 Austria</td><td><span class="badge badge-gray">Día 2 · Viern. 7</span></td><td>Apple Strudel · Schnitzel</td><td style="font-size:11px;color:var(--gray-500)">🔥 Necesita horno (con bandejas) · 🍳 sartén · 🛒 manzanas 8kg + cerdo 2kg + huevos + harina + aceite · ❄️ 1 estante</td></tr>
-          <tr><td>🇫🇷 Francia</td><td><span class="badge badge-gray">Día 2 · Viern. 7</span></td><td>Vinos · Licores · Quesos · Charcutería · Paté · Foie gras · Dulces franceses</td><td style="font-size:11px;color:var(--gray-500)">🛒 10 baguettes (panadería) + ensalada verde · ❄️ 3 estantes · sin cocina</td></tr>
-          <tr><td>🇬🇧 Gran Bretaña</td><td><span class="badge badge-gray">Día 2 · Viern. 7</span></td><td>Pimm's · Scones con nata y mermelada · Jaffa cakes</td><td style="font-size:11px;color:var(--gray-500)">🛒 Limonada (36 L) · fresas · limones · naranjas · menta · pepino · mermelada · nata · ❄️ 3 estantes · piden recipiente grande (&gt;20L)</td></tr>
-          <tr><td>🇭🇺 Hungría</td><td><span class="badge badge-gray">Día 2 · Viern. 7</span></td><td>Lecsó (estofado de pimiento y tomate) · Paté de berenjena · Pálinka · Unicum</td><td style="font-size:11px;color:var(--gray-500)">🍳 Necesita cocina (2 ollas grandes) · 🛒 pimientos 12kg + tomates 9kg + cebollas 3kg · ❄️ 2 estantes + congelador para bebidas · 🔌 2 enchufes</td></tr>
-          <tr><td>🇮🇹 Italia</td><td><span class="badge badge-gray">Día 2 · Viern. 7</span></td><td>Quesos y embutidos · Pan con salsas · Taralli · Hojaldre · Aperol Spritz · Mimosa</td><td style="font-size:11px;color:var(--gray-500)">🛒 Hielo (2 bolsas) + agua con gas + zumo naranja + naranjas + limas + tomates + 5 baguettes · ❄️ 4 estantes · piden dispensadores de bebida grandes + 200 vasos + platos</td></tr>
-          <tr><td>🇱🇹 Lituania</td><td><span class="badge badge-gray">Día 2 · Viern. 7</span></td><td>Charcutería lituana · Sopa fría rosa (kefir) · Alcohol y refrescos</td><td style="font-size:11px;color:var(--gray-500)">🍳 Necesita sartén + olla · 🛒 4 L kefir + huevos + cebollas · ❄️ 2 estantes</td></tr>
-          <tr><td>🇪🇸 España</td><td><span class="badge badge-gray">Día 2 · Viern. 7</span></td><td>Migas · Quesos y embutidos · Tortilla · Rebujito · Licores</td><td style="font-size:11px;color:var(--gray-500)">🍳 Necesita cocina · ❄️ 6 estantes · 🛒 20 bolsas hielo (5 kg) + 20 ramos menta</td></tr>
-          <tr><td>🇵🇪 Perú</td><td><span class="badge badge-gray">Día 2 · Viern. 7</span></td><td>Ají de Gallina · Pisco Sour</td><td style="font-size:11px;color:var(--gray-500)">🍳 Necesita cocina (olla 30L + batidora de vaso) · 🛒 pollo 4,5 kg + cebolla roja 2kg + leche evaporada + especias + verduras · ⚠️ piden cooler cilíndrico con grifo (imprescindible para el cóctel)</td></tr>
-          <tr><td>🇱🇧 Líbano</td><td><span class="badge badge-gray">Día 2 · Viern. 7</span></td><td>Hummus · Tabulé · Labneh · Crackers · Dulces libaneses · Zaatar · Pita · Zumo casero</td><td style="font-size:11px;color:var(--gray-500)">🍳 Necesita cocina · 🛒 perejil 6-7 kg + tomates 5 kg + cebollas 2 kg + 35 limones + aceite + mozzarella (7,5 kg) · ❄️ 4 estantes</td></tr>
+          <tr style="background:var(--gray-50)"><td colspan="4" style="font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.06em;border-bottom:1px solid var(--gray-200)" data-i18n="intl.div.wed">MIÉRCOLES 5 · DÍA 1 — 13 países</td></tr>
+          <tr><td>🇧🇪 Bélgica</td><td><span class="badge badge-dark" data-i18n="badge.dia1">Día 1 · Miérc. 5</span></td><td>Fuente de chocolate · Gofres · Galletas · Salchichitas · Shots</td><td style="font-size:11px;color:var(--gray-500)">🔌 Enchufe para fuente de chocolate · sin nevera</td></tr>
+          <tr><td>🇨🇿 Rep. Checa</td><td><span class="badge badge-dark" data-i18n="badge.dia1">Día 1 · Miérc. 5</span></td><td>Caramelos y dulces · Bebidas retro</td><td style="font-size:11px;color:var(--gray-500)">🛒 Agua mineral · sin nevera · sin cocina</td></tr>
+          <tr><td>🇩🇪 Alemania</td><td><span class="badge badge-dark" data-i18n="badge.dia1">Día 1 · Miérc. 5</span></td><td>Licores y dulces alemanes</td><td style="font-size:11px;color:var(--gray-500)">❄️ 1 estante · sin cocina</td></tr>
+          <tr><td>🇮🇪 Irlanda</td><td><span class="badge badge-dark" data-i18n="badge.dia1">Día 1 · Miérc. 5</span></td><td>Pan · Queso · Crackers · Relish · Bizcocho · Limonada roja · Baby Guinness</td><td style="font-size:11px;color:var(--gray-500)">❄️ 1 estante · sin cocina · piden acceso para sillas de ruedas</td></tr>
+          <tr><td>🇲🇹 Malta</td><td><span class="badge badge-dark" data-i18n="badge.dia1">Día 1 · Miérc. 5</span></td><td>Snacks · Bebidas</td><td style="font-size:11px;color:var(--gray-500)">🛒 Limones x3 + hielo · piden espacio frío para enfriar bebidas · sin cocina</td></tr>
+          <tr><td>🇲🇽 México</td><td><span class="badge badge-dark" data-i18n="badge.dia1">Día 1 · Miérc. 5</span></td><td>Cochinita Pibil · Margaritas</td><td style="font-size:11px;color:var(--gray-500)">🍳 Necesita cocina (olla grande + plancha) · ❄️ 1 estante</td></tr>
+          <tr><td>🇸🇰 Eslovaquia</td><td><span class="badge badge-dark" data-i18n="badge.dia1">Día 1 · Miérc. 5</span></td><td>Quesos y salchichas tradicionales · Queso a la plancha · Bebidas</td><td style="font-size:11px;color:var(--gray-500)">🔌 Placa eléctrica (enchufe) · 🛒 5 cebollas rojas + 1-2 barras pan · ❄️ 2 estantes</td></tr>
+          <tr><td>🇨🇭 Suiza</td><td><span class="badge badge-dark" data-i18n="badge.dia1">Día 1 · Miérc. 5</span></td><td>Fondue · Pan · Carne · Queso · Chocolate · Refrescos · Vino blanco · Licor</td><td style="font-size:11px;color:var(--gray-500)">🍳 Necesita cocina · 🛒 1 kg pan fresco · ❄️ 2 estantes</td></tr>
+          <tr><td>🇺🇦 Ucrania</td><td><span class="badge badge-dark" data-i18n="badge.dia1">Día 1 · Miérc. 5</span></td><td>Sandwiches con ensaladas · Dulces · Alcohol</td><td style="font-size:11px;color:var(--gray-500)">🛒 Pan negro (4 barras) · queso fundido · huevos · pepinillos y varios · ❄️ 1 estante · sin cocina</td></tr>
+          <tr><td>🇺🇸 USA</td><td><span class="badge badge-dark" data-i18n="badge.dia1">Día 1 · Miérc. 5</span></td><td>Brownies caseros · Coca-Cola · Jack Daniel's</td><td style="font-size:11px;color:var(--gray-500)">🔥 Necesita horno + enchufe · trae mezclas e ingredientes · ~350-400 raciones</td></tr>
+          <tr><td>🇵🇱 Polonia</td><td><span class="badge badge-dark" data-i18n="badge.dia1">Día 1 · Miérc. 5</span></td><td>Pierogi · Borsch · Salchichas · Untado de manteca</td><td style="font-size:11px;color:var(--gray-500)">🍳 Necesita sartén + olla grande · ❄️ 2 estantes</td></tr>
+          <tr><td>🇵🇹 Portugal</td><td><span class="badge badge-dark" data-i18n="badge.dia1">Día 1 · Miérc. 5</span></td><td>Caldo verde · Chorizos y jamón · Garbanzos · Judías · Atún · Sardinas · Puré · Vino de Oporto</td><td style="font-size:11px;color:var(--gray-500)">🍳 Necesita cocina · 🛒 pan con aceite de oliva · ❄️ 3 estantes · piden 500 vasitos</td></tr>
+          <tr><td>🇳🇱 Países Bajos</td><td><span class="badge badge-dark" data-i18n="badge.dia1">Día 1 · Miérc. 5</span></td><td>Quesos · Salchichas · Fritos holandeses · Licores · Cerveza · Panqueques</td><td style="font-size:11px;color:var(--gray-500)">🍳 Necesita freidora grande + sartén grande · 🛒 harinas + levadura + leche + huevos + mantequilla · ❄️ 4 estantes</td></tr>
+          <tr style="background:var(--gray-50)"><td colspan="4" style="font-size:11px;font-weight:600;color:var(--gray-500);padding:6px 12px;letter-spacing:.06em;border-bottom:1px solid var(--gray-200)" data-i18n="intl.div.fri">VIERNES 7 · DÍA 2 — 12 países</td></tr>
+          <tr><td>🇦🇱 Albania</td><td><span class="badge badge-gray" data-i18n="badge.dia2">Día 2 · Viern. 7</span></td><td>Licores</td><td style="font-size:11px;color:var(--gray-500)">Sin nevera · sin cocina</td></tr>
+          <tr><td>🇧🇬 Bulgaria</td><td><span class="badge badge-gray" data-i18n="badge.dia2">Día 2 · Viern. 7</span></td><td>Embutidos secos · Lukum (dulce de rosa) · Luteniza (paté de verdura) · Rakia</td><td style="font-size:11px;color:var(--gray-500)">🛒 5 kg pan estilo baguette · ❄️ 2 estantes + congelador 3h (Rakia)</td></tr>
+          <tr><td>🇪🇪 Estonia</td><td><span class="badge badge-gray" data-i18n="badge.dia2">Día 2 · Viern. 7</span></td><td>Licor · Palitos dulces · Golosinas</td><td style="font-size:11px;color:var(--gray-500)">❄️ 1 estante · sin cocina · piden 100 vasitos + 2 boles grandes</td></tr>
+          <tr><td>🇦🇹 Austria</td><td><span class="badge badge-gray" data-i18n="badge.dia2">Día 2 · Viern. 7</span></td><td>Apple Strudel · Schnitzel</td><td style="font-size:11px;color:var(--gray-500)">🔥 Necesita horno (con bandejas) · 🍳 sartén · 🛒 manzanas 8kg + cerdo 2kg + huevos + harina + aceite · ❄️ 1 estante</td></tr>
+          <tr><td>🇫🇷 Francia</td><td><span class="badge badge-gray" data-i18n="badge.dia2">Día 2 · Viern. 7</span></td><td>Vinos · Licores · Quesos · Charcutería · Paté · Foie gras · Dulces franceses</td><td style="font-size:11px;color:var(--gray-500)">🛒 10 baguettes (panadería) + ensalada verde · ❄️ 3 estantes · sin cocina</td></tr>
+          <tr><td>🇬🇧 Gran Bretaña</td><td><span class="badge badge-gray" data-i18n="badge.dia2">Día 2 · Viern. 7</span></td><td>Pimm's · Scones con nata y mermelada · Jaffa cakes</td><td style="font-size:11px;color:var(--gray-500)">🛒 Limonada (36 L) · fresas · limones · naranjas · menta · pepino · mermelada · nata · ❄️ 3 estantes · piden recipiente grande (&gt;20L)</td></tr>
+          <tr><td>🇭🇺 Hungría</td><td><span class="badge badge-gray" data-i18n="badge.dia2">Día 2 · Viern. 7</span></td><td>Lecsó (estofado de pimiento y tomate) · Paté de berenjena · Pálinka · Unicum</td><td style="font-size:11px;color:var(--gray-500)">🍳 Necesita cocina (2 ollas grandes) · 🛒 pimientos 12kg + tomates 9kg + cebollas 3kg · ❄️ 2 estantes + congelador para bebidas · 🔌 2 enchufes</td></tr>
+          <tr><td>🇮🇹 Italia</td><td><span class="badge badge-gray" data-i18n="badge.dia2">Día 2 · Viern. 7</span></td><td>Quesos y embutidos · Pan con salsas · Taralli · Hojaldre · Aperol Spritz · Mimosa</td><td style="font-size:11px;color:var(--gray-500)">🛒 Hielo (2 bolsas) + agua con gas + zumo naranja + naranjas + limas + tomates + 5 baguettes · ❄️ 4 estantes · piden dispensadores de bebida grandes + 200 vasos + platos</td></tr>
+          <tr><td>🇱🇹 Lituania</td><td><span class="badge badge-gray" data-i18n="badge.dia2">Día 2 · Viern. 7</span></td><td>Charcutería lituana · Sopa fría rosa (kefir) · Alcohol y refrescos</td><td style="font-size:11px;color:var(--gray-500)">🍳 Necesita sartén + olla · 🛒 4 L kefir + huevos + cebollas · ❄️ 2 estantes</td></tr>
+          <tr><td>🇪🇸 España</td><td><span class="badge badge-gray" data-i18n="badge.dia2">Día 2 · Viern. 7</span></td><td>Migas · Quesos y embutidos · Tortilla · Rebujito · Licores</td><td style="font-size:11px;color:var(--gray-500)">🍳 Necesita cocina · ❄️ 6 estantes · 🛒 20 bolsas hielo (5 kg) + 20 ramos menta</td></tr>
+          <tr><td>🇵🇪 Perú</td><td><span class="badge badge-gray" data-i18n="badge.dia2">Día 2 · Viern. 7</span></td><td>Ají de Gallina · Pisco Sour</td><td style="font-size:11px;color:var(--gray-500)">🍳 Necesita cocina (olla 30L + batidora de vaso) · 🛒 pollo 4,5 kg + cebolla roja 2kg + leche evaporada + especias + verduras · ⚠️ piden cooler cilíndrico con grifo (imprescindible para el cóctel)</td></tr>
+          <tr><td>🇱🇧 Líbano</td><td><span class="badge badge-gray" data-i18n="badge.dia2">Día 2 · Viern. 7</span></td><td>Hummus · Tabulé · Labneh · Crackers · Dulces libaneses · Zaatar · Pita · Zumo casero</td><td style="font-size:11px;color:var(--gray-500)">🍳 Necesita cocina · 🛒 perejil 6-7 kg + tomates 5 kg + cebollas 2 kg + 35 limones + aceite + mozzarella (7,5 kg) · ❄️ 4 estantes</td></tr>
         </tbody>
       </table>
     </div>
 
     <div class="section-block" id="intl-cocina">
-      <div class="section-title">Material de cocina por noche</div>
-      <div style="font-size:13px;color:var(--gray-600);margin-bottom:1.25rem">13 de 25 países necesitan cocina — 7 el miércoles, 6 el viernes.</div>
+      <div class="section-title" data-i18n="intl.sec.cocina">Material de cocina por noche</div>
+      <div style="font-size:13px;color:var(--gray-600);margin-bottom:1.25rem" data-i18n="intl.cocina.note">13 de 25 países necesitan cocina — 7 el miércoles, 6 el viernes.</div>
       <table class="data-table">
-        <thead><tr><th>Material</th><th>Miércoles 5</th><th>Viernes 7</th></tr></thead>
+        <thead><tr><th data-i18n="intl.th.material">Material</th><th data-i18n="intl.th.wed">Miércoles 5</th><th data-i18n="intl.th.fri">Viernes 7</th></tr></thead>
         <tbody>
           <tr>
-            <td>Ollas / Sartenes</td>
+            <td data-i18n="intl.cook.pots">Ollas / Sartenes</td>
             <td style="font-size:12px">Portugal (sartén ×1) · Polonia (sartén ×1 + olla ×1) · México (olla ×1) · Suiza (sartén ×1) · Países Bajos (sartén ×1)</td>
             <td style="font-size:12px">Austria (sartén ×1) · Lituania (sartén ×1 + olla ×1) · Líbano (sartenes ×2) · Hungría (ollas ×2) · Perú (olla ×1) · España (sartén ×1)</td>
           </tr>
           <tr>
-            <td>Horno</td>
+            <td data-i18n="intl.cook.oven">Horno</td>
             <td style="font-size:12px">USA (×1)</td>
             <td style="font-size:12px">Austria (×1)</td>
           </tr>
           <tr>
-            <td>Planchas eléctricas</td>
+            <td data-i18n="intl.cook.plancha">Planchas eléctricas</td>
             <td style="font-size:12px">Eslovaquia (×1) · México (×1)</td>
             <td style="font-size:12px">—</td>
           </tr>
           <tr>
-            <td>Otras</td>
+            <td data-i18n="intl.cook.otras">Otras</td>
             <td style="font-size:12px">Suiza – fondue · Países Bajos – freidora</td>
             <td style="font-size:12px">Líbano – exprimidor · Perú – batidora de vaso</td>
           </tr>
           <tr>
-            <td>Sin fogón / horno</td>
+            <td data-i18n="intl.cook.nofogo">Sin fogón / horno</td>
             <td style="font-size:12px">Bélgica · Rep. Checa · Alemania · Irlanda · Malta · Ucrania <span style="color:var(--gray-400)">(6)</span></td>
             <td style="font-size:12px">Albania · Bulgaria · Estonia · Francia · Gran Bretaña · Italia <span style="color:var(--gray-400)">(6)</span></td>
           </tr>
           <tr style="font-weight:600;background:var(--gray-50)">
-            <td>Países con cocina</td>
+            <td data-i18n="intl.cook.total">Países con cocina</td>
             <td>7</td>
             <td>6</td>
           </tr>
         </tbody>
       </table>
-      <div style="padding:0.75rem 1rem;background:#fefce8;border-left:2px solid #fde047;font-size:12px;color:var(--gray-700);margin-top:1.25rem">
+      <div style="padding:0.75rem 1rem;background:#fefce8;border-left:2px solid #fde047;font-size:12px;color:var(--gray-700);margin-top:1.25rem" data-i18n="intl.basuras">
         <strong>🗑️ Basuras</strong> — Prever cubos de basura tanto en zona de evento (uno por puesto o zona compartida) como en cada cocina. Coordinar vaciado entre noches.
       </div>
     </div>
 
     <div class="section-block" id="intl-formulario">
-      <div class="section-title">Formulario delegaciones</div>
+      <div class="section-title" data-i18n="intl.sec.form">Formulario delegaciones</div>
       <div class="info-grid" style="margin-bottom:1.25rem">
         <div class="info-cell">
-          <div class="info-cell-label">Formulario</div>
+          <div class="info-cell-label" data-i18n="intl.form.label">Formulario</div>
           <div class="info-cell-value">
             <a href="https://tally.so/r/GxkNkj" target="_blank"
-               style="display:inline-flex;align-items:center;gap:6px;padding:8px 12px;background:#111827;color:#fff;text-decoration:none;border-radius:6px;font-size:12px;font-weight:600">
+               style="display:inline-flex;align-items:center;gap:6px;padding:8px 12px;background:#111827;color:#fff;text-decoration:none;border-radius:6px;font-size:12px;font-weight:600"
+               data-i18n="intl.form.btn">
               Formulario enviado ↗
             </a>
           </div>
         </div>
         <div class="info-cell">
-          <div class="info-cell-label">Países contestados</div>
+          <div class="info-cell-label" data-i18n="intl.form.resp.label">Países contestados</div>
           <div class="info-cell-value">
             <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:4px">
               <span style="font-size:22px;font-weight:700;line-height:1">25</span>
-              <span style="color:var(--gray-400);font-size:13px">/ 25 países</span>
+              <span style="color:var(--gray-400);font-size:13px" data-i18n="intl.form.pct.of">/ 25 países</span>
             </div>
             <div style="background:var(--gray-100);border-radius:99px;height:8px;overflow:hidden">
               <div style="height:100%;width:100%;background:#16a34a;border-radius:99px"></div>
             </div>
-            <div style="font-size:10px;color:var(--gray-400);margin-top:4px">100% completado ✓</div>
+            <div style="font-size:10px;color:var(--gray-400);margin-top:4px" data-i18n="intl.form.resp.pct">100% completado ✓</div>
           </div>
         </div>
       </div>
-      <div class="tbd-block">Pendiente → Actualizar inventario con Ana una vez sabido el espacio que necesitan.</div>
+      <div class="tbd-block" data-i18n="intl.form.tbd">Pendiente → Actualizar inventario con Ana una vez sabido el espacio que necesitan.</div>
     </div>
 
   </div>
 </div>
 
+<script src="lang.js"></script>
 <script>
 function scrollToSection(id, link) {
   const el = document.getElementById(id);
